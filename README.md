@@ -1,8 +1,7 @@
-# web-dev-template
+Hi there!
 
-1. git clone https://github.com/jannunzi/web-dev-template.git
-1. cd web-dev-template
-1. npm install
-1. mongod
-1. node server.js
-1. browse to localhost:3000
+My name is Omkar Kakade and I am an undergraduate student at Northeastern University. Computer Science has always been my interest and I wish to bridge the gap between business and technology. The reason I decided to take this course is to be able to make my own website and to perform analytics on it.
+
+The purpose of this repo is for my Web Development course.
+
+root for hosted environment: https://kakade-omkar-webdev.herokuapp.com/
