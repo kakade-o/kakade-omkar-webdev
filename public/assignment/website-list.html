@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Website_list Page</title>
-        <link href="css/bootstrap.css" rel="stylesheet"/>
-        <link href="style.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+              rel="stylesheet"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
     </head>
     <body>
 
@@ -13,30 +15,30 @@
             <div class="blog-masthead">
                 <div class="container-fluid">
 
-                    <div class="navbar-text pull-left" style="margin-left: 0;">
+                    <div class="navbar-text pull-left">
                         <a href="profile.html">
-                            <span style="color: white" class = "glyphicon glyphicon-chevron-left"></span>
+                            <span class = "glyphicon glyphicon-chevron-left white_color"></span>
+                        </a>
+                    </div>
+
+                    <div class="navbar-text pull-right">
+                        <a href="website-new.html">
+                            <span class="glyphicon glyphicon-plus white_color"></span>
                         </a>
                     </div>
 
                     <div class="navbar-header">
-                        <a class="navbar-brand" style="color: white; font-size: x-large">
-                        Websites
+                        <a class="navbar-brand">
+                        <span class="white_color x-large_font_size">Websites</span>
                         </a>
                     </div>
 
-                    <div class="navbar-text pull-right" style="margin-right: 10px">
-                        <a href="website-new.html">
-                            <span style="color: white" class="glyphicon glyphicon-plus"></span>
-                        </a>
-
-                    </div>
                 </div>
             </div>
         </nav>
 
 
-        <div class = "container-fluid">
+        <div class="container-fluid margins">
 
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation">
@@ -44,9 +46,19 @@
                     <div class="text-left">
                         <a href="page-list.html">Address Book App
                         </a>
+
+                        <div class="pull-right">
+                            <a href="website-edit.html">
+                                <span class="glyphicon glyphicon-cog">
+                                </span>
+                            </a>
+                        </div>
+                        <!--
                         <a href="website-edit.html">
-                            <span class="glyphicon glyphicon-cog pull-right"></span>
+                            <span class="glyphicon glyphicon-cog pull-right">
+                            </span>
                         </a>
+                        -->
                     </div>
                 </li>
                 &nbsp;
@@ -56,7 +68,8 @@
                         <a href="page-list.html">Blogger
                         </a>
                         <a href="website-edit.html">
-                            <span class="glyphicon glyphicon-cog pull-right"></span>
+                            <span class="glyphicon glyphicon-cog pull-right">
+                            </span>
                         </a>
                     </div>
                 </li>
@@ -83,23 +96,6 @@
                     </div>
                 </li>
 
-                <!--
-                <li role="presentation">
-                    <a href="page-list.html">Blogger
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="page-list.html">Blogging App
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="page-list.html">Test Scripting App
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-                -->
             </ul>
         </div>
 
@@ -107,9 +103,10 @@
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="blog-masthead">
                 <div class="container-fluid">
-                    <div class="navbar-text pull-right" style="margin-right: 10px">
+                    <div class="navbar-text pull-right"
+                         >
                         <a href="profile.html">
-                            <span style="color: white" class="glyphicon glyphicon-user"></span>
+                            <span class="glyphicon glyphicon-user white_color"></span>
                         </a>
                     </div>
                 </div>

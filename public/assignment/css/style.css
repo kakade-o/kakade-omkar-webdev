@@ -1,7 +1,101 @@
 input.form-control {
     margin-bottom: 5px;
 }
-
+/*
 body {
     padding-top: 36px;
+} */
+
+.blog-masthead {
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+
+.margins {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.indexheader {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 18%;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    padding-top: 70px;
+}
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #fff;
+    background-color: #428bca;
+}
+
+ol.jga-horizontal {
+    /*
+    padding-left: 330px;
+    padding-top: 40px;
+    */
+    width: 600px;
+    margin:auto;
+}
+ol.jga-horizontal li {
+    display: inline;
+    padding: 20px;
+}
+
+/* colors
+Used:
+profile.html
+website-list.html
+website-new.html
+website-edit.html
+page-edit.html
+page-new.html
+page-list.html
+widget-heading.html
+*/
+.white_color {
+    color: white;
+}
+
+
+.footer_color {
+    color: #428bca;
+}
+
+/* Extra large Font size
+Used:
+profile.html
+website-list.html
+website-new.html
+website-edit.html
+page-edit.html
+page-new.html
+page-list.html
+widget-heading.html
+ */
+.x-large_font_size {
+    font-size: x-large;
+}
+
+.increase_text_area {
+    height: 200px;
+}
+
+/* used in widget-heading.html */
+.dropdown_width {
+    width: 100%;
 }

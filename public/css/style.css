@@ -4,6 +4,15 @@
     box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
 
+
+.indexheader {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 16%;
+}
+
+
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
@@ -21,4 +30,16 @@ body {
     background-color: #428bca;
 }
 
+ol.jga-horizontal {
+    /*
+    padding-left: 330px;
+    padding-top: 40px;
+    */
+    width: 600px;
+    margin:auto;
+}
+ol.jga-horizontal li {
+    display: inline;
+    padding: 20px;
+}
 
