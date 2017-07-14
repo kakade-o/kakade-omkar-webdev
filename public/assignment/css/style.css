@@ -22,8 +22,9 @@ body {
     color: white;
     font-size: 50px;
     text-align: center;
-    margin-top: 18%;
+    margin-top: 250px;
 }
+
 
 
 body {
@@ -71,6 +72,11 @@ widget-heading.html
     color: white;
 }
 
+.black_color {
+    color: black;
+}
+
+
 
 .footer_color {
     color: #428bca;
@@ -91,11 +97,21 @@ widget-heading.html
     font-size: x-large;
 }
 
-.increase_text_area {
-    height: 200px;
-}
-
 /* used in widget-heading.html */
 .dropdown_width {
     width: 100%;
+}
+
+
+.ok-add_pixels_to_right {
+    margin-right: 15px;
+}
+
+.vr {
+    width:1px;
+    background-color:#000;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 327px;
 }
