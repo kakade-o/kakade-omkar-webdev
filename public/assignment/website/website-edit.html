@@ -3,68 +3,143 @@
     <head>
         <meta charset="UTF-8">
         <title>Website-Edit</title>
+        <link href="../css/bootstrap.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet"/>
         <link href="../css/style.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-
-        <!-- Header -->
+    <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="blog-masthead">
                 <div class="container-fluid">
 
-                    <div class="navbar-text pull-left">
-                        <a href="website-list.html">
-                            <span class = "glyphicon glyphicon-chevron-left white_color">
-                            </span>
-                        </a>
-                    </div>
+                    <div class="row">
 
-                    <div class="navbar-text pull-right">
-                        <a href="website-list.html">
-                            <span
-                                  class="glyphicon glyphicon-ok white_color">
-                            </span>
-                        </a>
-                    </div>
+                        <div class="navbar-text pull-left">
+                            <a href="website-list.html">
+                                <span class = "white_color glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                        </div>
 
-                    <div class="navbar-header">
-                        <a class="navbar-brand">
-                            <span class="white_color x-large_font_size">Edit Website</span>
-                        </a>
-                    </div>
+                        <div class="visible-lg col-lg-3 navbar-brand x-large_font_size">
+                            <a>
+                                <span class="white_color">Website</span>
+                            </a>
+                        </div>
 
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7 navbar-brand x-large_font_size">
+                            <a>
+                                <span class="white_color">Edit Website</span>
+                            </a>
+                        </div>
+
+
+                        <div class="navbar-text pull-right">
+                            <a href="website-list.html">
+                                <span class="white_color glyphicon glyphicon-ok ok-add_pixels_to_right"></span>
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </nav>
 
-        <div class="container">
-            <form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="visible-lg col-xs-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation">
 
-                <label for="Name">
-                    Name
-                </label>
+                            <div class="text-left">
+                                <a href="../page/page-list.html">Address Book App
+                                </a>
 
-                <input id="Name"
-                       type="text"
-                       class="form-control"
-                       placeholder="Name" value="Blogger">
-                <br/>
-                <label for="Description">
-                    Description
-                </label>
+                                <a href="website-edit.html">
+                                            <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">
+                                            </span>
+                                </a>
+                                <!--
+                                <a href="website-edit.html">
+                                    <span class="glyphicon glyphicon-cog pull-right">
+                                    </span>
+                                </a>
+                                -->
+                            </div>
+                        </li>
+                        &nbsp;
+                        <li role="presentation">
+
+                            <div class="text-left">
+                                <a href="../page/page-list.html">Blogger
+                                </a>
+                                <a href="website-edit.html">
+                                            <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">
+                                            </span>
+                                </a>
+                            </div>
+                        </li>
+                        &nbsp;
+                        <li role="presentation">
+
+                            <div class="text-left">
+                                <a href="../page/page-list.html">Blogging App
+                                </a>
+                                <a href="website-edit.html">
+                                    <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>
+                                </a>
+                            </div>
+                        </li>
+                        &nbsp;
+                        <li role="presentation">
+
+                            <div class="text-left">
+                                <a href="../page/page-list.html">Test Scripting App
+                                </a>
+                                <a href="website-edit.html">
+                                    <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="vr visible-lg">&nbsp;</div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+
+                    <form>
+
+                        <label for="Name">
+                            Name
+                        </label>
+
+                        <input id="Name"
+                               type="text"
+                               class="form-control"
+                               placeholder="Name" value="Blogger">
+                        <br/>
+                        <label for="Description">
+                            Description
+                        </label>
 
 
-                <textarea class="form-control"
-                          id="Description"
-                          rows="5">Blogger is a blog-publishing service that allows multi-user blogs withtime-stamped entries. It was developed by Pyra Labs, which was bought by Google in 2003. Generally, the blogs are hosted by Google at a subdomain of blogspot.com. Blogs can also be hosted in the registered custom domain of the blogger (like www.example.com).[4] A user can have up to 100 blogs per account.</textarea>
-                &nbsp;
-                <a href="website-list.html"
-                   class="btn btn-danger btn-block">Delete</a>
-            </form>
+                        <textarea class="form-control"
+                                  id="Description"
+                                  rows="5">Blogger is a blog-publishing service that allows multi-user blogs withtime-stamped entries. It was developed by Pyra Labs, which was bought by Google in 2003. Generally, the blogs are hosted by Google at a subdomain of blogspot.com. Blogs can also be hosted in the registered custom domain of the blogger (like www.example.com).[4] A user can have up to 100 blogs per account.</textarea>
+                        &nbsp;
+                        <a href="website-list.html"
+                           class="btn btn-danger btn-block">Delete</a>
+                    </form>
+
+                </div>
+
+            </div>
         </div>
+
 
         <!-- Footer -->
         <nav class="navbar navbar-default navbar-fixed-bottom">
