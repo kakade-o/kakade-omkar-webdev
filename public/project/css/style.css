@@ -17,6 +17,7 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
     padding-top: 70px;
+    background-size: 100%;
 }
 
 .nav-sidebar > li > a {
@@ -40,6 +41,14 @@ ol.jga-horizontal {
 }
 ol.jga-horizontal li {
     display: inline;
-    margin: 20px;
+    padding: 20px;
+}
+
+.white_color {
+    color: white;
+}
+
+.black_color {
+    color: black;
 }
 
