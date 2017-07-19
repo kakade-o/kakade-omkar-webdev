@@ -59,14 +59,14 @@ ol.jga-horizontal li {
 
 /* colors
 Used:
-profile.html
-website-list.html
-website-new.html
-website-edit.html
-page-edit.html
-page-new.html
+profile.view.client.html
+website-list.view.client.html
+website-new.view.client.html
+website-edit.view.client.html
+page-edit.view.client.html
+page-new.view.client.html
 page-list.html
-widget-heading.html
+widget-heading.view.client.html
 */
 .white_color {
     color: white;
@@ -84,20 +84,20 @@ widget-heading.html
 
 /* Extra large Font size
 Used:
-profile.html
-website-list.html
-website-new.html
-website-edit.html
-page-edit.html
-page-new.html
+profile.view.client.html
+website-list.view.client.html
+website-new.view.client.html
+website-edit.view.client.html
+page-edit.view.client.html
+page-new.view.client.html
 page-list.html
-widget-heading.html
+widget-heading.view.client.html
  */
 .x-large_font_size {
     font-size: x-large;
 }
 
-/* used in widget-heading.html */
+/* used in widget-heading.view.client.html */
 .dropdown_width {
     width: 100%;
 }
