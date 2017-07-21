@@ -10,23 +10,28 @@
 <!--</head>-->
 <!--<body>-->
     <div class="container">
-        <div ng-controller="loginController">
-            <div ng-show="errorMessage" class="alert alert-danger">
-                {{errorMessage}}
+        <div>
+            <div ng-show="model.errorMessage" class="alert alert-danger">
+                {{model.errorMessage}}
             </div>
+
             <h1>Login</h1>
             <input type="text"
-                   ng-model="user.username"
+                   ng-model="model.user.username"
                    class="form-control"
                    placeholder="username"/>
+
             <input type="password"
-                   ng-model="user.password"
+                   ng-model="model.user.password"
                    class="form-control"
                    placeholder="password"/>
+
             <a class="btn btn-primary btn-block"
-               ng-click="login(user)">Login</a>
+               ng-click="model.login(model.user)">Login</a>
+
             <a class="btn btn-success btn-block"
                href="#!/register">Register</a>
+
         </div>
     </div>
 <!--</body>-->

@@ -11,14 +11,14 @@
     <!--</head>-->
 
     <!--<body>-->
-<div ng-controller="profileController">
+<div >
     <!-- Header -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="blog-masthead">
             <div class="container-fluid">
 
                 <div class="navbar-text pull-right">
-                    <a href="profile.view.client.html">
+                    <a ng-click="model.updateUser(model.user)" role="button">
                         <span class="glyphicon glyphicon-ok white_color"></span>
                     </a>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text"
-                           ng-model="user.username"
+                           ng-model="model.user.username"
                            class="form-control"
                            id="username"
                            placeholder="Username">
@@ -54,7 +54,7 @@
                 <div class="form-group">
                     <label for="first-name">First Name</label>
                     <input type="text"
-                           ng-model="user.firstName"
+                           ng-model="model.user.firstName"
                            class="form-control"
                            id="first-name"
                            placeholder="Alice">
@@ -62,7 +62,7 @@
                 <div class="form-group">
                     <label for="last-name">Last Name</label>
                     <input type="text"
-                           ng-model="user.lastName"
+                           ng-model="model.user.lastName"
                            class="form-control"
                            id="last-name"
                            placeholder="Wonderland">
@@ -70,9 +70,17 @@
             </form>
 
             <a class="btn btn-primary btn-block"
-               href="../website/website-list.view.client.html">Websites</a>
+               href="#!/user/{{model.user._id}}/website">Websites</a>
+
             <a class="btn btn-danger  btn-block"
                href="#!/login">Logout</a>
+
+            <a class="btn btn-danger  btn-block"
+               ng-click="unregister()">Unregister</a>
+
+            <!--<a class="btn btn-primary  btn-block"-->
+               <!--ng-click="model.updateUser(model.user)">Update</a>-->
+
         </div>
 
         <!-- Footer -->
