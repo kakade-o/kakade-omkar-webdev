@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="WamApp">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          rel="stylesheet"/>
-    <script src="../vendor/angular.js"></script>
-    <script src="../vendor/angular-route.js"></script>
-    <script src="app.js"></script>
-</head>
-<body>
-    <div ng-view>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+              rel="stylesheet"/>
+        <script src="../vendor/angular.js"></script>
+        <script src="../vendor/angular-route.js"></script>
+        <script src="app.js"></script>
+        <script src="config.js"></script>
+        <script src="controllers/login.controller.client.js"></script>
+        <script src="controllers/profile.controller.client.js"></script>
+        <script src="user.service.client.js"></script>
+        <script src="controllers/register.controller.client.js"></script>
 
-    </div>
-</body>
+    </head>
+    <body>
+        <div ng-view>
+
+        </div>
+    </body>
 </html>
