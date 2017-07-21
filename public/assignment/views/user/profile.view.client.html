@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-              rel="stylesheet"/>
-        <link href="../../css/style.css"
-              rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    </head>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+    <!--<head>-->
+        <!--<meta charset="UTF-8">-->
+        <!--<title>Title</title>-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+              <!--rel="stylesheet"/>-->
+        <!--<link href="../../css/style.css"-->
+              <!--rel="stylesheet"/>-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <!--</head>-->
 
-    <body>
-
+    <!--<body>-->
+<div ng-controller="profileController">
     <!-- Header -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="blog-masthead">
@@ -39,6 +39,7 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text"
+                           ng-model="user.username"
                            class="form-control"
                            id="username"
                            placeholder="Username">
@@ -53,6 +54,7 @@
                 <div class="form-group">
                     <label for="first-name">First Name</label>
                     <input type="text"
+                           ng-model="user.firstName"
                            class="form-control"
                            id="first-name"
                            placeholder="Alice">
@@ -60,6 +62,7 @@
                 <div class="form-group">
                     <label for="last-name">Last Name</label>
                     <input type="text"
+                           ng-model="user.lastName"
                            class="form-control"
                            id="last-name"
                            placeholder="Wonderland">
@@ -69,7 +72,7 @@
             <a class="btn btn-primary btn-block"
                href="../website/website-list.view.client.html">Websites</a>
             <a class="btn btn-danger  btn-block"
-               href="login.view.client.html">Logout</a>
+               href="#!/login">Logout</a>
         </div>
 
         <!-- Footer -->
@@ -84,7 +87,7 @@
                 </div>
             </div>
         </nav>
+</div>
 
-
-    </body>
-</html>
+    <!--</body>-->
+<!--</html>-->

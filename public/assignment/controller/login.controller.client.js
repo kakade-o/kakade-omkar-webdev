@@ -3,10 +3,9 @@
  */
 
 (function () {
-    var app = angular.module("WebAppMaker", ["ngRoute"]);
-
-    app.controller("loginController", loginController);
-    app.controller("profileController", profileController);
+    angular
+        .module("WebAppMaker")
+        .controller("loginController", loginController)
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -15,16 +14,6 @@
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
     ];
 
-
-    function profileController($scope, $routeParams) {
-        var userId = $routeParams["userId"];
-
-        for(u in users) {
-            if(users[u]._id === userId) {
-                $scope.user = users[u];
-            }
-        }
-    }
 
     function loginController($scope, $location) {
         $scope.login = function(user) {

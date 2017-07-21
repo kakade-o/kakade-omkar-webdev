@@ -3,10 +3,9 @@
  */
 
 (function () {
-    var app = angular.module("WebAppMaker", ["ngRoute"]);
-
-    app.controller("loginController", loginController);
-    app.controller("profileController", profileController);
+    angular
+        .module("WebAppMaker")
+        .controller("profileController", profileController);
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -23,21 +22,6 @@
             if(users[u]._id === userId) {
                 $scope.user = users[u];
             }
-        }
-    }
-
-    function loginController($scope, $location) {
-        $scope.login = function(user) {
-
-            for (var u in users) {
-                var _user = users[u];
-                if(_user.username === user.username && _user.password === user.password) {
-                    $location.url("profile/" +_user._id);
-                }
-
-            }
-            $scope.errorMessage = "User not found";
-            //alert("login clicked")
         }
     }
 })();
