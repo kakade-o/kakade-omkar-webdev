@@ -45,5 +45,17 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/:websiteId/page", {
+                templateUrl: "views/page/page-list.view.client.html",
+                controller: "pageListController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/new", {
+                templateUrl: "views/page/page-new.view.client.html",
+                controller: "pageNewController",
+                controllerAs: "model"
+            })
+
     }
 })();
