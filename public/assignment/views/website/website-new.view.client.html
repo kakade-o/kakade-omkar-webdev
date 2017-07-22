@@ -61,7 +61,9 @@
                         </li>
 
                         <li ng-repeat="website in model.websites" class="list-group-item">
-                            {{website.name}}
+                            <a href="#!/user/{{model.userId}}/{{website._id}}/page">
+                                {{website.name}}
+                            </a>
                             <a href="#!/user/{{model.userId}}/{{website._id}}/edit">
                                 <span class="pull-right glyphicon glyphicon-cog"></span>
                             </a>

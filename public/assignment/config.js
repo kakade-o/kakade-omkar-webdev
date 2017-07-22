@@ -58,7 +58,7 @@
             })
 
             .when("/user/:userId/:websiteId/:pageId/edit", {
-                templateUrl: "views/website/page-edit.view.client.html",
+                templateUrl: "views/page/page-edit.view.client.html",
                 controller: "pageEditController",
                 controllerAs: "model"
             })
