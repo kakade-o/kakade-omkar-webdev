@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     angular
         .module("WebAppMaker")
@@ -14,6 +14,7 @@
         ]
         
         this.findPageByWebsiteId = findPageByWebsiteId;
+        this.createPage = createPage;
         
         function findPageByWebsiteId(siteId) {
             var page = [];
@@ -25,6 +26,12 @@
             }
             return page;
 
+        }
+        
+        function createPage(websiteId, page) {
+            page.websiteId = websiteId;
+            page._id = (new Date()).getTime() + "";
+            pages.push(page);
         }
 
 

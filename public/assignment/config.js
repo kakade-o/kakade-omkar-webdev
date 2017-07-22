@@ -51,9 +51,15 @@
                 controllerAs: "model"
             })
 
-            .when("/user/:userId/:websiteId/new", {
+            .when("/user/:userId/:websiteId/page/new", {
                 templateUrl: "views/page/page-new.view.client.html",
                 controller: "pageNewController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/edit", {
+                templateUrl: "views/website/page-edit.view.client.html",
+                controller: "pageEditController",
                 controllerAs: "model"
             })
 
