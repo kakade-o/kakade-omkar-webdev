@@ -39,5 +39,11 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/:websiteId/edit", {
+                templateUrl: "views/website/website-edit.view.client.html",
+                controller: "websiteEditController",
+                controllerAs: "model"
+            })
+
     }
 })();

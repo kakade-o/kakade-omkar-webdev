@@ -18,7 +18,11 @@
 
         this.findWebsitesForUser = findWebsitesForUser;
         this.createWebsite = createWebsite;
+        this.deleteWebsite = deleteWebsite;
+        this.findWebsiteById = findWebsiteById;
+        this.updateWebsite = updateWebsite;
 
+        // Finds list of websites by user
         function findWebsitesForUser(userId) {
 
             var sites = [];
@@ -31,10 +35,39 @@
             return sites;
         }
 
+        // updates the current website
+        function updateWebsite(id, website) {
+            for(var w in websites) {
+                if(websites[w]._id === id) {
+                    websites[w] = website;
+                }
+            }
+        }
+
+        //creates a new website
         function createWebsite(id, website) {
             website.developerId = id;
             website._id = (new Date()).getTime() + "";
             websites.push(website);
+        }
+
+        // deletes an existing website
+        function deleteWebsite(siteId) {
+            for(var w in websites) {
+                if(websites[w]._id === siteId) {
+                    websites.pop(websites[w]);
+                }
+            }
+        }
+
+        // Finds an existing website by id
+        function findWebsiteById(id) {
+            for(var w in websites) {
+                if(websites[w]._id === id) {
+                    return websites[w];
+                }
+            }
+            return null;
         }
 
         
