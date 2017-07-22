@@ -115,3 +115,18 @@ widget-heading.view.client.html
     bottom:0;
     left: 315px;
 }
+
+.ok-split-view-left {
+    position: absolute;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+@media (min-width: 1200px) {
+    .col-lg-9.ok-split-view-right {
+        width: 75%;
+        right: 0px;
+        position: absolute;
+        overflow-y: scroll;
+    }
+}

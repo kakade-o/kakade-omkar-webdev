@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Website-New</title>
-        <link href="../../css/bootstrap.css" rel="stylesheet"/>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-              rel="stylesheet"/>
-        <link href="../../css/style.css" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    </head>
-    <body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+    <!--<head>-->
+        <!--<meta charset="UTF-8">-->
+        <!--<title>Website-New</title>-->
+        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+              <!--rel="stylesheet"/>-->
+        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <!--</head>-->
+    <!--<body>-->
 
         <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -52,61 +52,101 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="visible-lg col-xs-3">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li role="presentation">
+                <div class="visible-lg col-xs-3 ok-split-view-left">
 
-                                <div class="text-left">
-                                    <a href="../page/page-list.view.client.html">Address Book App
-                                    </a>
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            Name
+                        </li>
 
-                                    <a href="website-edit.view.client.html">
-                                        <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">
-                                        </span>
-                                    </a>
-                                </div>
-                            </li>
-                            &nbsp;
-                            <li role="presentation">
+                        <li ng-repeat="website in model.websites" class="list-group-item">
+                            {{website.name}}
+                            <a href="website-edit.view.client.html">
+                                <span class="pull-right glyphicon glyphicon-cog"></span>
+                            </a>
+                        </li>
 
-                                <div class="text-left">
-                                    <a href="../page/page-list.view.client.html">Blogger
-                                    </a>
-                                    <a href="website-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">
-                                </span>
-                                    </a>
-                                </div>
-                            </li>
-                            &nbsp;
-                            <li role="presentation">
+                        <!--<li class="list-group-item">-->
+                            <!--Address Book App-->
+                            <!--<a href="website-edit.view.client.html">-->
+                    <!--<span class="pull-right glyphicon glyphicon-cog">-->
+                    <!--</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="list-group-item">-->
+                            <!--Blogger-->
+                            <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="list-group-item">-->
+                            <!--Blogging App-->
+                            <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="list-group-item">-->
+                            <!--Test Scripting App-->
+                            <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    </ul>
 
-                                <div class="text-left">
-                                    <a href="../page/page-list.view.client.html">Blogging App
-                                    </a>
-                                    <a href="website-edit.view.client.html">
-                                        <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>
-                                    </a>
-                                </div>
-                            </li>
-                            &nbsp;
-                            <li role="presentation">
+                        <!--<ul class="nav nav-pills nav-stacked">-->
+                            <!--<li role="presentation">-->
 
-                                <div class="text-left">
-                                    <a href="../page/page-list.view.client.html">Test Scripting App
-                                    </a>
-                                    <a href="website-edit.view.client.html">
-                                        <span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>
-                                    </a>
-                                </div>
-                            </li>
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Address Book App-->
+                                    <!--</a>-->
 
-                        </ul>
+                                    <!--<a href="website-edit.view.client.html">-->
+                                        <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">-->
+                                        <!--</span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--&nbsp;-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Blogger-->
+                                    <!--</a>-->
+                                    <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">-->
+                                <!--</span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--&nbsp;-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Blogging App-->
+                                    <!--</a>-->
+                                    <!--<a href="website-edit.view.client.html">-->
+                                        <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--&nbsp;-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Test Scripting App-->
+                                    <!--</a>-->
+                                    <!--<a href="website-edit.view.client.html">-->
+                                        <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+
+                        <!--</ul>-->
                 </div>
 
-                <div class="vr visible-lg">&nbsp;</div>
+                <!--<div class="vr visible-lg">&nbsp;</div>-->
 
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
 
                     <form>
                         <label for="Name">
@@ -147,5 +187,5 @@
             </div>
         </nav>
 
-    </body>
-</html>
+    <!--</body>-->
+<!--</html>-->
