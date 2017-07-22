@@ -17,6 +17,7 @@
         ]
 
         this.findWebsitesForUser = findWebsitesForUser;
+        this.createWebsite = createWebsite;
 
         function findWebsitesForUser(userId) {
 
@@ -29,6 +30,13 @@
             }
             return sites;
         }
+
+        function createWebsite(id, website) {
+            website.developerId = id;
+            website._id = (new Date()).getTime() + "";
+            websites.push(website);
+        }
+
         
     }
 

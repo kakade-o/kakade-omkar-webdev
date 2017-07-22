@@ -17,11 +17,22 @@
             "findUserByCredentials": findUserByCredentials,
             "findUserById": findUserById,
             "registerUser": registerUser,
-            "findUserByUsername": findUserByUsername
+            "findUserByUsername": findUserByUsername,
+            "deleteUser": deleteUser
         };
 
         return api;
 
+        // Deletes an existing user
+        function deleteUser(userId) {
+            for (var u in users) {
+                if(users[u]._id === userId) {
+                    users.pop(users[u]);
+                }
+            }
+        }
+
+        // updates the info of an existing user
         function updateUser(userId, user) {
             for(var u in users) {
                 if(users[u]._id === userId) {
@@ -32,6 +43,7 @@
             return null;
         }
 
+        // Finds user by username only
         function findUserByUsername(username) {
             for(u in users) {
                 if(users[u].username === username) {
@@ -41,12 +53,14 @@
             return null;
         }
 
+        // Registers a new user
         function registerUser(user) {
             user._id = (new Date()).getTime() + "";
             users.push(user);
             return user;
         }
 
+        // Finds user by username and password
         function findUserByCredentials(username, password) {
             for (var u in users) {
                 var _user = users[u];
@@ -59,6 +73,7 @@
 
         }
 
+        // Finds the user by ID
         function findUserById(userId) {
 
             for(u in users) {

@@ -19,7 +19,7 @@
                     <div class="row">
 
                         <div class="navbar-text pull-left">
-                            <a href="website-list.view.client.html">
+                            <a href="#!/user/{{model.userId}}/website">
                                 <span class = "white_color glyphicon glyphicon-chevron-left"></span>
                             </a>
                         </div>
@@ -38,7 +38,8 @@
 
 
                         <div class="navbar-text pull-right">
-                            <a href="website-list.view.client.html">
+                            <a role="button" ng-click="model.newWebsite(model.userId, website)"
+                               href="#!/user/{{model.userId}}/website">
                                 <span class="white_color glyphicon glyphicon-ok ok-add_pixels_to_right"></span>
                             </a>
                         </div>
@@ -153,6 +154,7 @@
                             Name
                         </label>
                         <input id="Name"
+                               ng-model="website.name"
                                type="text"
                                class="form-control"
                                placeholder="Name">
@@ -161,6 +163,7 @@
                             Description
                         </label>
                         <textarea class="form-control"
+                                  ng-model="website.description"
                                   id="Description"
                                   rows="5"
                                   placeholder="Description"></textarea>
@@ -179,7 +182,7 @@
             <div class="blog-masthead">
                 <div class="container-fluid">
                     <div class="navbar-text pull-right">
-                        <a href="../user/profile.view.client.html">
+                        <a href="#!/profile/{{model.userId}}">
                             <span class="glyphicon glyphicon-user white_color"></span>
                         </a>
                     </div>

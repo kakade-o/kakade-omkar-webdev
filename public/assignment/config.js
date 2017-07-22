@@ -34,7 +34,9 @@
             })
 
             .when("/user/:userId/website/new", {
-                templateUrl: "views/website/website-new.view.client.html"
+                templateUrl: "views/website/website-new.view.client.html",
+                controller: "websiteNewController",
+                controllerAs: "model"
             })
 
     }

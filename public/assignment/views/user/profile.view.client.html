@@ -76,25 +76,26 @@
                href="#!/login">Logout</a>
 
             <a class="btn btn-danger  btn-block"
-               ng-click="unregister()">Unregister</a>
+               ng-click="model.unregister(model.user)"
+               href="#!/login">Unregister</a>
 
             <!--<a class="btn btn-primary  btn-block"-->
                <!--ng-click="model.updateUser(model.user)">Update</a>-->
 
         </div>
 
-        <!-- Footer -->
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="blog-masthead">
-                <div class="container-fluid">
-                    <div class="navbar-text pull-right">
-                        <a href="profile.view.client.html">
-                                <span class="glyphicon glyphicon-user white_color"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <!--&lt;!&ndash; Footer &ndash;&gt;-->
+        <!--<nav class="navbar navbar-default navbar-fixed-bottom">-->
+            <!--<div class="blog-masthead">-->
+                <!--<div class="container-fluid">-->
+                    <!--<div class="navbar-text pull-right">-->
+                        <!--<a href="#!/profile/{{model.userId}}">-->
+                                <!--<span class="glyphicon glyphicon-user white_color"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</nav>-->
 </div>
 
     <!--</body>-->

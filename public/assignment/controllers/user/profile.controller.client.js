@@ -27,8 +27,8 @@
             userService.updateUser(user._id, user);
         }
 
-        function unregister() {
-
+        function unregister(user) {
+            userService.deleteUser(user._id);
         }
 
     }
