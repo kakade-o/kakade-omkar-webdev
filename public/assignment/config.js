@@ -92,10 +92,39 @@
                 controllerAs: "model"
             })
 
-            //#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/youtube
             .when("/user/:userId/:websiteId/:pageId/widget/new/youtube", {
-                templateUrl: "views/widget/widget-youtube.client.html",
+                templateUrl: "views/widget/widget-youtube.view.client.html",
                 controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/widget/new/html", {
+                templateUrl : "views/widget/widget-html.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+                //#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HEADER
+            .when("/user/:userId/:websiteId/:pageId/:widgetId/HEADER", {
+                templateUrl: "views/widget/widget-edit-heading.view.client.html",
+                controller: "widgetEditController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/:widgetId/IMAGE", {
+                templateUrl: "views/widget/widget-edit-image.view.client.html",
+                controller: "widgetEditController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/:widgetId/YOUTUBE", {
+                templateUrl: "views/widget/widget-edit-youtube.view.client.html",
+                controller: "widgetEditController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/:widgetId/HTML", {
+                templateUrl: "views/widget/widget-edit-html.view.client.html",
+                controller: "widgetEditController",
                 controllerAs: "model"
             })
 

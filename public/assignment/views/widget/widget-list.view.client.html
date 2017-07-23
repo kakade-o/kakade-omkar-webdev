@@ -41,13 +41,15 @@
 
             <div ng-repeat="widget in model.widgets" class="wd-widget">
 
-                <div class="wd-toolbar">
-                    <span class="glyphicon glyphicon-cog"></span>
-                    <span class="glyphicon glyphicon-align-justify"></span>
-                </div>
 
                 <div ng-switch="widget.widgetType">
                     <div ng-switch-when="HEADING" ng-switch="widget.size">
+                        <div class="wd-toolbar">
+                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HEADER">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="glyphicon glyphicon-align-justify"></span>
+                            </a>
+                        </div>
                         <h1 ng-switch-when="1">{{widget.text}}</h1>
                         <h2 ng-switch-when="2">{{widget.text}}</h2>
                         <h3 ng-switch-when="3">{{widget.text}}</h3>
@@ -57,18 +59,37 @@
                     </div>
 
                     <div ng-switch-when="IMAGE">
+                        <div class="wd-toolbar">
+                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/IMAGE">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="glyphicon glyphicon-align-justify"></span>
+                            </a>
+                        </div>
                         <img ng-src="{{widget.url}}" width="{{widget.width}}"/>
 
                     </div>
 
                     <div ng-switch-when="YOUTUBE">
+                        <div class="wd-toolbar">
+                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/YOUTUBE">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="glyphicon glyphicon-align-justify"></span>
+                            </a>
+                        </div>
                         <iframe width="{{widget.width}}" height="315" src="{{model.getYouTubeUrl(widget.url)}}"
                                 frameborder="0" allowfullscreen></iframe>
-                        <!--{{widget.url}}-->
                     </div>
 
-                    <div ng-switch-when="HTML"
-                         ng-bind-html="model.trustThisContent(widget.text)">
+                    <div ng-switch-when="HTML">
+
+                        <div class="wd-toolbar">
+                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HTML">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="glyphicon glyphicon-align-justify"></span>
+                            </a>
+                        </div>
+
+                        <div ng-bind-html="model.trustThisContent(widget.text)"></div>
 
                     </div>
 

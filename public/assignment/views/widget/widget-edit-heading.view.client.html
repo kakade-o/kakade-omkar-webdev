@@ -16,13 +16,14 @@
                 <div class="container-fluid">
 
                     <div class="navbar-text pull-left">
-                        <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new">
+                        <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
                             <span class = "glyphicon glyphicon-chevron-left white_color"></span>
                         </a>
                     </div>
 
                     <div class="navbar-text pull-right">
-                        <a href="widget-list.view.client.html">
+                        <a ng-click="model.updateWidget(model.widget)"
+                           href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
                             <span class="glyphicon glyphicon-ok white_color"></span>
                         </a>
                     </div>
@@ -41,36 +42,37 @@
             <form>
                 <div class="form-group">
                     Name
-                    <input
-                           type="text"
-                           ng-model=""
-                           class="form-control"
-                           placeholder="Name"/>
+                    <br/>
+                    <select class="dropdown_width" ng-model="model.widget.widgetType">
+                        <option value="HEADING">HEADING</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     Text
                     <input
-                           type="text"
-                           class="form-control"
-                           placeholder="Text"/>
+                            type="text"
+                            ng-model="model.widget.text"
+                            class="form-control"
+                            placeholder="Text"/>
                 </div>
 
                 <div class="form-group dropdown btn-block">
                     Size
                     <br/>
-                    <select class="dropdown_width">
-                        <option value="h1">1</option>
-                        <option value="h2">2</option>
-                        <option value="h3">3</option>
-                        <option value="h4">4</option>
-                        <option value="h5">5</option>
-                        <option value="h6">6</option>
+                    <select class="dropdown_width" ng-model="model.widget.size">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <a href="widget-list.view.client.html"
+                    <a ng-click="model.removeWidget()"
+                       href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget"
                        class="btn btn-danger btn-block">Delete</a>
                 </div>
 
@@ -82,8 +84,7 @@
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="blog-masthead">
                 <div class="container-fluid">
-                    <div class="navbar-text pull-right"
-                    >
+                    <div class="navbar-text pull-right">
                         <a href="#!/profile/{{model.userId}}">
                             <span class="glyphicon glyphicon-user white_color"></span>
                         </a>

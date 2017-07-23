@@ -20,6 +20,35 @@
 
         this.findWidgetsByPageId = findWidgetsByPageId;
         this.createWidget = createWidget;
+        this.findWidgetById = findWidgetById;
+        this.updateWidget = updateWidget;
+        this.deleteWidget = deleteWidget;
+
+        function deleteWidget(id) {
+            for(var w in widgets) {
+                if(widgets[w]._id === id) {
+                    widgets.pop(widgets[w]);
+                }
+            }
+        }
+
+        function updateWidget(id, widget) {
+            for(var w in widgets) {
+                if(widgets[w]._id === id) {
+                    widgets[w] === widget;
+                }
+            }
+
+        }
+
+        function findWidgetById(id) {
+            for(var w in widgets) {
+                if(widgets[w]._id === id) {
+                    return widgets[w];
+                }
+            }
+            return null;
+        }
 
 
         function findWidgetsByPageId(id) {
