@@ -24,6 +24,7 @@
         this.updateWidget = updateWidget;
         this.deleteWidget = deleteWidget;
 
+        // Deletes an existing widget
         function deleteWidget(id) {
             for(var w in widgets) {
                 if(widgets[w]._id === id) {
@@ -32,6 +33,7 @@
             }
         }
 
+        // Updates an existing widget
         function updateWidget(id, widget) {
             for(var w in widgets) {
                 if(widgets[w]._id === id) {
@@ -41,6 +43,7 @@
 
         }
 
+        // Finds an existing widget by its id
         function findWidgetById(id) {
             for(var w in widgets) {
                 if(widgets[w]._id === id) {
@@ -50,7 +53,7 @@
             return null;
         }
 
-
+        // Finds list of widgets by its page id
         function findWidgetsByPageId(id) {
             var widget = [];
 
@@ -63,6 +66,7 @@
 
         }
 
+        // Creates a new widget
         function createWidget(id, widget) {
             widget.pageId = id;
             widget._id = (new Date()).getTime() + "";

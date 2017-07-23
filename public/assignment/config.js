@@ -103,7 +103,7 @@
                 controller: "widgetNewController",
                 controllerAs: "model"
             })
-                //#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HEADER
+
             .when("/user/:userId/:websiteId/:pageId/:widgetId/HEADER", {
                 templateUrl: "views/widget/widget-edit-heading.view.client.html",
                 controller: "widgetEditController",
