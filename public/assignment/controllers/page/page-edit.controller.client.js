@@ -16,6 +16,7 @@
 
         function init() {
             model.page = pageService.findPageById(model.pageId);
+            model.pages = pageService.findPageByWebsiteId(model.websiteId);
         }
         init();
 

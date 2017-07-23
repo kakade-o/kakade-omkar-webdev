@@ -55,7 +55,7 @@
                 controllerAs: "model"
             })
 
-            .when("/user/:userId/:websiteId/page/new", {
+            .when("/user/:userId/:websiteId/:pageId/new", {
                 templateUrl: "views/page/page-new.view.client.html",
                 controller: "pageNewController",
                 controllerAs: "model"

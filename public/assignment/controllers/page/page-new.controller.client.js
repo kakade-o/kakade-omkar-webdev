@@ -9,13 +9,15 @@
 
         model.userId = $routeParams.userId;
         model.websiteId = $routeParams.websiteId;
+        model.pageId = $routeParams.pageId;
 
         model.newPage = newPage;
 
         function init() {
-
+            model.pages = pageService.findPageByWebsiteId(model.websiteId);
         }
         init();
+
 
         function newPage(siteId, page) {
             pageService.createPage(siteId, page);
