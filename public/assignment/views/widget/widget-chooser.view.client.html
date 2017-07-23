@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Widget Chooser</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-              rel="stylesheet"/>
-        <link href="../../css/style.css" rel="stylesheet"/>
-        <link href="../../css/bootstrap.css" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    </head>
-    <body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+    <!--<head>-->
+        <!--<meta charset="UTF-8">-->
+        <!--<title>Widget Chooser</title>-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+              <!--rel="stylesheet"/>-->
+        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
+        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <!--</head>-->
+    <!--<body>-->
         <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="blog-masthead">
                 <div class="container-fluid">
 
                     <div class="navbar-text pull-left">
-                        <a href="widget-list.view.client.html">
+                        <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
                             <span class = "glyphicon glyphicon-chevron-left white_color"></span>
                         </a>
                     </div>
@@ -33,9 +33,12 @@
 
         <div class="container-fluid">
             <ul class="nav nav-sidebar">
-                <li><a href="widget-heading.view.client.html">Header</a></li>
-                <li><a href="widget-image.view.client.html">Image</a></li>
-                <li><a href="widget-youtube.view.client.html">YouTube</a></li>
+                <li><a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/header">
+                    Header</a></li>
+                <li><a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/image">
+                    Image</a></li>
+                <li><a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/youtube">
+                    YouTube</a></li>
             </ul>
         </div>
 
@@ -45,7 +48,7 @@
                 <div class="container-fluid">
                     <div class="navbar-text pull-right"
                     >
-                        <a href="../user/profile.view.client.html">
+                        <a href="#!/profile/{{model.userId}}">
                             <span class="glyphicon glyphicon-user white_color"></span>
                         </a>
                     </div>
@@ -53,5 +56,5 @@
             </div>
         </nav>
 
-    </body>
-</html>
+    <!--</body>-->
+<!--</html>-->

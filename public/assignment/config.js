@@ -11,6 +11,7 @@
                 templateUrl: "views/home.html"
             })
 
+            // User
             .when("/login", {
                 templateUrl: "views/user/login.view.client.html",
                 controller: "loginController",
@@ -27,6 +28,8 @@
                 controller: "registerController",
                 controllerAs: "model"
             })
+
+            // Website
             .when("/user/:userId/website", {
                 templateUrl: "views/website/website-list.view.client.html",
                 controller: "websiteListController",
@@ -45,6 +48,7 @@
                 controllerAs: "model"
             })
 
+            // Page
             .when("/user/:userId/:websiteId/page", {
                 templateUrl: "views/page/page-list.view.client.html",
                 controller: "pageListController",
@@ -60,6 +64,38 @@
             .when("/user/:userId/:websiteId/:pageId/edit", {
                 templateUrl: "views/page/page-edit.view.client.html",
                 controller: "pageEditController",
+                controllerAs: "model"
+            })
+
+            // Widget
+            .when("/user/:userId/:websiteId/:pageId/widget", {
+                templateUrl: "views/widget/widget-list.view.client.html",
+                controller: "widgetListController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/widget/new", {
+                templateUrl: "views/widget/widget-chooser.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/widget/new/header", {
+                templateUrl: "views/widget/widget-heading.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/:websiteId/:pageId/widget/new/image", {
+                templateUrl: "views/widget/widget-image.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
+            //#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/youtube
+            .when("/user/:userId/:websiteId/:pageId/widget/new/youtube", {
+                templateUrl: "views/widget/widget-youtube.client.html",
+                controller: "widgetNewController",
                 controllerAs: "model"
             })
 

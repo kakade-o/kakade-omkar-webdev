@@ -1,29 +1,28 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-    <!--<head>-->
-        <!--<meta charset="UTF-8">-->
-        <!--<title>Widget Image</title>-->
-        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
-        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
-    <!--</head>-->
-    <!--<body>-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Widget Image</title>
+        <link href="../../css/bootstrap.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+              rel="stylesheet"/>
+        <link href="../../css/style.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    </head>
+    <body>
         <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="blog-masthead">
                 <div class="container-fluid">
 
                     <div class="navbar-text pull-left">
-                        <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new">
+                        <a href="widget-list.view.client.html">
                             <span class = "glyphicon glyphicon-chevron-left white_color"></span>
                         </a>
                     </div>
 
                     <div class="navbar-text pull-right">
-                        <a ng-click="model.createWidget(widget)"
-                                href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
+                        <a href="widget-list.view.client.html">
                             <span class="glyphicon glyphicon-ok white_color"></span>
                         </a>
                     </div>
@@ -43,17 +42,16 @@
             <form>
                 <div class="form-group">
                     Name
-                    <br/>
-                    <select class="dropdown_width" ng-model="widget.widgetType">
-                        <option value="IMAGE">IMAGE</option>
-                    </select>
+                    <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Name"/>
                 </div>
 
                 <div class="form-group">
                     Text
                     <input
                             type="text"
-                            ng-model="widget.text"
                             class="form-control"
                             placeholder="Text"/>
                 </div>
@@ -61,17 +59,15 @@
                 <div class="form-group">
                     URL
                     <input type="url"
-                           ng-model="widget.url"
                             class="form-control"
                             placeholder="URL"/>
                 </div>
 
                 <div class="form-group">
                     Width
-                    <input type="text"
-                           ng-model="widget.width"
+                    <input type="number"
                            class="form-control"
-                            placeholder="Number followed by '%' sign">
+                            placeholder="Number">
                 </div>
 
                 <div class="form-group">
@@ -83,6 +79,8 @@
                 <div class="form-group">
                     <a href="widget-list.view.client.html"
                        class="btn btn-primary btn-block">Upload Image</a>
+                    <a href="widget-list.view.client.html"
+                       class="btn btn-danger btn-block">Delete</a>
                 </div>
 
             </form>
@@ -94,8 +92,9 @@
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="blog-masthead">
                 <div class="container-fluid">
-                    <div class="navbar-text pull-right">
-                        <a href="#!/profile/{{model.userId}}">
+                    <div class="navbar-text pull-right"
+                    >
+                        <a href="../user/profile.view.client.html">
                             <span class="glyphicon glyphicon-user white_color"></span>
                         </a>
                     </div>
@@ -103,5 +102,5 @@
             </div>
         </nav>
 
-    <!--</body>-->
-<!--</html>-->
+    </body>
+</html>

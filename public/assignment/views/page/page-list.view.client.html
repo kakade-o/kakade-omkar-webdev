@@ -47,7 +47,10 @@
             </li>
 
             <li ng-repeat="page in model.pages" class="list-group-item">
-                {{page.name}}
+                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{page._id}}/widget" >
+                    {{page.name}}
+                </a>
+
                 <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{page._id}}/edit">
                     <span class="pull-right glyphicon glyphicon-cog"></span>
                 </a>
