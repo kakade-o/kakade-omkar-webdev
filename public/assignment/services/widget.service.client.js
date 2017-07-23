@@ -27,7 +27,7 @@
         function deleteWidget(id) {
             for(var w in widgets) {
                 if(widgets[w]._id === id) {
-                    widgets.pop(widgets[w]);
+                    widgets.splice(w, 1);
                 }
             }
         }

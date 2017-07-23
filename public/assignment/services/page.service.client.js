@@ -24,7 +24,7 @@
         function deletePage(id) {
             for(var p in pages) {
                 if(pages[p]._id === id) {
-                    pages.pop(pages[p]);
+                    pages.splice(p, 1);
                 }
             }
         }
