@@ -25,6 +25,7 @@
 
         function updateUser(user) {
             userService.updateUser(user._id, user);
+            model.updated = "Updated!";
         }
 
         function unregister(user) {
