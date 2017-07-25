@@ -146,3 +146,13 @@ widget-heading.view.client.html
     border-bottom-left-radius: 10px;
     opacity: 0.8;
 }
+
+.ok-fade {
+    transition: all linear 450ms;
+    opacity: 1;
+}
+
+.ok-fade.ng-hide {
+    opacity: 0;
+}
+
