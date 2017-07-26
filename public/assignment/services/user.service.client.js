@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .factory("userService", userService)
     
-    function userService() {
+    function userService($http) {
 
         var users = [
             {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -55,33 +55,52 @@
 
         // Registers a new user
         function registerUser(user) {
-            user._id = (new Date()).getTime() + "";
-            users.push(user);
-            return user;
+
+            var url = "/api/profile";
+
+            $http.post(url, user);
+
+            // user._id = (new Date()).getTime() + "";
+            // users.push(user);
+            // return user;
         }
 
         // Finds user by username and password
         function findUserByCredentials(username, password) {
-            for (var u in users) {
-                var _user = users[u];
-                if(_user.username === username && _user.password === password) {
-                    return _user;
-                }
 
-            }
-            return null;
+            var url = "/api/user?username=" + username + "&password=" + password;
+
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+
+            // for (var u in users) {
+            //     var _user = users[u];
+            //     if(_user.username === username && _user.password === password) {
+            //         return _user;
+            //     }
+            //
+            // }
+            // return null;
 
         }
 
         // Finds the user by ID
         function findUserById(userId) {
 
-            for(u in users) {
-                if(users[u]._id === userId) {
-                    return users[u];
-                }
-            }
-            return null;
+            var url = "/api/user/" + userId;
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+
+            // for(u in users) {
+            //     if(users[u]._id === userId) {
+            //         return users[u];
+            //     }
+            // }
+            // return null;
 
         }
         
