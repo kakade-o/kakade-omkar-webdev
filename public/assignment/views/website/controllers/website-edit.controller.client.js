@@ -18,7 +18,11 @@
                 .then(function (websites) {
                     model.websites = websites;
                 });
-            model.site = websiteService.findWebsiteById(model.websiteId);
+            websiteService
+                .findWebsiteById(model.userId, model.websiteId)
+                .then(function (response) {
+                    model.site = response.data;
+                });
         }
         init();
 

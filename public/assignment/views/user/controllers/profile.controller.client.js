@@ -8,7 +8,7 @@
         .controller("profileController", profileController);
 
 
-    function profileController($routeParams, userService) {
+    function profileController($location, $routeParams, userService) {
 
         var model = this;
 
@@ -43,7 +43,11 @@
         }
 
         function unregister(user) {
-            userService.deleteUser(user._id);
+            userService
+                .deleteUser(user._id)
+                .then(function () {
+                    $location.url('/login');
+                })
         }
 
     }

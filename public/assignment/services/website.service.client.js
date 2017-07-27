@@ -70,13 +70,18 @@
         }
 
         // Finds an existing website by id
-        function findWebsiteById(id) {
-            for(var w in websites) {
-                if(websites[w]._id === id) {
-                    return websites[w];
-                }
-            }
-            return null;
+        function findWebsiteById(userId, websiteId) {
+
+            var url = "/api/user/" + userId + "/website/" + websiteId;
+            return $http.get(url);
+
+
+            // for(var w in websites) {
+            //     if(websites[w]._id === id) {
+            //         return websites[w];
+            //     }
+            // }
+            // return null;
         }
 
         

@@ -25,11 +25,15 @@
 
         // Deletes an existing user
         function deleteUser(userId) {
-            for (var u in users) {
-                if(users[u]._id === userId) {
-                    users.splice(u, 1);
-                }
-            }
+
+            var url = "/api/user/" + userId;
+            return $http.delete(url);
+
+            // for (var u in users) {
+            //     if(users[u]._id === userId) {
+            //         users.splice(u, 1);
+            //     }
+            // }
         }
 
         // updates the info of an existing user

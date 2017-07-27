@@ -1,9 +1,10 @@
 module.exports = function (app) {
 
-    app.get('/api/user/:userId', findUserById);
-    app.get('/api/user', findUserByCredentials);
-    app.post('/api/profile', registerUser);
-    app.put("/api/user/:userId", updateUser);
+    app.get   ('/api/user/:userId', findUserById);
+    app.get   ('/api/user', findUserByCredentials);
+    app.post  ('/api/profile', registerUser);
+    app.put   ("/api/user/:userId", updateUser);
+    app.delete("/api/user/:userId", deleteUser);
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -31,6 +32,16 @@ module.exports = function (app) {
         user._id = (new Date()).getTime() + "";
         users.push(user);
         res.send(user);
+    }
+
+    function deleteUser(req, res) {
+        var userId = req.params.userId;
+        for (var u in users) {
+            if(users[u]._id === userId) {
+                users.splice(u, 1);
+                res.sendStatus(200);
+            }
+        }
     }
 
     function findUserById(req, res) {

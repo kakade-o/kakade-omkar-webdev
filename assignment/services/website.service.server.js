@@ -1,7 +1,9 @@
 module.exports = function (app) {
 
     app.get("/api/user/:userId/website", findWebsitesForUser);
+    app.get("/api/user/:userId/website/:websiteId", findWebsiteById);
     app.post("/api/user/:userId/website", createWebsite);
+
 
     var websites = [
         { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
@@ -21,6 +23,15 @@ module.exports = function (app) {
 
         websites.push(website);
         res.json(website);
+    }
+
+    function findWebsiteById(req, res) {
+        for(var w in websites) {
+            if(websites[w]._id === req.params.websiteId) {
+                res.json(websites[w]);
+            }
+        }
+        res.sendStatus(404);
     }
 
     function findWebsitesForUser(req, res) {
