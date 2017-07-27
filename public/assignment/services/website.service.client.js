@@ -4,7 +4,7 @@
         .module("WebAppMaker")
         .service("websiteService", websiteService);
     
-    function websiteService() {
+    function websiteService($http) {
 
         var websites = [
             { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
@@ -24,6 +24,9 @@
 
         // Finds list of websites by user
         function findWebsitesForUser(userId) {
+
+            // var url = "/api/user/" + userId + "/website";
+            // return $http.get(url);
 
             var sites = [];
 

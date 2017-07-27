@@ -34,23 +34,32 @@
 
         // updates the info of an existing user
         function updateUser(userId, user) {
-            for(var u in users) {
-                if(users[u]._id === userId) {
-                    users[u] = user;
-                    return;
-                }
-            }
-            return null;
+
+            var url = "/api/user/" + userId;
+
+            return $http.put(url, user);
+
+            // for(var u in users) {
+            //     if(users[u]._id === userId) {
+            //         users[u] = user;
+            //         return;
+            //     }
+            // }
+            // return null;
         }
 
         // Finds user by username only
         function findUserByUsername(username) {
-            for(u in users) {
-                if(users[u].username === username) {
-                    return users[u];
-                }
-            }
-            return null;
+
+            var url = "/api/user?username=" + username;
+            return $http.get(url);
+
+            // for(u in users) {
+            //     if(users[u].username === username) {
+            //         return users[u];
+            //     }
+            // }
+            // return null;
         }
 
         // Registers a new user
@@ -58,7 +67,7 @@
 
             var url = "/api/profile";
 
-            $http.post(url, user);
+            return $http.post(url, user);
 
             // user._id = (new Date()).getTime() + "";
             // users.push(user);

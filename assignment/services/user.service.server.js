@@ -3,6 +3,7 @@ module.exports = function (app) {
     app.get('/api/user/:userId', findUserById);
     app.get('/api/user', findUserByCredentials);
     app.post('/api/profile', registerUser);
+    app.put("/api/user/:userId", updateUser);
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -10,6 +11,20 @@ module.exports = function (app) {
         {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
     ];
+
+    function updateUser(req, res) {
+        var userId = req.params.userId;
+        var user = req.body;
+
+        for(var u in users) {
+            if(users[u]._id === userId) {
+                users[u] = user;
+                res.send(user);
+                return;
+            }
+        }
+        return res.sendStatus(404);
+    }
 
     function registerUser(req, res) {
         var user = req.body;
@@ -31,15 +46,28 @@ module.exports = function (app) {
         var username = req.query['username'];
         var password = req.query['password'];
         //console.log([username, password]);
-        for(var u in users) {
-            var user = users[u];
-            if(user.username === username &&
-                user.password === password) {
-                res.json(user);
-                return;
+        if(username && password) {
+            for(var u in users) {
+                var user = users[u];
+                if(user.username === username &&
+                    user.password === password) {
+                    res.json(user);
+                    return;
+                }
             }
+            res.sendStatus(404);
+
+        } else if(username) {
+            for(u in users) {
+                if(users[u].username === username) {
+                    //return users[u];
+                    res.send(users[u]);
+                    return;
+                }
+            }
+            res.send("0");
         }
-        res.sendStatus(404);
+
     }
 
 }
