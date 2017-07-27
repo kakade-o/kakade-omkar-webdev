@@ -14,7 +14,7 @@
             { "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
             { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
             { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
-        ]
+        ];
 
         this.findWebsitesForUser = findWebsitesForUser;
         this.createWebsite = createWebsite;
@@ -25,17 +25,20 @@
         // Finds list of websites by user
         function findWebsitesForUser(userId) {
 
-            // var url = "/api/user/" + userId + "/website";
-            // return $http.get(url);
+            var url = "/api/user/" + userId + "/website";
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
 
-            var sites = [];
-
-            for(var w in websites) {
-                if(websites[w].developerId === userId) {
-                    sites.push(websites[w]);
-                }
-            }
-            return sites;
+            // var sites = [];
+            //
+            // for(var w in websites) {
+            //     if(websites[w].developerId === userId) {
+            //         sites.push(websites[w]);
+            //     }
+            // }
+            // return sites;
         }
 
         // updates the current website
