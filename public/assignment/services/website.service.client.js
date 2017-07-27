@@ -51,10 +51,13 @@
         }
 
         //creates a new website
-        function createWebsite(id, website) {
-            website.developerId = id;
-            website._id = (new Date()).getTime() + "";
-            websites.push(website);
+        function createWebsite(userId, website) {
+            var url = "/api/user/" + userId + "/website";
+            return $http.post(url, website);
+
+            // website.developerId = id;
+            // website._id = (new Date()).getTime() + "";
+            // websites.push(website);
         }
 
         // deletes an existing website

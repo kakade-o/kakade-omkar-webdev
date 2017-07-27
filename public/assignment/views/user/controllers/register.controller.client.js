@@ -41,25 +41,27 @@
         init();
 
         function registerUser(user) {
+
+            //console.log(user.username, user.password2, user.password);
+
+            if(user.password !== user.password2) {
+                model.error = "Passwords must match!";
+            } else {
                 userService.findUserByUsername(user.username)
                     .then(function (response) {
                         var _user = response.data;
                         if(_user ==="0") {
-                            if(_user.password !== _user.password2) {
-                                model.error = "Passwords must match!";
-                            } else {
-                                userService.registerUser(user)
-                                    .then(function (response) {
-                                        _user = response.data;
-                                        $location.url("/profile/" + _user._id);
-                                })
-
-                            }
+                            return userService.registerUser(user)
 
                         } else {
                             model.error = "User already exists";
                         }
                     })
+                    .then(function (response) {
+                        _user = response.data;
+                        $location.url("/profile/" + _user._id);
+                    });
+            }
 
             }
 

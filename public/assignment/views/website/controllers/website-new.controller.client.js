@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("websiteNewController", websiteNewController);
 
-    function websiteNewController($routeParams, websiteService) {
+    function websiteNewController($location, $routeParams, websiteService) {
 
         var model = this;
 
@@ -12,13 +12,20 @@
         model.newWebsite = newWebsite;
 
         function init() {
-            model.websites = websiteService.findWebsitesForUser(model.userId);
+            websiteService.findWebsitesForUser(model.userId)
+                .then(function (websites) {
+                    model.websites = websites;
+                });
 
         }
         init();
 
-        function newWebsite(id, website) {
-            var site = websiteService.createWebsite(id, website);
+        function newWebsite(website) {
+            websiteService
+                .createWebsite(model.userId, website)
+                .then(function () {
+                    $location.url("/user/"+model.userId+"/website");
+                })
         }
 
     }
