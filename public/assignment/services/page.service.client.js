@@ -49,7 +49,7 @@
 
         // Finds the list of pages in a website of a user
         function findPageByWebsiteId(siteId) {
-            var url = '/api/website/' + siteId;
+            var url = '/api/website/' + siteId + '/page';
             return $http.get(url)
                 .then(function (response) {
                     return response.data;
@@ -68,9 +68,13 @@
 
         // Creates a new page
         function createPage(websiteId, page) {
-            page.websiteId = websiteId;
-            page._id = (new Date()).getTime() + "";
-            pages.push(page);
+
+            var url = '/api/website/' + websiteId + '/page';
+            return $http.post(url, page);
+
+            // page.websiteId = websiteId;
+            // page._id = (new Date()).getTime() + "";
+            // pages.push(page);
         }
 
 

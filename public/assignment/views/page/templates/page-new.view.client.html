@@ -22,8 +22,7 @@
                 </div>
 
                 <div class="navbar-text pull-right">
-                    <a ng-click="model.newPage(model.websiteId, page)"
-                            href="#!/user/{{model.userId}}/{{model.websiteId}}/page">
+                    <a ng-click="model.newPage(new_page)" role="button">
                         <span class="glyphicon glyphicon-ok white_color"></span>
                     </a>
                 </div>
@@ -68,7 +67,7 @@
                             </label>
                             <input id="name"
                                    type="text"
-                                   ng-model="page.name"
+                                   ng-model="new_page.name"
                                    class="form-control"
                                    placeholder="Name"/>
                         </div>
@@ -78,7 +77,7 @@
                             </label>
                             <input id="title"
                                    type="text"
-                                   ng-model="page.description"
+                                   ng-model="new_page.description"
                                    class="form-control"
                                    placeholder="Page Title"/>
                         </div>

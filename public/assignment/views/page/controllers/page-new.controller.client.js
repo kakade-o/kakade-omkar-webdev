@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("pageNewController", pageNewController);
 
-    function pageNewController($routeParams, pageService) {
+    function pageNewController($location, $routeParams, pageService) {
 
         var model = this;
 
@@ -14,13 +14,21 @@
         model.newPage = newPage;
 
         function init() {
-            model.pages = pageService.findPageByWebsiteId(model.websiteId);
+            pageService
+                .findPageByWebsiteId(model.websiteId)
+                .then(function (pages) {
+                    model.pages = pages;
+                });
         }
         init();
 
 
-        function newPage(siteId, page) {
-            pageService.createPage(siteId, page);
+        function newPage(page) {
+            pageService
+                .createPage(model.websiteId, page)
+                .then(function () {
+                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/page");
+                })
         }
 
     }
