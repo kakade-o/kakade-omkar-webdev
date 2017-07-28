@@ -38,7 +38,7 @@
 
 
                         <div class="navbar-text pull-right">
-                            <a ng-click="model.updateWebsite(website)" href="#!/user/{{model.userId}}/website">
+                            <a ng-click="model.updateWebsite(model.site)">
                                 <span class="white_color glyphicon glyphicon-ok ok-add_pixels_to_right"></span>
                             </a>
                         </div>
@@ -157,7 +157,6 @@
                         </textarea>
                         &nbsp;
                         <a ng-click="model.removeWebsite(model.site)"
-                                href="#!/user/{{model.userId}}/website"
                            class="btn btn-danger btn-block">Delete</a>
                     </form>
 

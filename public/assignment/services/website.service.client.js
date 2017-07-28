@@ -43,11 +43,15 @@
 
         // updates the current website
         function updateWebsite(id, website) {
-            for(var w in websites) {
-                if(websites[w]._id === id) {
-                    websites[w] = website;
-                }
-            }
+            var url = '/api/website/' + id;
+
+            return $http.put(url, website);
+
+            // for(var w in websites) {
+            //     if(websites[w]._id === id) {
+            //         websites[w] = website;
+            //     }
+            // }
         }
 
         //creates a new website

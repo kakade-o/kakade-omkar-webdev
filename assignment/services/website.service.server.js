@@ -3,6 +3,7 @@ module.exports = function (app) {
     app.get("/api/user/:userId/website", findWebsitesForUser);
     app.get("/api/user/:userId/website/:websiteId", findWebsiteById);
     app.post("/api/user/:userId/website", createWebsite);
+    app.put("/api/website/:websiteId", updateWebsite);
 
 
     var websites = [
@@ -23,6 +24,20 @@ module.exports = function (app) {
 
         websites.push(website);
         res.json(website);
+    }
+
+    function updateWebsite(req, res) {
+
+        var website = req.body;
+
+        for(var w in websites) {
+            if(websites[w]._id === req.params.websiteId) {
+                websites[w] = website;
+                res.send(website);
+            }
+        }
+        res.sendStatus(404);
+
     }
 
     function findWebsiteById(req, res) {
