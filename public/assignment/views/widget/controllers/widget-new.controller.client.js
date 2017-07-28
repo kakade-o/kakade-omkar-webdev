@@ -20,7 +20,7 @@
     //
     // }
 
-    function widgetNewController($routeParams, widgetService) {
+    function widgetNewController($location, $routeParams, widgetService) {
 
         var model = this;
 
@@ -36,7 +36,13 @@
         init();
 
         function createWidget(widget) {
-            widgetService.createWidget(model.pageId, widget);
+
+            widgetService
+                .createWidget(model.pageId, widget)
+                .then(function () {
+                    // href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget"
+                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/"+model.pageId+"/widget");
+                })
         }
 
     }

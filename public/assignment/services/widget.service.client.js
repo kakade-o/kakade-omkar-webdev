@@ -76,9 +76,13 @@
 
         // Creates a new widget
         function createWidget(id, widget) {
-            widget.pageId = id;
-            widget._id = (new Date()).getTime() + "";
-            widgets.push(widget);
+
+            var url = '/api/page/' + id + '/widget';
+            return $http.post(url, widget);
+
+            // widget.pageId = id;
+            // widget._id = (new Date()).getTime() + "";
+            // widgets.push(widget);
         }
 
     }

@@ -1,6 +1,7 @@
 module.exports = function (app) {
 
     app.get("/api/page/:pageId/widget", findWidgetsByPageId);
+    app.post("/api/page/:pageId/widget", createWidget);
 
     var widgets = [
         { "_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
@@ -24,6 +25,19 @@ module.exports = function (app) {
             }
         }
         res.json(widget);
+    }
+
+    function createWidget(req, res) {
+
+        var widget = req.body;
+        var pageId = req.params.pageId;
+
+        widget.pageId = pageId;
+        widget._id = (new Date()).getTime() + "";
+        widgets.push(widget);
+
+        res.json(widget);
+
     }
 
 
