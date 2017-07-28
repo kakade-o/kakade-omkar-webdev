@@ -22,29 +22,42 @@
 
         // Deletes an existing page
         function deletePage(id) {
-            for(var p in pages) {
-                if(pages[p]._id === id) {
-                    pages.splice(p, 1);
-                }
-            }
+
+            var url = "/api/page/" + id;
+            return $http.delete(url);
+
+            // for(var p in pages) {
+            //     if(pages[p]._id === id) {
+            //         pages.splice(p, 1);
+            //     }
+            // }
         }
 
         // Updates details of an an existing page
         function updatePage(id, page) {
-            for(var p in pages) {
-                if(pages[p]._id === id) {
-                    pages[p] = page;
-                }
-            }
+
+            var url = "/api/page/" + id;
+
+            return $http.put(url, page);
+
+            // for(var p in pages) {
+            //     if(pages[p]._id === id) {
+            //         pages[p] = page;
+            //     }
+            // }
         }
 
         // Finds a page requested by user by Id
         function findPageById(pageId) {
-            for(var p in pages) {
-                if(pages[p]._id === pageId) {
-                    return pages[p];
-                }
-            }
+
+            var url = "/api/page/" + pageId;
+            return $http.get(url);
+
+            // for(var p in pages) {
+            //     if(pages[p]._id === pageId) {
+            //         return pages[p];
+            //     }
+            // }
         }
 
         // Finds the list of pages in a website of a user
