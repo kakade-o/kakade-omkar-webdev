@@ -1,6 +1,7 @@
 module.exports = function (app) {
 
     app.get("/api/page/:pageId/widget", findWidgetsByPageId);
+    app.get("/api/widget/:widgetId", findWidgetById);
     app.post("/api/page/:pageId/widget", createWidget);
 
     var widgets = [
@@ -25,6 +26,16 @@ module.exports = function (app) {
             }
         }
         res.json(widget);
+    }
+
+    function findWidgetById(req, res) {
+
+        for(var w in widgets) {
+            if(widgets[w]._id === req.params.widgetId) {
+                res.json(widgets[w]);
+            }
+        }
+        res.sendStatus(404);
     }
 
     function createWidget(req, res) {

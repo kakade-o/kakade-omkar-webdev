@@ -16,7 +16,11 @@
         model.removeWidget = removeWidget;
 
         function init() {
-            model.widget = widgetService.findWidgetById(model.widgetId);
+            widgetService
+                .findWidgetById(model.widgetId)
+                .then(function (response) {
+                    model.widget = response.data;
+                })
         }
         init();
 

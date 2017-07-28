@@ -45,12 +45,17 @@
 
         // Finds an existing widget by its id
         function findWidgetById(id) {
-            for(var w in widgets) {
-                if(widgets[w]._id === id) {
-                    return widgets[w];
-                }
-            }
-            return null;
+
+            var url = "/api/widget/" + id;
+
+            return $http.get(url);
+
+            // for(var w in widgets) {
+            //     if(widgets[w]._id === id) {
+            //         return widgets[w];
+            //     }
+            // }
+            // return null;
         }
 
         // Finds list of widgets by its page id
