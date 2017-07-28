@@ -35,11 +35,16 @@
 
         // Updates an existing widget
         function updateWidget(id, widget) {
-            for(var w in widgets) {
-                if(widgets[w]._id === id) {
-                    widgets[w] === widget;
-                }
-            }
+
+            var url = "/api/widget/" + id;
+
+            return $http.put(url, widget);
+
+            // for(var w in widgets) {
+            //     if(widgets[w]._id === id) {
+            //         widgets[w] === widget;
+            //     }
+            // }
 
         }
 

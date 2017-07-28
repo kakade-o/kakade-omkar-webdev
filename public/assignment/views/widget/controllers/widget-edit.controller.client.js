@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("widgetEditController", widgetEditController);
 
-    function widgetEditController($routeParams, widgetService) {
+    function widgetEditController($location, $routeParams, widgetService) {
 
         var model = this;
 
@@ -25,11 +25,19 @@
         init();
 
         function removeWidget() {
-            widgetService.deleteWidget(model.widgetId);
+            widgetService
+                .deleteWidget(model.widgetId)
+                .then(function () {
+                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/"+model.pageId+"/widget");
+                });
         }
 
         function updateWidget(widget) {
-            widgetService.updateWidget(model.widgetId, widget);
+            widgetService
+                .updateWidget(model.widgetId, widget)
+                .then(function () {
+                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/"+model.pageId+"/widget");
+                });
         }
     }
 

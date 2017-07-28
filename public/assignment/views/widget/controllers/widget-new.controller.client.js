@@ -40,7 +40,6 @@
             widgetService
                 .createWidget(model.pageId, widget)
                 .then(function () {
-                    // href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget"
                     $location.url("/user/"+model.userId+"/"+model.websiteId+"/"+model.pageId+"/widget");
                 })
         }
