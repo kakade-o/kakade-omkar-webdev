@@ -15,8 +15,13 @@
         model.removePage = removePage;
 
         function init() {
-            model.page = pageService.findPageById(model.pageId);
-            model.pages = pageService.findPageByWebsiteId(model.websiteId);
+            pageService
+                .findPageByWebsiteId(model.websiteId)
+                .then(function (pages) {
+                    model.pages = pages;
+                });
+
+            //model.page = pageService.findPageById(model.pageId);
         }
         init();
 
