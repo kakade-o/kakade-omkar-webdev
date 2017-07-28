@@ -26,11 +26,15 @@
 
         // Deletes an existing widget
         function deleteWidget(id) {
-            for(var w in widgets) {
-                if(widgets[w]._id === id) {
-                    widgets.splice(w, 1);
-                }
-            }
+
+            var url = "/api/widget/" + id;
+            return $http.delete(url);
+
+            // for(var w in widgets) {
+            //     if(widgets[w]._id === id) {
+            //         widgets.splice(w, 1);
+            //     }
+            // }
         }
 
         // Updates an existing widget
