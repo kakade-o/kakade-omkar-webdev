@@ -5,13 +5,13 @@
         .service("pageService", pageService);
 
 
-    function pageService() {
+    function pageService($http) {
 
-        var pages = [
-            { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
-            { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
-            { "_id": "543", "name": "Post 3", "websiteId": "456", "description": "Lorem" }
-        ]
+        // var pages = [
+        //     { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
+        //     { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
+        //     { "_id": "543", "name": "Post 3", "websiteId": "456", "description": "Lorem" }
+        // ];
         
         this.findPageByWebsiteId = findPageByWebsiteId;
         this.createPage = createPage;
@@ -49,14 +49,20 @@
 
         // Finds the list of pages in a website of a user
         function findPageByWebsiteId(siteId) {
-            var page = [];
+            var url = '/api/website/' + siteId;
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
 
-            for(var p in pages) {
-                if(pages[p].websiteId === siteId) {
-                    page.push(pages[p]);
-                }
-            }
-            return page;
+            // var page = [];
+            //
+            // for(var p in pages) {
+            //     if(pages[p].websiteId === siteId) {
+            //         page.push(pages[p]);
+            //     }
+            // }
+            // return page;
 
         }
 
