@@ -66,11 +66,15 @@
 
         // deletes an existing website
         function deleteWebsite(siteId) {
-            for(var w in websites) {
-                if(websites[w]._id === siteId) {
-                    websites.splice(w, 1);
-                }
-            }
+
+            var url = '/api/website/' + siteId;
+            return $http.delete(url);
+
+            // for(var w in websites) {
+            //     if(websites[w]._id === siteId) {
+            //         websites.splice(w, 1);
+            //     }
+            // }
         }
 
         // Finds an existing website by id

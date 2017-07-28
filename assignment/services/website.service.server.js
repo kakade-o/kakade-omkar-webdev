@@ -4,6 +4,7 @@ module.exports = function (app) {
     app.get("/api/user/:userId/website/:websiteId", findWebsiteById);
     app.post("/api/user/:userId/website", createWebsite);
     app.put("/api/website/:websiteId", updateWebsite);
+    app.delete("/api/website/:websiteId", deleteWebsite);
 
 
     var websites = [
@@ -24,6 +25,18 @@ module.exports = function (app) {
 
         websites.push(website);
         res.json(website);
+    }
+
+    function deleteWebsite(req, res) {
+        var websiteId = req.params.websiteId;
+
+        for(var w in websites) {
+            if(websites[w]._id === websiteId) {
+                websites.splice(w, 1);
+                res.sendStatus(200);
+            }
+        }
+
     }
 
     function updateWebsite(req, res) {
