@@ -37,7 +37,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid">
+        <div class="container-fluid" wd-draggable>
 
             <div ng-repeat="widget in model.widgets" class="wd-widget">
 
@@ -47,8 +47,8 @@
                         <div class="wd-toolbar">
                             <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HEADER">
                                 <span class="glyphicon glyphicon-cog"></span>
-                                <span class="glyphicon glyphicon-align-justify"></span>
                             </a>
+                            <span class="glyphicon glyphicon-align-justify ok-sort-handle"></span>
                         </div>
                         <h1 ng-switch-when="1">{{widget.text}}</h1>
                         <h2 ng-switch-when="2">{{widget.text}}</h2>
@@ -58,12 +58,12 @@
                         <h6 ng-switch-when="6">{{widget.text}}</h6>
                     </div>
 
-                    <div ng-switch-when="IMAGE">
+                    <div ng-switch-when="IMAGE">oe
                         <div class="wd-toolbar">
                             <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/IMAGE">
                                 <span class="glyphicon glyphicon-cog"></span>
-                                <span class="glyphicon glyphicon-align-justify"></span>
                             </a>
+                            <span class="glyphicon glyphicon-align-justify ok-sort-handle"></span>
                         </div>
                         <img ng-src="{{widget.url}}" width="{{widget.width}}"/>
 
@@ -73,8 +73,8 @@
                         <div class="wd-toolbar">
                             <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/YOUTUBE">
                                 <span class="glyphicon glyphicon-cog"></span>
-                                <span class="glyphicon glyphicon-align-justify"></span>
                             </a>
+                            <span class="glyphicon glyphicon-align-justify ok-sort-handle"></span>
                         </div>
                         <iframe width="{{widget.width}}" height="315" src="{{model.getYouTubeUrl(widget.url)}}"
                                 frameborder="0" allowfullscreen></iframe>
@@ -85,8 +85,8 @@
                         <div class="wd-toolbar">
                             <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HTML">
                                 <span class="glyphicon glyphicon-cog"></span>
-                                <span class="glyphicon glyphicon-align-justify"></span>
                             </a>
+                            <span class="glyphicon glyphicon-align-justify ok-sort-handle"></span>
                         </div>
 
                         <div ng-bind-html="model.trustThisContent(widget.text)"></div>

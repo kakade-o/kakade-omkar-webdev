@@ -6,6 +6,11 @@ module.exports = function (app) {
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
 
+    var multer = require('multer'); // npm install multer --save
+    var upload = multer({ dest: './public/assignment/uploads' });
+
+    app.post ("/api/upload", upload.single('myFile'), uploadImage);
+
     var widgets = [
         { "_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
         { "_id": "234", "widgetType": "HEADING", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
@@ -65,6 +70,15 @@ module.exports = function (app) {
         res.sendStatus(404);
     }
 
+    function getWidgetById(widgetId) {
+        for(var w in widgets) {
+            if(widgets[w]._id === widgetId) {
+                return widgets[w];
+            }
+        }
+
+    }
+
     function createWidget(req, res) {
 
         var widget = req.body;
@@ -78,6 +92,39 @@ module.exports = function (app) {
 
     }
 
+    function uploadImage(req, res) {
+
+        var widgetId      = req.body.widgetId;
+        var width         = req.body.width;
+        var myFile        = req.file;
+
+        var userId = req.body.userId;
+        var websiteId = req.body.websiteId;
+        var pageId = req.body.pageId;
+
+        var originalname  = myFile.originalname; // file name on user's computer
+        var filename      = myFile.filename;     // new file name in upload folder
+        var path          = myFile.path;         // full path of uploaded file
+        var destination   = myFile.destination;  // folder where file is saved to
+        var size          = myFile.size;
+        var mimetype      = myFile.mimetype;
+
+        var widget = getWidgetById(widgetId);
+        if(!widget) {
+            widget = {};
+            widgetId = (new Date()).getTime() + "";
+            widget._id = widgetId;
+            widget.pageId = pageId;
+            widgets.push(widget);
+        }
+        widget.url = '/assignment/uploads/'+filename;
+
+
+
+        var callbackUrl   = "/assignment/#!/user/"+userId+"/"+websiteId+"/"+pageId+ "/"+ widgetId + "/IMAGE";
+
+        res.redirect(callbackUrl);
+    }
 
 
 };

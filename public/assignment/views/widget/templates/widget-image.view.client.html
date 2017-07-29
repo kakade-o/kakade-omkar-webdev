@@ -39,7 +39,7 @@
 
 
         <div class = "container">
-            <form>
+            <form action="/api/upload"   method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     Name
                     <br/>
@@ -84,8 +84,17 @@
 
                 <div class="form-group">
                     Upload
-                    <input type="file"
-                            class="form-control">
+
+                        <input  name="myFile"    type="file" class="form-control"/>
+                        <input  name="width"     value="{{widget.width}}" style="display: none"/>
+                        <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+                        <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+                        <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+                        <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
+                        <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
+
+                    <!--<input type="file"-->
+                            <!--class="form-control">-->
                 </div>
 
 
