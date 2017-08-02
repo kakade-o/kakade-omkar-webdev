@@ -106,7 +106,7 @@ module.exports = function (app) {
         var pageId = req.params.pageId;
 
         widget.pageId = pageId;
-        widget._id = (new Date()).getTime() + "";
+        //widget._id = (new Date()).getTime() + "";
         widgets.push(widget);
 
         res.json(widget);

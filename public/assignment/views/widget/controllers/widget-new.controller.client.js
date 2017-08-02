@@ -31,12 +31,12 @@
         model.createWidget = createWidget;
 
         function init() {
-
+            model.widgetId = (new Date()).getTime() + "";
         }
         init();
 
         function createWidget(widget) {
-
+            widget._id = model.widgetId;
             widgetService
                 .createWidget(model.pageId, widget)
                 .then(function () {

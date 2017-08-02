@@ -39,19 +39,67 @@
 
             console.log("controller hit");
 
-            console.log(model.widgetId);
+
 
             widgetService
-                .updateWidget(model.widgetId, {
-                    _id: model.widgetId,
-                    url: url,
-                    "widgetType": 'IMAGE',
-                    "pageId": model.pageId,
-                    "width": "100%"
-                })
+                // does the widget exist
+                .findWidgetById(model.widgetId)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
-                })
+                    // if so, then update it
+                    widgetService
+                        .updateWidget(model.widgetId, {
+                            _id: model.widgetId,
+                            url: url,
+                            "widgetType": 'IMAGE',
+                            "pageId": model.pageId,
+                            "width": "100%"
+                        })
+                        .then(function () {
+                            $location.url("/user/" + model.userId + "/" +
+                                model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
+                        })
+                }, function () {
+                    // if not, then create one
+                    widgetService
+                        .createWidget(model.pageId, {
+                            _id: model.widgetId,
+                            url: url,
+                            "widgetType": 'IMAGE',
+                            "pageId": model.pageId,
+                            "width": "100%"
+                        })
+                        .then(function () {
+                            // once created, add the changes to it
+                            widgetService
+                                .updateWidget(model.widgetId, {
+                                    _id: model.widgetId,
+                                    url: url,
+                                    "widgetType": 'IMAGE',
+                                    "pageId": model.pageId,
+                                    "width": "100%"
+                                })
+                                .then(function () {
+                                    $location.url("/user/" + model.userId + "/" +
+                                        model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
+                                })
+                        })
+
+                });
+
+
+
+            // widgetService
+            //     .updateWidget(model.widgetId, {
+            //         _id: model.widgetId,
+            //         url: url,
+            //         "widgetType": 'IMAGE',
+            //         "pageId": model.pageId,
+            //         "width": "100%"
+            //     })
+            //     .then(function () {
+            //         $location.url("/user/" + model.userId + "/" + model.websiteId
+            // + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
+            //     })
         }
 
     }
