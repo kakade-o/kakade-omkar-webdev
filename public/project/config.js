@@ -1,10 +1,23 @@
 (function () {
+    
     angular
-        .module("VideoGameReview")
-        .config(Config);
+        .module("omdbApp")
+        .config(configuration);
+    
+    function configuration($routeProvider) {
 
-    function Config($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "omdb/search.html",
+                controller: "searchController",
+                controllerAs: "model"
+            })
+            .when("/details/:imdbId", {
+                templateUrl: "omdb/details.html",
+                controller: "detailsController",
+                controllerAs : "model"
+            })
 
     }
-
+    
 })();

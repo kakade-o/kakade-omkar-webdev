@@ -1,3 +1,7 @@
 (function () {
-    var app = angular.module("VideoGameReview", ['ngRoute']);
+
+
+    angular
+        .module("omdbApp", ["ngRoute"]);
+
 })();
