@@ -1,5 +1,7 @@
 module.exports = function (app) {
 
+    var websiteModel = require("../model/website/website.model.server");
+
     app.get   ("/api/user/:userId/website", findWebsitesForUser);
     app.get   ("/api/user/:userId/website/:websiteId", findWebsiteById);
     app.post  ("/api/user/:userId/website", createWebsite);
@@ -20,11 +22,18 @@ module.exports = function (app) {
     function createWebsite(req, res) {
         var website = req.body;
         var userId = req.params.userId;
-        website.developerId = userId;
-        website._id = (new Date()).getTime() + "";
 
-        websites.push(website);
-        res.json(website);
+        websiteModel
+            .createWebsite(userId ,website)
+            .then(function (website) {
+                res.json(website);
+            });
+
+        // website.developerId = userId;
+        // website._id = (new Date()).getTime() + "";
+        //
+        // websites.push(website);
+        // res.json(website);
     }
 
     function deleteWebsite(req, res) {
@@ -66,14 +75,20 @@ module.exports = function (app) {
 
         var userId = req.params.userId;
 
-        var sites = [];
+        websiteModel
+            .findWebsitesForUser(userId)
+            .then(function (websites) {
+                res.json(websites);
+            });
 
-        for(var w in websites) {
-            if(websites[w].developerId === userId) {
-                sites.push(websites[w]);
-            }
-        }
-        res.json(sites);
+        // var sites = [];
+        //
+        // for(var w in websites) {
+        //     if(websites[w].developerId === userId) {
+        //         sites.push(websites[w]);
+        //     }
+        // }
+        // res.json(sites);
 
     }
 
