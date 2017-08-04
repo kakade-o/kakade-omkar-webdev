@@ -4,7 +4,7 @@
 
 (function () {
     angular
-        .module("WebAppMaker")
+        .module("omdbApp")
         .controller("profileController", profileController);
 
 

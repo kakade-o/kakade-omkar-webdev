@@ -1,10 +1,10 @@
 module.exports = function (app) {
 
-    app.get   ("/api/website/:websiteId/page", findPageByWebsiteId);
-    app.get   ("/api/page/:pageId", findPageById);
-    app.post  ("/api/website/:websiteId/page",createPage);
-    app.put   ("/api/page/:pageId", updatePage);
-    app.delete("/api/page/:pageId", deletePage);
+    app.get   ("/api/website/:websiteId/review", findPageByWebsiteId);
+    app.get   ("/api/review/:pageId", findPageById);
+    app.post  ("/api/website/:websiteId/review",createPage);
+    app.put   ("/api/review/:pageId", updatePage);
+    app.delete("/api/review/:pageId", deletePage);
 
     var pages = [
         { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },

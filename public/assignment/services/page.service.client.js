@@ -20,10 +20,10 @@
         this.deletePage = deletePage;
 
 
-        // Deletes an existing page
+        // Deletes an existing review
         function deletePage(id) {
 
-            var url = "/api/page/" + id;
+            var url = "/api/review/" + id;
             return $http.delete(url);
 
             // for(var p in pages) {
@@ -33,24 +33,24 @@
             // }
         }
 
-        // Updates details of an an existing page
+        // Updates details of an an existing review
         function updatePage(id, page) {
 
-            var url = "/api/page/" + id;
+            var url = "/api/review/" + id;
 
             return $http.put(url, page);
 
             // for(var p in pages) {
             //     if(pages[p]._id === id) {
-            //         pages[p] = page;
+            //         pages[p] = review;
             //     }
             // }
         }
 
-        // Finds a page requested by user by Id
+        // Finds a review requested by user by Id
         function findPageById(pageId) {
 
-            var url = "/api/page/" + pageId;
+            var url = "/api/review/" + pageId;
             return $http.get(url);
 
             // for(var p in pages) {
@@ -62,32 +62,32 @@
 
         // Finds the list of pages in a website of a user
         function findPageByWebsiteId(siteId) {
-            var url = '/api/website/' + siteId + '/page';
+            var url = '/api/website/' + siteId + '/review';
             return $http.get(url)
                 .then(function (response) {
                     return response.data;
                 });
 
-            // var page = [];
+            // var review = [];
             //
             // for(var p in pages) {
             //     if(pages[p].websiteId === siteId) {
-            //         page.push(pages[p]);
+            //         review.push(pages[p]);
             //     }
             // }
-            // return page;
+            // return review;
 
         }
 
-        // Creates a new page
+        // Creates a new review
         function createPage(websiteId, page) {
 
-            var url = '/api/website/' + websiteId + '/page';
+            var url = '/api/website/' + websiteId + '/review';
             return $http.post(url, page);
 
-            // page.websiteId = websiteId;
-            // page._id = (new Date()).getTime() + "";
-            // pages.push(page);
+            // review.websiteId = websiteId;
+            // review._id = (new Date()).getTime() + "";
+            // pages.push(review);
         }
 
 
