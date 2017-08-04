@@ -1,0 +1,200 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+    <!--<head>-->
+        <!--<meta charset="UTF-8">-->
+        <!--<title>Website-New</title>-->
+        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+              <!--rel="stylesheet"/>-->
+        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <!--</head>-->
+    <!--<body>-->
+
+        <!-- Header -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="blog-masthead">
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <div class="navbar-text pull-left">
+                            <a href="#!/user/{{model.userId}}/website">
+                                <span class = "white_color glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                        </div>
+
+                        <div class="visible-lg col-lg-3 navbar-brand x-large_font_size">
+                            <a>
+                                <span class="white_color">Website</span>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7 navbar-brand x-large_font_size">
+                            <a>
+                                <span class="white_color">New Website</span>
+                            </a>
+                        </div>
+
+
+                        <div class="navbar-text pull-right">
+                            <a role="button" ng-click="model.newWebsite(website)">
+                                <span class="white_color glyphicon glyphicon-ok ok-add_pixels_to_right"></span>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="visible-lg col-xs-3 ok-split-view-left">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            Name
+                        </li>
+
+                        <li ng-repeat="website in model.websites" class="list-group-item">
+                            <a href="#!/user/{{model.userId}}/{{website._id}}/page">
+                                {{website.name}}
+                            </a>
+                            <a href="#!/user/{{model.userId}}/{{website._id}}/edit">
+                                <span class="pull-right glyphicon glyphicon-cog"></span>
+                            </a>
+                        </li>
+
+                        <!--<li class="list-group-item">-->
+                            <!--Address Book App-->
+                            <!--<a href="website-edit.view.client.html">-->
+                    <!--<span class="pull-right glyphicon glyphicon-cog">-->
+                    <!--</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="list-group-item">-->
+                            <!--Blogger-->
+                            <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="list-group-item">-->
+                            <!--Blogging App-->
+                            <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="list-group-item">-->
+                            <!--Test Scripting App-->
+                            <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    </ul>
+
+                        <!--<ul class="nav nav-pills nav-stacked">-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Address Book App-->
+                                    <!--</a>-->
+
+                                    <!--<a href="website-edit.view.client.html">-->
+                                        <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">-->
+                                        <!--</span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--&nbsp;-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Blogger-->
+                                    <!--</a>-->
+                                    <!--<a href="website-edit.view.client.html">-->
+                                <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right">-->
+                                <!--</span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--&nbsp;-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Blogging App-->
+                                    <!--</a>-->
+                                    <!--<a href="website-edit.view.client.html">-->
+                                        <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--&nbsp;-->
+                            <!--<li role="presentation">-->
+
+                                <!--<div class="text-left">-->
+                                    <!--<a href="../page/page-list.view.client.html">Test Scripting App-->
+                                    <!--</a>-->
+                                    <!--<a href="website-edit.view.client.html">-->
+                                        <!--<span class="glyphicon glyphicon-cog pull-right ok-add_pixels_to_right"></span>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+
+                        <!--</ul>-->
+                </div>
+
+                <!--<div class="vr visible-lg">&nbsp;</div>-->
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
+
+                    <form>
+                        <label for="Name">
+                            Name
+                        </label>
+                        <input id="Name"
+                               ng-model="website.name"
+                               type="text"
+                               class="form-control"
+                               placeholder="Name">
+                        <br/>
+                        <label for="Description">
+                            Description
+                        </label>
+                        <textarea class="form-control"
+                                  ng-model="website.description"
+                                  id="Description"
+                                  rows="5"
+                                  placeholder="Description"></textarea>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+
+        <!-- Footer -->
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="blog-masthead">
+                <div class="container-fluid">
+                    <div class="navbar-text pull-right">
+                        <a href="#!/profile/{{model.userId}}">
+                            <span class="glyphicon glyphicon-user white_color"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    <!--</body>-->
+<!--</html>-->
