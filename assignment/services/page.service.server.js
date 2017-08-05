@@ -1,5 +1,7 @@
 module.exports = function (app) {
 
+    var pageModel = require("../model/page/page.model.server");
+
     app.get   ("/api/website/:websiteId/page", findPageByWebsiteId);
     app.get   ("/api/page/:pageId", findPageById);
     app.post  ("/api/website/:websiteId/page",createPage);
@@ -17,11 +19,17 @@ module.exports = function (app) {
         var websiteId = req.params.websiteId;
         var page = req.body;
 
-        page.websiteId = websiteId;
-        page._id = (new Date()).getTime() + "";
+        pageModel
+            .createPage(websiteId, page)
+            .then(function (page) {
+                res.json(page);
+            });
 
-        pages.push(page);
-        res.json(page);
+        // page.websiteId = websiteId;
+        // page._id = (new Date()).getTime() + "";
+        //
+        // pages.push(page);
+        // res.json(page);
     }
 
     function deletePage(req, res) {
@@ -62,14 +70,20 @@ module.exports = function (app) {
     function findPageByWebsiteId(req, res) {
         var websiteId = req.params.websiteId;
 
-        var page = [];
+        pageModel
+            .findPageByWebsiteId(websiteId)
+            .then(function (pages) {
+                res.json(pages);
+            })
 
-        for(var p in pages) {
-            if(pages[p].websiteId === websiteId) {
-                page.push(pages[p]);
-            }
-        }
-        res.json(page);
+        // var page = [];
+        //
+        // for(var p in pages) {
+        //     if(pages[p].websiteId === websiteId) {
+        //         page.push(pages[p]);
+        //     }
+        // }
+        // res.json(page);
     }
 
 };

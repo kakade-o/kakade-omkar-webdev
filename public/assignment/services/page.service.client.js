@@ -83,7 +83,11 @@
         function createPage(websiteId, page) {
 
             var url = '/api/website/' + websiteId + '/page';
-            return $http.post(url, page);
+            return $http
+                .post(url, page)
+                .then(function (response) {
+                    return response.data;
+                });
 
             // page.websiteId = websiteId;
             // page._id = (new Date()).getTime() + "";
