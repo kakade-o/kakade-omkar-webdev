@@ -5,6 +5,7 @@ var websiteModel = require("../website/website.model.server");
 
 pageModel.createPage = createPage;
 pageModel.findPageByWebsiteId = findPageByWebsiteId;
+pageModel.deletePage = deletePage;
 
 module.exports = pageModel;
 
@@ -22,4 +23,12 @@ function findPageByWebsiteId(websiteId) {
     return pageModel.find({_website: websiteId})
                     .populate('_website', 'name')
                     .exec();
+}
+
+function deletePage(websiteId, pageId) {
+    return pageModel.remove({_id: pageId})
+                    .then(function (status) {
+                        return websiteModel
+                            .deletePage(websiteId, pageId);
+                    })
 }

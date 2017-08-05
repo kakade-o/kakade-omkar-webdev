@@ -21,10 +21,14 @@
 
 
         // Deletes an existing page
-        function deletePage(id) {
+        function deletePage(websiteId, pageId) {
 
-            var url = "/api/page/" + id;
-            return $http.delete(url);
+            var url = "/api/website/"+ websiteId +"/page/" + pageId;
+            return $http
+                .delete(url)
+                .then(function (response) {
+                    return response.data;
+                });
 
             // for(var p in pages) {
             //     if(pages[p]._id === id) {

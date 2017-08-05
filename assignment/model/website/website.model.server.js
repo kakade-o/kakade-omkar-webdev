@@ -9,6 +9,7 @@ websiteModel.deleteWebsite = deleteWebsite;
 websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.updateWebsite = updateWebsite;
 websiteModel.addPage = addPage;
+websiteModel.deletePage = deletePage;
 
 module.exports = websiteModel;
 
@@ -29,6 +30,16 @@ function addPage(websiteId, pageId) {
         .then(function (website) {
 
             website.pages.push(pageId);
+            return website.save();
+        })
+}
+
+function deletePage(websiteId, pageId) {
+    return websiteModel
+        .findWebsiteById(websiteId)
+        .then(function (website) {
+            var index = website.pages.indexOf(pageId);
+            website.pages.splice(index, 1);
             return website.save();
         })
 }

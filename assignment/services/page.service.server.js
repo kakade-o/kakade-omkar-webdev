@@ -6,7 +6,7 @@ module.exports = function (app) {
     app.get   ("/api/page/:pageId", findPageById);
     app.post  ("/api/website/:websiteId/page",createPage);
     app.put   ("/api/page/:pageId", updatePage);
-    app.delete("/api/page/:pageId", deletePage);
+    app.delete("/api/website/:websiteId/page/:pageId", deletePage);
 
     var pages = [
         { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
@@ -33,13 +33,21 @@ module.exports = function (app) {
     }
 
     function deletePage(req, res) {
+        var websiteId = req.params.websiteId;
         var pageId = req.params.pageId;
-        for(var p in pages) {
-            if(pages[p]._id === pageId) {
-                pages.splice(p, 1);
-                res.sendStatus(200);
-            }
-        }
+
+        pageModel
+            .deletePage(websiteId, pageId)
+            .then(function (status) {
+                res.json(status);
+            });
+
+        // for(var p in pages) {
+        //     if(pages[p]._id === pageId) {
+        //         pages.splice(p, 1);
+        //         res.sendStatus(200);
+        //     }
+        // }
     }
 
     function updatePage(req, res) {
