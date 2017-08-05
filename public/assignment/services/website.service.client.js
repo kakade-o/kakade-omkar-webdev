@@ -65,10 +65,14 @@
         }
 
         // deletes an existing website
-        function deleteWebsite(siteId) {
+        function deleteWebsite(userId, siteId) {
 
-            var url = '/api/website/' + siteId;
-            return $http.delete(url);
+            var url = '/api/user/'+ userId +'/website/' + siteId;
+            return $http
+                .delete(url)
+                .then(function (response) {
+                    return response.data;
+                });
 
             // for(var w in websites) {
             //     if(websites[w]._id === siteId) {

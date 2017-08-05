@@ -9,6 +9,7 @@ userModel.updateUser = updateUser;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.deleteUser = deleteUser;
 userModel.addWebsite = addWebsite;
+userModel.deleteWebsite = deleteWebsite;
 
 module.exports = userModel;
 
@@ -37,6 +38,16 @@ function addWebsite(userId, websiteId) {
         .findUserById(userId)
         .then(function (user) {
             user.websites.push(websiteId);
+            return user.save();
+        })
+}
+
+function deleteWebsite(userId, websiteId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            var index = user.websites.indexOf(websiteId);
+            user.websites.splice(index, 1);
             return user.save();
         })
 }

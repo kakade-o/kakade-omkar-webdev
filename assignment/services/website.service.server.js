@@ -6,7 +6,7 @@ module.exports = function (app) {
     app.get   ("/api/user/:userId/website/:websiteId", findWebsiteById);
     app.post  ("/api/user/:userId/website", createWebsite);
     app.put   ("/api/website/:websiteId", updateWebsite);
-    app.delete("/api/website/:websiteId", deleteWebsite);
+    app.delete("/api/user/:userId/website/:websiteId", deleteWebsite);
 
 
     var websites = [
@@ -38,13 +38,19 @@ module.exports = function (app) {
 
     function deleteWebsite(req, res) {
         var websiteId = req.params.websiteId;
+        var userId = req.params.userId;
+        websiteModel
+            .deleteWebsite(userId, websiteId)
+            .then(function (status) {
+               res.json(status);
+            });
 
-        for(var w in websites) {
-            if(websites[w]._id === websiteId) {
-                websites.splice(w, 1);
-                res.sendStatus(200);
-            }
-        }
+        // for(var w in websites) {
+        //     if(websites[w]._id === websiteId) {
+        //         websites.splice(w, 1);
+        //         res.sendStatus(200);
+        //     }
+        // }
 
     }
 
