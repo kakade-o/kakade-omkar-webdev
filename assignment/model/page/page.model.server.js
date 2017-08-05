@@ -9,13 +9,13 @@ pageModel.findPageByWebsiteId = findPageByWebsiteId;
 module.exports = pageModel;
 
 function createPage(websiteId, page) {
-
     page._website = websiteId;
-    return pageModel.create(page);
-        // .then(function (page) {
-        //     // return websiteModel
-        //     //     .addPage(websiteId, page._id);
-        // })
+    return pageModel
+        .create(page)
+        .then(function (page) {
+            return websiteModel
+                .addPage(websiteId, page._id);
+        });
 }
 
 function findPageByWebsiteId(websiteId) {

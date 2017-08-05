@@ -27,7 +27,8 @@ function addPage(websiteId, pageId) {
     return websiteModel
         .findWebsiteById(websiteId)
         .then(function (website) {
-            user.websites.push(pageId);
+
+            website.pages.push(pageId);
             return website.save();
         })
 }
