@@ -55,26 +55,40 @@ module.exports = function (app) {
     }
 
     function updateWebsite(req, res) {
-
+        var websiteId = req.params.websiteId;
         var website = req.body;
 
-        for(var w in websites) {
-            if(websites[w]._id === req.params.websiteId) {
-                websites[w] = website;
-                res.send(website);
-            }
-        }
-        res.sendStatus(404);
+        websiteModel
+            .updateWebsite(websiteId, website)
+            .then(function (website) {
+                res.json(website);
+            })
+
+        // for(var w in websites) {
+        //     if(websites[w]._id === req.params.websiteId) {
+        //         websites[w] = website;
+        //         res.send(website);
+        //     }
+        // }
+        // res.sendStatus(404);
 
     }
 
     function findWebsiteById(req, res) {
-        for(var w in websites) {
-            if(websites[w]._id === req.params.websiteId) {
-                res.json(websites[w]);
-            }
-        }
-        res.sendStatus(404);
+
+        websiteModel
+            .findWebsiteById(req.params.websiteId)
+            .then(function (website) {
+                res.json(website);
+            })
+
+
+        // for(var w in websites) {
+        //     if(websites[w]._id === req.params.websiteId) {
+        //         res.json(websites[w]);
+        //     }
+        // }
+        // res.sendStatus(404);
     }
 
     function findWebsitesForUser(req, res) {

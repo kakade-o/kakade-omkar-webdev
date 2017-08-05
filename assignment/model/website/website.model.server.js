@@ -6,6 +6,8 @@ var userModel = require("../user/user.model.server");
 websiteModel.createWebsite = createWebsite;
 websiteModel.findWebsitesForUser = findWebsitesForUser;
 websiteModel.deleteWebsite = deleteWebsite;
+websiteModel.findWebsiteById = findWebsiteById;
+websiteModel.updateWebsite = updateWebsite;
 
 module.exports = websiteModel;
 
@@ -25,6 +27,14 @@ function findWebsitesForUser(userId) {
         .find({_user: userId})
         .populate('_user', 'username')
         .exec();
+}
+
+function findWebsiteById(websiteId) {
+    return websiteModel.findById(websiteId);
+}
+
+function updateWebsite(websiteId, website) {
+    return websiteModel.update({_id: websiteId}, {$set: website});
 }
 
 function deleteWebsite(userId, websiteId) {
