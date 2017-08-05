@@ -5,6 +5,8 @@ var websiteModel = require("../website/website.model.server");
 
 pageModel.createPage = createPage;
 pageModel.findPageByWebsiteId = findPageByWebsiteId;
+pageModel.findPageById = findPageById;
+pageModel.updatePage = updatePage;
 pageModel.deletePage = deletePage;
 
 module.exports = pageModel;
@@ -23,6 +25,14 @@ function findPageByWebsiteId(websiteId) {
     return pageModel.find({_website: websiteId})
                     .populate('_website', 'name')
                     .exec();
+}
+
+function findPageById(pageId) {
+    return pageModel.findById(pageId);
+}
+
+function updatePage(pageId, page) {
+    return pageModel.update({_id: pageId}, {$set: page});
 }
 
 function deletePage(websiteId, pageId) {

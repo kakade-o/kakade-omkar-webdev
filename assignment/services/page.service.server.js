@@ -52,26 +52,41 @@ module.exports = function (app) {
 
     function updatePage(req, res) {
 
+        var pageId = req.params.pageId;
         var page = req.body;
 
-        for(var p in pages) {
-            if(pages[p]._id === req.params.pageId) {
-                pages[p] = page;
-                res.send(page);
-            }
-        }
-        res.sendStatus(404);
+        pageModel
+            .updatePage(pageId, page)
+            .then(function (page) {
+                res.json(page);
+            });
+
+        // for(var p in pages) {
+        //     if(pages[p]._id === req.params.pageId) {
+        //         pages[p] = page;
+        //         res.send(page);
+        //     }
+        // }
+        // res.sendStatus(404);
 
     }
 
     function findPageById(req, res) {
 
-        for(var p in pages) {
-            if(pages[p]._id === req.params.pageId) {
-                res.json(pages[p]);
-            }
-        }
-        res.sendStatus(404);
+        var pageId = req.params.pageId;
+
+        pageModel
+            .findPageById(pageId)
+            .then(function (page) {
+                res.json(page);
+            })
+
+        // for(var p in pages) {
+        //     if(pages[p]._id === req.params.pageId) {
+        //         res.json(pages[p]);
+        //     }
+        // }
+        // res.sendStatus(404);
     }
 
 
