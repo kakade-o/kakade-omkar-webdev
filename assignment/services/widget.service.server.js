@@ -7,7 +7,7 @@ module.exports = function (app) {
     app.post("/api/page/:pageId/widget", createWidget);
     app.put("/api/widget/:widgetId", updateWidget);
     app.put("/api/page/:pageId/widget", updateWidgetOrder);
-    app.delete("/api/widget/:widgetId", deleteWidget);
+    app.delete("/api/page/:pageId/widget/:widgetId", deleteWidget);
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({ dest: './public/assignment/uploads' });
@@ -46,14 +46,22 @@ module.exports = function (app) {
     }
 
     function deleteWidget(req, res) {
+        var pageId = req.params.pageId;
         var widgetId = req.params.widgetId;
 
-        for(var w in widgets) {
-            if(widgets[w]._id === widgetId) {
-                widgets.splice(w, 1);
-                res.sendStatus(200);
-            }
-        }
+        widgetModel
+            .deleteWidget(pageId, widgetId)
+            .then(function (status) {
+                res.json(status);
+            })
+
+
+        // for(var w in widgets) {
+        //     if(widgets[w]._id === widgetId) {
+        //         widgets.splice(w, 1);
+        //         res.sendStatus(200);
+        //     }
+        // }
 
     }
 

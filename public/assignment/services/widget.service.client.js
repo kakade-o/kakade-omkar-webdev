@@ -25,9 +25,9 @@
         this.deleteWidget = deleteWidget;
 
         // Deletes an existing widget
-        function deleteWidget(id) {
+        function deleteWidget(pageId, widgetId) {
 
-            var url = "/api/widget/" + id;
+            var url = "/api/page/" + pageId + "/widget/" + widgetId;
             return $http.delete(url);
 
             // for(var w in widgets) {
