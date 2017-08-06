@@ -100,12 +100,20 @@ module.exports = function (app) {
 
     function findWidgetById(req, res) {
 
-        for(var w in widgets) {
-            if(widgets[w]._id === req.params.widgetId) {
-                res.json(widgets[w]);
-            }
-        }
-        res.sendStatus(404);
+        var widgetId = req.params.widgetId;
+
+        widgetModel
+            .findWidgetById(widgetId)
+            .then(function (widget) {
+                res.json(widget);
+            })
+
+        // for(var w in widgets) {
+        //     if(widgets[w]._id === req.params.widgetId) {
+        //         res.json(widgets[w]);
+        //     }
+        // }
+        // res.sendStatus(404);
     }
 
     function getWidgetById(widgetId) {
