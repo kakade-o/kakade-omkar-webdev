@@ -66,16 +66,22 @@ module.exports = function (app) {
     }
 
     function updateWidget(req, res) {
-
+        var widgetId = req.params.widgetId;
         var widget = req.body;
 
-        for(var w in widgets) {
-            if(widgets[w]._id === req.params.widgetId) {
-                widgets[w] = widget;
-                res.send(widget);
-            }
-        }
-        res.sendStatus(404);
+        widgetModel
+            .updateWidget(widgetId, widget)
+            .then(function (widget) {
+                res.json(widget);
+            });
+
+        // for(var w in widgets) {
+        //     if(widgets[w]._id === req.params.widgetId) {
+        //         widgets[w] = widget;
+        //         res.send(widget);
+        //     }
+        // }
+        // res.sendStatus(404);
     }
 
     function updateWidgetOrder(req, res) {
