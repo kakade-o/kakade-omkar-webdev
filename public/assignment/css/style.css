@@ -156,3 +156,12 @@ widget-heading.view.client.html
     opacity: 0;
 }
 
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 100%;
+}
+
+
+
+

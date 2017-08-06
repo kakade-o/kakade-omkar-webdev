@@ -89,18 +89,22 @@ module.exports = function (app) {
         var startIndex = parseInt(req.query.initial);
         var endIndex = parseInt(req.query.final);
 
-        var widgetsforPage = [];
-        for(var w in widgets) {
-            if(widgets[w].pageId = pageId) {
-                widgetsforPage.push(widgets[w]);
-            }
-        }
-
-        var initialWidget = widgetsforPage[startIndex];
-        var finalWidget = widgetsforPage[endIndex];
-
-        widgets.splice(widgets.indexOf(finalWidget), 0, widgets.splice(widgets.indexOf(initialWidget), 1)[0]);
-        res.sendStatus(200);
+        widgetModel.reorderWidget(pageId, startIndex, endIndex)
+            .then(function (status) {
+                res.json(status);
+            })
+        // var widgetsforPage = [];
+        // for(var w in widgets) {
+        //     if(widgets[w].pageId = pageId) {
+        //         widgetsforPage.push(widgets[w]);
+        //     }
+        // }
+        //
+        // var initialWidget = widgetsforPage[startIndex];
+        // var finalWidget = widgetsforPage[endIndex];
+        //
+        // widgets.splice(widgets.indexOf(finalWidget), 0, widgets.splice(widgets.indexOf(initialWidget), 1)[0]);
+        // res.sendStatus(200);
 
     }
 
@@ -159,23 +163,41 @@ module.exports = function (app) {
         var websiteId = req.body.websiteId;
         var pageId = req.body.pageId;
 
-        var originalname  = myFile.originalname; // file name on user's computer
+        //var originalname  = myFile.originalname; // file name on user's computer
         var filename      = myFile.filename;     // new file name in upload folder
         var path          = myFile.path;         // full path of uploaded file
         var destination   = myFile.destination;  // folder where file is saved to
         var size          = myFile.size;
         var mimetype      = myFile.mimetype;
 
-        var widget = getWidgetById(widgetId);
-        if(!widget) {
-            widget = {};
-            widgetId = (new Date()).getTime() + "";
-            widget._id = widgetId;
-            widget.pageId = pageId;
-            widgets.push(widget);
-        }
-        widget.url = '/assignment/uploads/'+filename;
+        var current_widget;
+        widgetModel
+            .findWidgetById(widgetId)
+            .then(function (widget) {
+                current_widget = widget;
 
+            }, function (err) {
+                current_widget.url = '/assignment/uploads/'+filename;
+                widgetModel
+                    .createWidget(pageId, current_widget)
+                    .then(function (current_widget) {
+                        widgetId = current_widget._id;
+                        var callbackUrl   = "/assignment/#!/user/"+userId+"/"+websiteId+"/"+pageId+ "/"+ widgetId + "/IMAGE";
+
+                        res.redirect(callbackUrl);
+                        return;
+                    });
+            });
+        //if(!current_widget) {
+            // var new_widget = {};
+            // //widgetId = (new Date()).getTime() + "";
+            // //widget._id = widgetId;
+            // new_widget._page = pageId;
+            // new_widget.width = req.body.width;
+            // new_widget.url = '/assignment/uploads/'+filename;
+
+        //}
+        //current_widget.url = '/assignment/uploads/'+filename;
 
 
         var callbackUrl   = "/assignment/#!/user/"+userId+"/"+websiteId+"/"+pageId+ "/"+ widgetId + "/IMAGE";
