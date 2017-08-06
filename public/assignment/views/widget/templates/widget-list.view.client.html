@@ -42,7 +42,7 @@
             <div ng-repeat="widget in model.widgets" class="wd-widget">
 
 
-                <div ng-switch="widget.widgetType">
+                <div ng-switch="widget.type">
                     <div ng-switch-when="HEADING" ng-switch="widget.size">
                         <div class="wd-toolbar">
                             <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/{{widget._id}}/HEADER">

@@ -92,7 +92,10 @@
         function createWidget(id, widget) {
 
             var url = '/api/page/' + id + '/widget';
-            return $http.post(url, widget);
+            return $http.post(url, widget)
+                    .then(function (response) {
+                        return response.data;
+                    });
 
             // widget.pageId = id;
             // widget._id = (new Date()).getTime() + "";

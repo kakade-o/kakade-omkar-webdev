@@ -1,5 +1,7 @@
 module.exports = function (app) {
 
+    var widgetModel = require("../model/widget/widget.model.server");
+
     app.get("/api/page/:pageId/widget", findWidgetsByPageId);
     app.get("/api/widget/:widgetId", findWidgetById);
     app.post("/api/page/:pageId/widget", createWidget);
@@ -26,14 +28,21 @@ module.exports = function (app) {
 
     function findWidgetsByPageId(req, res) {
 
-        var widget = [];
+        var pageId = req.params.pageId;
 
-        for(var w in widgets) {
-            if(widgets[w].pageId === req.params.pageId) {
-                widget.push(widgets[w]);
-            }
-        }
-        res.json(widget);
+        widgetModel.findWidgetsByPageId(pageId)
+                .then(function (widgets) {
+                    res.json(widgets);
+                });
+
+        // var widget = [];
+        //
+        // for(var w in widgets) {
+        //     if(widgets[w].pageId === req.params.pageId) {
+        //         widget.push(widgets[w]);
+        //     }
+        // }
+        // res.json(widget);
     }
 
     function deleteWidget(req, res) {
@@ -105,11 +114,16 @@ module.exports = function (app) {
         var widget = req.body;
         var pageId = req.params.pageId;
 
-        widget.pageId = pageId;
-        //widget._id = (new Date()).getTime() + "";
-        widgets.push(widget);
-
-        res.json(widget);
+        widgetModel
+            .createWidget(pageId, widget)
+            .then(function (widget) {
+                res.json(widget);
+            });
+        // widget.pageId = pageId;
+        // //widget._id = (new Date()).getTime() + "";
+        // widgets.push(widget);
+        //
+        // res.json(widget);
 
     }
 
