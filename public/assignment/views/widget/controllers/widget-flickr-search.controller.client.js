@@ -50,39 +50,40 @@
                         .updateWidget(model.widgetId, {
                             _id: model.widgetId,
                             url: url,
-                            "widgetType": 'IMAGE',
+                            "type": 'IMAGE',
                             "pageId": model.pageId,
                             "width": "100%"
                         })
                         .then(function () {
                             $location.url("/user/" + model.userId + "/" +
-                                model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
+                                model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/edit");
                         })
-                }, function () {
+                }, function (err) {
                     // if not, then create one
-                    widgetService
-                        .createWidget(model.pageId, {
-                            _id: model.widgetId,
-                            url: url,
-                            "widgetType": 'IMAGE',
-                            "pageId": model.pageId,
-                            "width": "100%"
-                        })
-                        .then(function () {
-                            // once created, add the changes to it
-                            widgetService
-                                .updateWidget(model.widgetId, {
-                                    _id: model.widgetId,
-                                    url: url,
-                                    "widgetType": 'IMAGE',
-                                    "pageId": model.pageId,
-                                    "width": "100%"
-                                })
-                                .then(function () {
-                                    $location.url("/user/" + model.userId + "/" +
-                                        model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
-                                })
-                        })
+
+                    // widgetService
+                    //     .createWidget(model.pageId, {
+                    //         _id: model.widgetId,
+                    //         url: url,
+                    //         "widgetType": 'IMAGE',
+                    //         "pageId": model.pageId,
+                    //         "width": "100%"
+                    //     })
+                    //     .then(function () {
+                    //         // once created, add the changes to it
+                    //         widgetService
+                    //             .updateWidget(model.widgetId, {
+                    //                 _id: model.widgetId,
+                    //                 url: url,
+                    //                 "widgetType": 'IMAGE',
+                    //                 "pageId": model.pageId,
+                    //                 "width": "100%"
+                    //             })
+                    //             .then(function () {
+                    //                 $location.url("/user/" + model.userId + "/" +
+                    //                     model.websiteId + "/" + model.pageId + "/" + model.widgetId + "/IMAGE");
+                    //             })
+                    //     })
 
                 });
 

@@ -13,20 +13,18 @@ widgetModel.reorderWidget = reorderWidget;
 module.exports = widgetModel;
 
 function createWidget(pageId, widget) {
+    console.log("creating widget in model.");
     widget._page = pageId;
     return widgetModel
-            .create(widget)
-            .then(function (widget) {
-                 return pageModel
-                     .addWidget(pageId, widget._id);
-            });
+        .create(widget)
+        .then(function (createdWidget) {
+            return pageModel
+                .addWidget(pageId, createdWidget._id).then(() => createdWidget);
+        }).catch(console.log);
 }
 
 function findWidgetsByPageId(pageId) {
-    return widgetModel
-        .find({_page: pageId})
-        .populate('_page', 'name')
-        .exec();
+    return pageModel.findPageById(pageId).then(page => Promise.all(page.widgets.map(findWidgetById)));
 }
 
 function findWidgetById(id) {
@@ -34,7 +32,7 @@ function findWidgetById(id) {
 }
 
 function updateWidget(widgetId, widget) {
-    return widgetModel.update({_id: widget}, {$set: widget});
+    return widgetModel.update({_id: widgetId}, {$set: widget});
 }
 
 function deleteWidget(pageId, widgetId) {
@@ -58,7 +56,7 @@ function reorderWidget(pageId, startIndex, endIndex) {
 
             return 200;
         }, function (err) {
-           return err;
+            return err;
         });
 
     // return widgetModel

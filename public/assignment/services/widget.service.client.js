@@ -90,10 +90,13 @@
 
         // Creates a new widget
         function createWidget(id, widget) {
+            widget._page = id;
 
+            console.log("creating widget");
             var url = '/api/page/' + id + '/widget';
             return $http.post(url, widget)
                     .then(function (response) {
+                        console.log("got response");
                         return response.data;
                     });
 

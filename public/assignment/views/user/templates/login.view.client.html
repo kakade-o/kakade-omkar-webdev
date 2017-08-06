@@ -16,6 +16,7 @@
             </div>
 
             <h1>Login</h1>
+            <form ng-submit="model.login(model.user.username, model.user.password)">
             <input type="text"
                    ng-model="model.user.username"
                    class="form-control"
@@ -26,11 +27,11 @@
                    class="form-control"
                    placeholder="password"/>
 
-            <a class="btn btn-primary btn-block"
-               ng-click="model.login(model.user.username, model.user.password)">Login</a>
+            <button class="btn btn-primary btn-block">Login</button>
 
             <a class="btn btn-success btn-block"
                href="#!/register">Register</a>
+            </form>
 
         </div>
     </div>

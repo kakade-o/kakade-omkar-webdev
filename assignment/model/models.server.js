@@ -1,57 +1,12 @@
-console.log("Hello from Mongoose!!!");
+var connectionString = 'mongodb://127.0.0.1:27017/webdev_2017'; // for local
+if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
+    var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
+    var password = process.env.MLAB_PASSWORD_WEBDEV;
+    connectionString = 'mongodb://' + username + ':' + password;
+    connectionString += '@ds011715.mlab.com:11715/heroku_444tp65l'; // user yours
+}
 
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
+var db = mongoose.connect(connectionString);
 
-var db = mongoose.connect('mongodb://localhost/webdev_2017');
-
-// var userSchema = mongoose.Schema({
-//     username: String,
-//     password: String,
-//     firstName: String,
-//     lastName: String,
-//     email: String,
-//     dob: Date,
-//     phone: String,
-//     dateCreated: {type: Date, default: Date.now}
-//
-// }, {collection: "user"});
-
-//var userModel = mongoose.model("UserModel", userSchema);
-
-
-// removeUser("598499303965b31e42eed59c")
-//     .then(function (status) {
-//         console.log(status);
-//     });
-
-// function removeUser(userId) {
-//     return userModel.remove({_id: userId});
-// }
-//
-// function updateUser(userId, newUserValues) {
-//     return userModel.update({_id: userId}, {$set:newUserValues});
-// }
-//
-// function findUserById(id) {
-//     return userModel.findById(id);
-// }
-//
-// function findUserByUsername(username) {
-//     return userModel.findOne({username: username});
-// }
-//
-// function findAllUsers() {
-//     return userModel.find();
-// }
-//
-// function createUser(user) {
-//     userModel.create(user, function (err, doc) {
-//         if(err) {
-//             console.log(err);
-//         } else {
-//             console.log(doc);
-//         }
-//     });
-// }
-
-
+module.exports = db;
