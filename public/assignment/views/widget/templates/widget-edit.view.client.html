@@ -41,6 +41,7 @@
     <ng-include ng-if="model.widget"
                 src="'views/widget/templates/widget-edit-' +model.widget.type.toLowerCase()+ '.view.client.html'"></ng-include>
     <div class="form-group">
+        <br/>
         <a ng-click="model.removeWidget()" role="button"
            class="btn btn-danger btn-block">Delete</a>
     </div>

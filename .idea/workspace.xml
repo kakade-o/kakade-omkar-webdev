@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c17fa7bf-5708-4d92-aff5-bb1f5ac7d810" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/js/textAngular-rangy.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/js/textAngular-sanitize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/js/textAngular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webdev.iml" afterPath="$PROJECT_DIR$/.idea/webdev.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js" afterPath="$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/app.js" afterPath="$PROJECT_DIR$/public/assignment/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/index.html" afterPath="$PROJECT_DIR$/public/assignment/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-html.view.client.html" afterPath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-html.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-chooser.view.client.html" afterPath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-chooser.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html" afterPath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html" afterPath="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,108 +23,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="widget-edit.view.client.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widget-edit-html.view.client.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="widget-edit-html.view.client.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-html.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="240">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="18" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/index.html">
+      <file leaf-file-name="widget-edit-text.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-text.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="120">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="textAngular-sanitize.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/js/textAngular-sanitize.js">
+      <file leaf-file-name="widget.schema.server.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <marker date="1480883125000" expanded="true" signature="1847:2360" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="1952:2344" ph="[...]" />
-                <marker date="1480883125000" expanded="true" signature="1994:2343" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="2257:2329" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="2405:3571" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="2497:3557" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="2511:2636" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="2679:2914" ph="..." />
-                <marker date="1480883125000" expanded="false" signature="2783:2787" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="2813:2817" ph="&gt;" />
-                <marker date="1480883125000" expanded="false" signature="2822:2826" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="2830:2834" ph="&gt;" />
-                <marker date="1480883125000" expanded="true" signature="2954:3296" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="3083:3198" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="3100:3181" ph="..." />
-                <marker date="1480883125000" expanded="false" signature="3101:3105" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="3159:3163" ph="&gt;" />
-                <marker date="1480883125000" expanded="false" signature="3172:3176" ph="&gt;" />
-                <marker date="1480883125000" expanded="true" signature="3328:3541" ph="..." />
-                <marker date="1480883125000" expanded="false" signature="3420:3424" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="3445:3449" ph="&gt;" />
-                <marker date="1480883125000" expanded="false" signature="3454:3458" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="3462:3466" ph="&gt;" />
-                <marker date="1480883125000" expanded="true" signature="3699:3849" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="3929:4177" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="4244:4508" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="4548:5062" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="24002:24490" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="24104:24472" ph="[...]" />
-                <marker date="1480883125000" expanded="true" signature="24132:24471" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="24537:25562" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="24628:25561" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="24642:24740" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="24772:25025" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="24821:24921" ph="..." />
-                <marker date="1480883125000" expanded="false" signature="24841:24845" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="24879:24883" ph="&gt;" />
-                <marker date="1480883125000" expanded="false" signature="24887:24891" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="24895:24899" ph="&gt;" />
-                <marker date="1480883125000" expanded="true" signature="24937:25010" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="25057:25341" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="25104:25221" ph="..." />
-                <marker date="1480883125000" expanded="false" signature="25123:25127" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="25180:25184" ph="&gt;" />
-                <marker date="1480883125000" expanded="false" signature="25188:25192" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="25196:25200" ph="&gt;" />
-                <marker date="1480883125000" expanded="true" signature="25236:25326" ph="..." />
-                <marker date="1480883125000" expanded="true" signature="25373:25545" ph="..." />
-                <marker date="1480883125000" expanded="false" signature="25425:25429" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="25450:25454" ph="&gt;" />
-                <marker date="1480883125000" expanded="false" signature="25458:25462" ph="&lt;" />
-                <marker date="1480883125000" expanded="false" signature="25466:25470" ph="&gt;" />
-                <marker date="1480883125000" expanded="true" signature="25688:26042" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="26122:26475" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="26517:26984" ph="{...}" />
-                <marker date="1480883125000" expanded="true" signature="27049:27324" ph="{...}" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/app.js">
+      <file leaf-file-name="widget-list.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="1128">
+              <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -172,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/assignment/views/website/templates/website-new.view.client.html" />
         <option value="$PROJECT_DIR$/public/assignment/views/page/templates/page-new.view.client.html" />
         <option value="$PROJECT_DIR$/public/assignment/views/page/templates/page-edit.view.client.html" />
         <option value="$PROJECT_DIR$/assignment/app.js" />
@@ -208,21 +134,22 @@
         <option value="$PROJECT_DIR$/assignment/model/user/user.model.server.js" />
         <option value="$PROJECT_DIR$/public/assignment/views/widget/controllers/widget-new.controller.client.js" />
         <option value="$PROJECT_DIR$/public/assignment/services/widget.service.client.js" />
-        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-chooser.view.client.html" />
-        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html" />
         <option value="$PROJECT_DIR$/public/assignment/config.js" />
         <option value="$PROJECT_DIR$/public/assignment/views/user/templates/login.view.client.html" />
         <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-image.view.client.html" />
-        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html" />
         <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-heading.view.client.html" />
         <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-youtube.view.client.html" />
         <option value="$PROJECT_DIR$/assignment/model/widget/widget.model.server.js" />
         <option value="$PROJECT_DIR$/assignment/services/widget.service.server.js" />
         <option value="$PROJECT_DIR$/public/assignment/views/widget/controllers/widget-flickr-search.controller.client.js" />
-        <option value="$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js" />
         <option value="$PROJECT_DIR$/public/assignment/app.js" />
         <option value="$PROJECT_DIR$/public/assignment/index.html" />
         <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-html.view.client.html" />
+        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-chooser.view.client.html" />
+        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html" />
+        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-text.view.client.html" />
+        <option value="$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html" />
+        <option value="$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js" />
       </list>
     </option>
   </component>
@@ -269,6 +196,24 @@
             <path>
               <item name="webdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="webdev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webdev" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webdev" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webdev" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webdev" type="b2602c69:ProjectViewProjectNode" />
@@ -519,12 +464,12 @@
       <workItem from="1501971821001" duration="4000" />
       <workItem from="1502032839060" duration="7202000" />
       <workItem from="1502075987441" duration="3174000" />
-      <workItem from="1502129206229" duration="359000" />
+      <workItem from="1502129206229" duration="2259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294383000" />
+    <option name="totallyTimeSpent" value="296283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,13 +516,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assignment/services/user.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="88" column="18" lean-forward="true" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/model/user/user.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -631,20 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-heading.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="45" column="64" lean-forward="true" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-html.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -703,20 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-chooser.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="37" column="51" lean-forward="false" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="85" column="118" lean-forward="false" selection-start-line="85" selection-start-column="118" selection-end-line="85" selection-end-column="118" />
         </state>
       </provider>
     </entry>
@@ -790,20 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-image.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-youtube.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-flickr-search.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-491">
@@ -839,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/model/models.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -857,13 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -882,9 +764,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/js/textAngular-sanitize.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/js/textAngular-sanitize.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="15">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <marker date="1480883125000" expanded="true" signature="1847:2360" ph="..." />
@@ -947,21 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/js/textAngular-sanitize.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -970,10 +853,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-html.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-heading.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="45" column="64" lean-forward="true" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="41" column="89" lean-forward="false" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-html.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="240">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="18" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-chooser.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-youtube.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-text.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-edit-image.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/views/widget/templates/widget-list.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1128">
+          <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/model/widget/widget.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding />
         </state>
       </provider>
