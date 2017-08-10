@@ -1,7 +1,7 @@
 (function () {
     angular
         .module("WebAppMaker")
-        .factory("userService", userService)
+        .factory("userService", userService);
     
     function userService($http) {
 
@@ -18,7 +18,8 @@
             "findUserById": findUserById,
             "registerUser": registerUser,
             "findUserByUsername": findUserByUsername,
-            "deleteUser": deleteUser
+            "deleteUser": deleteUser,
+            "checkLogin": checkLogin
         };
 
         return api;
@@ -50,6 +51,13 @@
             //     }
             // }
             // return null;
+        }
+
+        function checkLogin() {
+            return $http.get("/api/checkLogin")
+                .then(function (response) {
+                    return response.data;
+                });
         }
 
         // Finds user by username only

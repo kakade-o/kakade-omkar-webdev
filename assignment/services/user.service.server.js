@@ -12,6 +12,7 @@ module.exports = function (app) {
     app.post  ('/api/profile', registerUser);
     app.put   ("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
+    app.get   ("/api/checkLogin", checkLogin);
 
     app.post  ('/api/login', passport.authenticate('local'), login);
 
@@ -40,6 +41,10 @@ module.exports = function (app) {
         var user = req.user;
         res.json(user);
 
+    }
+
+    function checkLogin(req, res) {
+        res.send(req.isAuthenticated()? req.user : '0');
     }
     
     function serializeUser(user, done) {
@@ -102,6 +107,7 @@ module.exports = function (app) {
             .deleteUser(userId)
             .then(function (status) {
                 res.sendStatus(200);
+                req.logOut();
             })
 
         // for (var u in users) {
