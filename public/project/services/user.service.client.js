@@ -1,7 +1,7 @@
 (function () {
     angular
-        .module("WebAppMaker")
-        .factory("userService", userService)
+        .module("omdbApp")
+        .factory("userService", userService);
     
     function userService($http) {
 
