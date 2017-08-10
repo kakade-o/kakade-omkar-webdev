@@ -1,8 +1,8 @@
 module.exports = function (app) {
 
-    app.get("/api/page/:pageId/widget", findWidgetsByPageId);
+    app.get("/api/review/:pageId/widget", findWidgetsByPageId);
     app.get("/api/widget/:widgetId", findWidgetById);
-    app.post("/api/page/:pageId/widget", createWidget);
+    app.post("/api/review/:pageId/widget", createWidget);
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
 

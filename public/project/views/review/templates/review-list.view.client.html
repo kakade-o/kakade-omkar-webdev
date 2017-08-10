@@ -2,7 +2,7 @@
 <!--<html lang="en">-->
     <!--<head>-->
         <!--<meta charset="UTF-8">-->
-        <!--<title>Page-List</title>-->
+        <!--<title>review-List</title>-->
         <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
               <!--rel="stylesheet"/>-->
         <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
@@ -12,6 +12,13 @@
     <!--<body>-->
 
     <!-- Header -->
+
+
+
+<!--***************NEED TO REFACTOR HREFS******************-->
+
+
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="blog-masthead">
             <div class="container-fluid">
@@ -23,14 +30,14 @@
                 </div>
 
                 <div class="navbar-text pull-right">
-                    <a href="#!/user/{{model.userId}}/{{model.websiteId}}/page/new">
+                    <a href="#!/user/{{model.userId}}/{{model.websiteId}}/review/new">
                         <span class="glyphicon glyphicon-plus white_color"></span>
                     </a>
                 </div>
 
                 <div class="navbar-header">
                     <a class="navbar-brand">
-                        <span class="white_color x-large_font_size">Pages</span>
+                        <span class="white_color x-large_font_size">Reviews</span>
                     </a>
                 </div>
 
@@ -46,12 +53,12 @@
                 Name
             </li>
 
-            <li ng-repeat="page in model.pages" class="list-group-item">
-                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{page._id}}/widget" >
-                    {{page.name}}
+            <li ng-repeat="review in model.reviews" class="list-group-item">
+                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/widget" >
+                    {{review.name}}
                 </a>
 
-                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{page._id}}/edit">
+                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/edit">
                     <span class="pull-right glyphicon glyphicon-cog"></span>
                 </a>
             </li>
@@ -65,7 +72,7 @@
                     <!--</a>-->
 
                     <!--<div class="pull-right">-->
-                        <!--<a hrreviewpage-edit.view.client.html">-->
+                        <!--<a hrreviewreview-edit.view.client.html">-->
                                 <!--<span class="glyphicon glyphicon-cog">-->
                                 <!--</span>-->
                         <!--</a>-->
@@ -84,7 +91,7 @@
                 <!--<div class="text-left">-->
                     <!--<a href="../widget/widget-list.view.client.html">Blogs-->
                     <!--</a>-->
-                    <!--<a hrreviewpage-edit.view.client.html">-->
+                    <!--<a hrreviewreview-edit.view.client.html">-->
                             <!--<span class="glyphicon glyphicon-cog pull-right">-->
                             <!--</span>-->
                     <!--</a>-->
@@ -96,7 +103,7 @@
                 <!--<div class="text-left">-->
                     <!--<a href="../widget/widget-list.view.client.html">Home-->
                     <!--</a>-->
-                    <!--<a hrreviewpage-edit.view.client.html">-->
+                    <!--<a hrreviewreview-edit.view.client.html">-->
                         <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
                     <!--</a>-->
                 <!--</div>-->
@@ -107,7 +114,7 @@
                 <!--<div class="text-left">-->
                     <!--<a href="../widget/widget-list.view.client.html">About-->
                     <!--</a>-->
-                    <!--<a hrreviewpage-edit.view.client.html">-->
+                    <!--<a hrreviewreview-edit.view.client.html">-->
                         <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
                     <!--</a>-->
                 <!--</div>-->
@@ -117,7 +124,7 @@
 
                 <!--<div class="text-left">-->
                     <!--<a href="../widget/widget-list.view.client.html">Contact Us</a>-->
-                    <!--<a hrreviewpage-edit.view.client.html">-->
+                    <!--<a hrreviewreview-edit.view.client.html">-->
                         <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
                     <!--</a>-->
                 <!--</div>-->

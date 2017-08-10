@@ -1,0 +1,105 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+    <!--<head>-->
+        <!--<meta charset="UTF-8">-->
+        <!--<title>New review</title>-->
+        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+              <!--rel="stylesheet"/>-->
+        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--</head>-->
+    <!--<body>-->
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="blog-masthead">
+            <div class="container-fluid">
+
+                <div class="navbar-text pull-left">
+                    <a href="#!/user/{{model.userId}}/{{model.websiteId}}/review">
+                        <span class = "glyphicon glyphicon-chevron-left white_color"></span>
+                    </a>
+                </div>
+
+                <div class="navbar-text pull-right">
+                    <a ng-click="model.newReview(new_review)" role="button">
+                        <span class="glyphicon glyphicon-ok white_color"></span>
+                    </a>
+                </div>
+
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        <span class="white_color x-large_font_size">New Review</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+        <div class = "container-fluid">
+            <div row>
+                <div class="visible-lg col-xs-3 ok-split-view-left">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            Name
+                        </li>
+
+                        <li ng-repeat="review in model.reviews" class="list-group-item">
+                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/widget" >
+                                {{review.name}}
+                            </a>
+
+                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/edit">
+                                <span class="pull-right glyphicon glyphicon-cog"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">
+                                Name
+                            </label>
+                            <input id="name"
+                                   type="text"
+                                   ng-model="new_review.name"
+                                   class="form-control"
+                                   placeholder="Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">
+                                Title
+                            </label>
+                            <input id="title"
+                                   type="text"
+                                   ng-model="new_review.description"
+                                   class="form-control"
+                                   placeholder="Review Title"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    <!-- Footer -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="blog-masthead">
+            <div class="container-fluid">
+                <div class="navbar-text pull-right"
+                >
+                    <a href="#!/profile/{{model.userId}}">
+                        <span class="glyphicon glyphicon-user white_color"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--</body>-->
+<!--</html>-->

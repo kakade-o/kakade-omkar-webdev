@@ -33,7 +33,7 @@
             pageService
                 .updatePage(page._id, page)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/page");
+                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/review");
                 });
         }
 
@@ -41,7 +41,7 @@
             pageService
                 .deletePage(id)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/page");
+                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/review");
                 });
         }
 

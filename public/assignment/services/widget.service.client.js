@@ -67,10 +67,10 @@
             // return null;
         }
 
-        // Finds list of widgets by its page id
+        // Finds list of widgets by its review id
         function findWidgetsByPageId(id) {
 
-            var url = "/api/page/" + id + "/widget";
+            var url = "/api/review/" + id + "/widget";
 
             return $http.get(url)
                 .then(function (response) {
@@ -91,7 +91,7 @@
         // Creates a new widget
         function createWidget(id, widget) {
 
-            var url = '/api/page/' + id + '/widget';
+            var url = '/api/review/' + id + '/widget';
             return $http.post(url, widget);
 
             // widget.pageId = id;

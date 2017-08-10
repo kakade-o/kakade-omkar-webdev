@@ -49,7 +49,7 @@
             })
 
             // Page
-            .when("/user/:userId/:websiteId/page", {
+            .when("/user/:userId/:websiteId/review", {
                 templateUrl: "views/page/templates/page-list.view.client.html",
                 controller: "pageListController",
                 controllerAs: "model"
