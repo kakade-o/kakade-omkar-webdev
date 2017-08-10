@@ -1,4 +1,5 @@
 module.exports = function (app) {
+    //test
 
     app.get   ('/api/user/:userId', findUserById);
     app.get   ('/api/user', findUserByCredentials);
