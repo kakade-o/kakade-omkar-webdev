@@ -80,7 +80,6 @@
 
         // Finds user by username and password
         function findUserByCredentials(username, password) {
-
             var url = "/api/user?username=" + username + "&password=" + password;
 
             return $http.get(url)
