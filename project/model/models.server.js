@@ -9,7 +9,5 @@ if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
 var mongoose = require("mongoose");
 var db = mongoose.connect(connectionString);
 
-require('./models.server');
-
 module.exports = db;
 
