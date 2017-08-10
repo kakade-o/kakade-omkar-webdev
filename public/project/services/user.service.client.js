@@ -1,8 +1,7 @@
 (function () {
     angular
         .module("omdbApp")
-
-        .factory("userService", userService)
+        .factory("userService", userService);
 
     
     function userService($http) {
@@ -82,12 +81,9 @@
 
         // Finds user by username and password
         function findUserByCredentials(username, password) {
-<<<<<<< HEAD
             var url = "/api/user?username=" + username + "&password=" + password;
-=======
 
             var url = "/api/project/user?username=" + username + "&password=" + password;
->>>>>>> a31a98c5a4d3a426ffb78475a1bdbae0cfe0db7d
 
             return $http.get(url)
                 .then(function (response) {
