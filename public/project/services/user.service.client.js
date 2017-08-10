@@ -1,7 +1,9 @@
 (function () {
     angular
         .module("omdbApp")
-        .factory("userService", userService);
+
+        .factory("userService", userService)
+
     
     function userService($http) {
 
@@ -26,7 +28,7 @@
         // Deletes an existing user
         function deleteUser(userId) {
 
-            var url = "/api/user/" + userId;
+            var url = "/api/project/user/" + userId;
             return $http.delete(url);
 
             // for (var u in users) {
@@ -39,7 +41,7 @@
         // updates the info of an existing user
         function updateUser(userId, user) {
 
-            var url = "/api/user/" + userId;
+            var url = "/api/project/user/" + userId;
 
             return $http.put(url, user);
 
@@ -55,7 +57,7 @@
         // Finds user by username only
         function findUserByUsername(username) {
 
-            var url = "/api/user?username=" + username;
+            var url = "/api/project/user?username=" + username;
             return $http.get(url);
 
             // for(u in users) {
@@ -69,7 +71,7 @@
         // Registers a new user
         function registerUser(user) {
 
-            var url = "/api/profile";
+            var url = "/api/project/profile";
 
             return $http.post(url, user);
 
@@ -80,7 +82,12 @@
 
         // Finds user by username and password
         function findUserByCredentials(username, password) {
+<<<<<<< HEAD
             var url = "/api/user?username=" + username + "&password=" + password;
+=======
+
+            var url = "/api/project/user?username=" + username + "&password=" + password;
+>>>>>>> a31a98c5a4d3a426ffb78475a1bdbae0cfe0db7d
 
             return $http.get(url)
                 .then(function (response) {
@@ -101,7 +108,7 @@
         // Finds the user by ID
         function findUserById(userId) {
 
-            var url = "/api/user/" + userId;
+            var url = "/api/project/user/" + userId;
             return $http.get(url)
                 .then(function (response) {
                     return response.data;

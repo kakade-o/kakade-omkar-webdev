@@ -23,7 +23,7 @@
         // Deletes an existing review
         function deleteReview(reviewId) {
 
-            var url = "/api/review/" + reviewId;
+            var url = "/api/project/review/" + reviewId;
             return $http.delete(url);
 
             // for(var p in reviews) {
@@ -36,7 +36,7 @@
         // Updates details of an an existing review
         function updateReview(reviewId, review) {
 
-            var url = "/api/review/" + reviewId;
+            var url = "/api/project/review/" + reviewId;
 
             return $http.put(url, review);
 
@@ -50,7 +50,7 @@
         // Finds a review requested by user by Id
         function findReviewById(reviewId) {
 
-            var url = "/api/review/" + reviewId;
+            var url = "/api/project/review/" + reviewId;
             return $http.get(url);
 
             // for(var p in reviews) {
@@ -62,7 +62,7 @@
 
         // Finds the list of reviews in a user of a user
         function findReviewByUserId(userId) {
-            var url = '/api/user/' + userId + '/review';
+            var url = '/api/project/user/' + userId + '/review';
             return $http.get(url)
                 .then(function (response) {
                     return response.data;
@@ -82,7 +82,7 @@
         // Creates a new review
         function createReview(userId, review) {
 
-            var url = '/api/user/' + userId + '/review';
+            var url = '/api/project/user/' + userId + '/review';
             return $http.post(url, review);
 
             // review.userId = userId;
