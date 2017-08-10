@@ -1,7 +1,11 @@
 (function () {
     angular
         .module("omdbApp")
+<<<<<<< HEAD
         .factory("userService", userService)
+=======
+        .factory("userService", userService);
+>>>>>>> e77a23c3f8cb0a2cd3a8ff4e92aa72528439bcd5
     
     function userService($http) {
 
