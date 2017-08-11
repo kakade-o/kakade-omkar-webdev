@@ -53,9 +53,15 @@
                 controllerAs: "model"
             })
 
+<<<<<<< HEAD
             .when("/user/:userId/following", {
                 templateUrl: "views/user/templates/following.view.client.html",
                 controller: "followingController",
+=======
+            .when("/user/:userId/favorites", {
+                templateUrl: "views/user/templates/favorites.view.client.html",
+                controller: "favoritesController",
+>>>>>>> f5c088aad65c17d4f47e633864267400b69dcd51
                 controllerAs: "model"
             })
 
