@@ -8,13 +8,13 @@
         .controller("profileController", profileController);
 
 
-    function profileController($location, $routeParams, userService, $timeout, user) {
+    function profileController($location, $routeParams, userService, $timeout) {
 
         var model = this;
 
         model.hasAlert = false;
 
-        var userId = user._id;
+        var userId = $routeParams["userId"];
 
         model.updateUser = updateUser;
         model.unregister = unregister;

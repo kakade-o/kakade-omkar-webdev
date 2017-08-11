@@ -25,10 +25,6 @@ function updateUser(userId, user) {
     return userModel.update({_id: userId}, {$set: user});
 }
 
-function findUserByUsername(username) {
-    return userModel.find({username: username});
-}
-
 function findUserByCredentials(username, password) {
     return userModel.findOne({username: username, password: password});
 }
@@ -54,4 +50,8 @@ function deleteWebsite(userId, websiteId) {
             user.websites.splice(index, 1);
             return user.save();
         })
+}
+
+function findUserByUsername(username) {
+    return userModel.findOne({username: username});
 }
