@@ -33,15 +33,15 @@
             pageService
                 .updatePage(page._id, page)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/review");
+                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/page");
                 });
         }
 
         function removePage(id) {
             pageService
-                .deletePage(id)
+                .deletePage(model.websiteId, id)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/review");
+                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/page");
                 });
         }
 

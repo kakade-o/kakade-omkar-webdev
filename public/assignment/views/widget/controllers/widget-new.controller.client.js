@@ -3,22 +3,6 @@
     angular
         .module("WebAppMaker")
         .controller("widgetNewController", widgetNewController);
-        // .controller("widgetNewHeadingController", widgetNewHeadingController);
-
-    // function widgetNewHeadingController($routeParams, widgetService) {
-    //
-    //     var model = this;
-    //
-    //     model.userId = $routeParams.userId;
-    //     model.websiteId = $routeParams.websiteId;
-    //     model.pageId = $routeParams.pageId;
-    //
-    //     function init() {
-    //
-    //     }
-    //     init();
-    //
-    // }
 
     function widgetNewController($location, $routeParams, widgetService) {
 
@@ -30,17 +14,16 @@
 
         model.createWidget = createWidget;
 
-        function init() {
-
-        }
-        init();
-
-        function createWidget(widget) {
-
+        function createWidget(type) {
+            //widget._id = model.widgetId;
+            console.log("Hello");
             widgetService
-                .createWidget(model.pageId, widget)
-                .then(function () {
-                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/"+model.pageId+"/widget");
+                .createWidget(model.pageId, {type})
+                .then(function (widget) {
+                    console.log(angular.toJson(widget));
+                    $location.url("/user/" + model.userId + "/"
+                        + model.websiteId + "/" + model.pageId
+                        + "/" + widget._id + "/edit");
                 })
         }
 

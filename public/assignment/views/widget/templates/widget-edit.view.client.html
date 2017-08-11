@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="blog-masthead">
+        <div class="container-fluid">
+
+            <div class="navbar-text pull-left">
+                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
+                    <span class="glyphicon glyphicon-chevron-left white_color"></span>
+                </a>
+            </div>
+
+            <div class="navbar-text pull-right">
+                <a ng-click="model.updateWidget(model.widget)" role="button">
+                    <span class="glyphicon glyphicon-ok white_color"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <span class="white_color x-large_font_size">Widget Edit</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <ng-include ng-if="model.widget"
+                src="'views/widget/templates/widget-edit-' +model.widget.type.toLowerCase()+ '.view.client.html'"></ng-include>
+    <div class="form-group">
+        <br/>
+        <a ng-click="model.removeWidget()" role="button"
+           class="btn btn-danger btn-block">Delete</a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="blog-masthead">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a href="#!/profile/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user white_color"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -25,9 +25,9 @@
         this.deleteWidget = deleteWidget;
 
         // Deletes an existing widget
-        function deleteWidget(id) {
+        function deleteWidget(pageId, widgetId) {
 
-            var url = "/api/widget/" + id;
+            var url = "/api/page/" + pageId + "/widget/" + widgetId;
             return $http.delete(url);
 
             // for(var w in widgets) {
@@ -67,10 +67,10 @@
             // return null;
         }
 
-        // Finds list of widgets by its review id
+        // Finds list of widgets by its page id
         function findWidgetsByPageId(id) {
 
-            var url = "/api/review/" + id + "/widget";
+            var url = "/api/page/" + id + "/widget";
 
             return $http.get(url)
                 .then(function (response) {
@@ -90,9 +90,15 @@
 
         // Creates a new widget
         function createWidget(id, widget) {
+            widget._page = id;
 
-            var url = '/api/review/' + id + '/widget';
-            return $http.post(url, widget);
+            console.log("creating widget");
+            var url = '/api/page/' + id + '/widget';
+            return $http.post(url, widget)
+                    .then(function (response) {
+                        console.log("got response");
+                        return response.data;
+                    });
 
             // widget.pageId = id;
             // widget._id = (new Date()).getTime() + "";

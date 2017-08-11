@@ -20,11 +20,15 @@
         this.deletePage = deletePage;
 
 
-        // Deletes an existing review
-        function deletePage(id) {
+        // Deletes an existing page
+        function deletePage(websiteId, pageId) {
 
-            var url = "/api/review/" + id;
-            return $http.delete(url);
+            var url = "/api/website/"+ websiteId +"/page/" + pageId;
+            return $http
+                .delete(url)
+                .then(function (response) {
+                    return response.data;
+                });
 
             // for(var p in pages) {
             //     if(pages[p]._id === id) {
@@ -33,24 +37,24 @@
             // }
         }
 
-        // Updates details of an an existing review
+        // Updates details of an an existing page
         function updatePage(id, page) {
 
-            var url = "/api/review/" + id;
+            var url = "/api/page/" + id;
 
             return $http.put(url, page);
 
             // for(var p in pages) {
             //     if(pages[p]._id === id) {
-            //         pages[p] = review;
+            //         pages[p] = page;
             //     }
             // }
         }
 
-        // Finds a review requested by user by Id
+        // Finds a page requested by user by Id
         function findPageById(pageId) {
 
-            var url = "/api/review/" + pageId;
+            var url = "/api/page/" + pageId;
             return $http.get(url);
 
             // for(var p in pages) {
@@ -62,32 +66,36 @@
 
         // Finds the list of pages in a website of a user
         function findPageByWebsiteId(siteId) {
-            var url = '/api/website/' + siteId + '/review';
+            var url = '/api/website/' + siteId + '/page';
             return $http.get(url)
                 .then(function (response) {
                     return response.data;
                 });
 
-            // var review = [];
+            // var page = [];
             //
             // for(var p in pages) {
             //     if(pages[p].websiteId === siteId) {
-            //         review.push(pages[p]);
+            //         page.push(pages[p]);
             //     }
             // }
-            // return review;
+            // return page;
 
         }
 
-        // Creates a new review
+        // Creates a new page
         function createPage(websiteId, page) {
 
-            var url = '/api/website/' + websiteId + '/review';
-            return $http.post(url, page);
+            var url = '/api/website/' + websiteId + '/page';
+            return $http
+                .post(url, page)
+                .then(function (response) {
+                    return response.data;
+                });
 
-            // review.websiteId = websiteId;
-            // review._id = (new Date()).getTime() + "";
-            // pages.push(review);
+            // page.websiteId = websiteId;
+            // page._id = (new Date()).getTime() + "";
+            // pages.push(page);
         }
 
 

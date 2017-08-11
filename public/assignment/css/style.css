@@ -63,9 +63,9 @@ profile.view.client.html
 website-list.view.client.html
 website-new.view.client.html
 website-edit.view.client.html
-review-edit.view.client.html
-review-new.view.client.html
-review-list.html
+page-edit.view.client.html
+page-new.view.client.html
+page-list.html
 widget-heading.view.client.html
 */
 .white_color {
@@ -88,9 +88,9 @@ profile.view.client.html
 website-list.view.client.html
 website-new.view.client.html
 website-edit.view.client.html
-review-edit.view.client.html
-review-new.view.client.html
-review-list.html
+page-edit.view.client.html
+page-new.view.client.html
+page-list.html
 widget-heading.view.client.html
  */
 .x-large_font_size {
@@ -145,6 +145,7 @@ widget-heading.view.client.html
     padding-bottom: 5px;
     border-bottom-left-radius: 10px;
     opacity: 0.8;
+    z-index: 1;
 }
 
 .ok-fade {
@@ -154,5 +155,19 @@ widget-heading.view.client.html
 
 .ok-fade.ng-hide {
     opacity: 0;
+}
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    /*height: 0;*/
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 

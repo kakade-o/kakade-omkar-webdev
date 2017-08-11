@@ -2977,7 +2977,7 @@ function publishExternalAPI(angular) {
  *
  * To use `jQuery`, simply ensure it is loaded before the `angular.js` file. You can also use the
  * {@link ngJq `ngJq`} directive to specify that jqlite should be used over jQuery, or to use a
- * specific version of jQuery if multiple versions exist on the review.
+ * specific version of jQuery if multiple versions exist on the page.
  *
  * <div class="alert alert-info">**Note:** All element references in Angular are always wrapped with jQuery or
  * jqLite (such as the element argument in a directive's compile / link function). They are never raw DOM references.</div>
@@ -5290,11 +5290,11 @@ function $AnchorScrollProvider() {
           // This is true ONLY if the call to `elem.scrollIntoView()` initially aligns `elem` at the
           // top of the viewport.
           //
-          // IF the number of pixels from the top of `elem` to the end of the review's content is less
+          // IF the number of pixels from the top of `elem` to the end of the page's content is less
           // than the height of the viewport, then `elem.scrollIntoView()` will align the `elem` some
-          // way down the review.
+          // way down the page.
           //
-          // This is often the case for elements near the bottom of the review.
+          // This is often the case for elements near the bottom of the page.
           //
           // In such cases we do not need to scroll the whole `offset` up, just the difference between
           // the top of the element and the offset, which is enough to align the top of `elem` at the
@@ -5312,7 +5312,7 @@ function $AnchorScrollProvider() {
       hash = isString(hash) ? hash : isNumber(hash) ? hash.toString() : $location.hash();
       var elm;
 
-      // empty hash, scroll to the top of the review
+      // empty hash, scroll to the top of the page
       if (!hash) scrollTo(null);
 
       // element with given id
@@ -5321,7 +5321,7 @@ function $AnchorScrollProvider() {
       // first anchor with given name :-D
       else if ((elm = getFirstAnchor(document.getElementsByName(hash)))) scrollTo(elm);
 
-      // no element and hash === 'top', scroll to the top of the review
+      // no element and hash === 'top', scroll to the top of the page
       else if (hash === 'top') scrollTo(null);
     }
 
@@ -5689,7 +5689,7 @@ var $AnimateProvider = ['$provide', /** @this */ function($provide) {
      * It is recommended that the`$animate` service is always used when executing DOM-related procedures within directives.
      *
      * To learn more about enabling animation support, click here to visit the
-     * {@link ngAnimate ngAnimate module review}.
+     * {@link ngAnimate ngAnimate module page}.
      */
     return {
       // we don't call it directly since non-existant arguments may
@@ -9277,7 +9277,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           }
 
           if (nodeName === 'input' && node.getAttribute('type') === 'hidden') {
-            // Hidden input elements can have strange behaviour when navigating back to the review
+            // Hidden input elements can have strange behaviour when navigating back to the page
             // This tells the browser not to try to cache and reinstate previous values
             node.setAttribute('autocomplete', 'off');
           }
@@ -13778,7 +13778,7 @@ function LocationHashbangInHtml5Url(appBase, appBaseNoFile, hashPrefix) {
         hash = this.$$hash ? '#' + encodeUriSegment(this.$$hash) : '';
 
     this.$$url = encodePath(this.$$path) + (search ? '?' + search : '') + hash;
-    // include hashPrefix in $$absUrl when $$url is empty so IE9 does not reload review because of removal of '#'
+    // include hashPrefix in $$absUrl when $$url is empty so IE9 does not reload page because of removal of '#'
     this.$$absUrl = appBase + hashPrefix + this.$$url;
 
     this.$$urlUpdatedByLocation = true;
@@ -18964,7 +18964,7 @@ function adjustMatchers(matchers) {
  * Contextual Escaping (SCE)} services to AngularJS.
  *
  * For an overview of this service and the functionnality it provides in AngularJS, see the main
- * review for {@link ng.$sce SCE}. The current review is targeted for developers who need to alter how
+ * page for {@link ng.$sce SCE}. The current page is targeted for developers who need to alter how
  * SCE works in their application, which shouldn't be needed in most cases.
  *
  * <div class="alert alert-danger">
@@ -19007,7 +19007,7 @@ function adjustMatchers(matchers) {
  * and
  * {@link ng.$sceDelegateProvider#resourceUrlBlacklist $sceDelegateProvider.resourceUrlBlacklist},
  *
- * For the general details about this service in Angular, read the main review for {@link ng.$sce
+ * For the general details about this service in Angular, read the main page for {@link ng.$sce
  * Strict Contextual Escaping (SCE)}.
  *
  * **Example**:  Consider the following case. <a name="example"></a>
@@ -20306,7 +20306,7 @@ function $$TestabilityProvider() {
      * @name $$testability#setLocation
      *
      * @description
-     * Shortcut for navigating to a location without doing a full review reload.
+     * Shortcut for navigating to a location without doing a full page reload.
      *
      * @param {string} url The location url (path, search and hash,
      *     e.g. /path?a=b#hash) to go to.
@@ -22737,7 +22737,7 @@ var htmlAnchorDirective = valueFn({
 
           element(by.id('link-3')).click();
 
-          review
+          // At this point, we navigate away from an Angular page, so we need
           // to use browser.driver to get the base webdriver.
 
           browser.wait(function() {
@@ -22766,7 +22766,7 @@ var htmlAnchorDirective = valueFn({
 
           element(by.id('link-6')).click();
 
-          review
+          // At this point, we navigate away from an Angular page, so we need
           // to use browser.driver to get the base webdriver.
           browser.wait(function() {
             return browser.driver.getCurrentUrl().then(function(url) {
@@ -23635,7 +23635,7 @@ var formDirectiveFactory = function(isNgForm) {
               //
               // IE 9 is not affected because it doesn't fire a submit event and try to do a full
               // page reload if the form was destroyed by submission of the form via a click handler
-              // on a button in the foreviewLooks like an IE9 specific bug.
+              // on a button in the form. Looks like an IE9 specific bug.
               var handleFormSubmission = function(event) {
                 scope.$apply(function() {
                   controller.$commitViewValue();
@@ -27184,7 +27184,7 @@ var ngControllerDirective = [function() {
           });
 
           // For now, we only test on Chrome,
-          review
+          // as Safari does not load the page with Protractor's injected scripts,
           // and Firefox webdriver always disables content security policy (#6358)
           if (browser.params.browser !== 'chrome') {
             return;
@@ -27193,7 +27193,7 @@ var ngControllerDirective = [function() {
           it('should not report errors when the page is loaded', function() {
             // clear errors so we are not dependent on previous tests
             clearErrors();
-            review
+            // Need to reload the page as the page is already loaded when
             // we come here
             browser.driver.getCurrentUrl().then(function(url) {
               browser.get(url);

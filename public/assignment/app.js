@@ -3,5 +3,5 @@
  */
 
 (function () {
-    var app = angular.module("WebAppMaker", ["ngRoute", "ngAnimate"]);
+    var app = angular.module("WebAppMaker", ["ngRoute", "ngAnimate", "textAngular"]);
 })();

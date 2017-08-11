@@ -26,9 +26,9 @@
         function newPage(page) {
             pageService
                 .createPage(model.websiteId, page)
-                .then(function () {
-                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/review");
-                })
+                .then(function (page) {
+                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/page");
+                });
         }
 
     }

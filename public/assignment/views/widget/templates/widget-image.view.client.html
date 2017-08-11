@@ -43,7 +43,7 @@
                 <div class="form-group">
                     Name
                     <br/>
-                    <select class="dropdown_width" ng-model="widget.widgetType">
+                    <select class="dropdown_width" ng-model="widget.type">
                         <option value="IMAGE">IMAGE</option>
                     </select>
                 </div>
@@ -80,6 +80,13 @@
                         <option value="90%">90%</option>
                         <option value="100%">100%</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <a class="btn btn-success btn-block"
+                       href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/{{model.widgetId}}/search">
+                        Search
+                    </a>
                 </div>
 
                 <div class="form-group">
