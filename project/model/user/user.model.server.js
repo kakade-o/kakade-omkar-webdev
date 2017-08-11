@@ -11,6 +11,10 @@ userModel.addWebsite = addWebsite;
 userModel.deleteWebsite = deleteWebsite;
 userModel.findUserByUsername = findUserByUsername;
 userModel.findCriticByUsername = findCriticByUsername;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fffe1a1786d4bc4733a9a8596b8a41c290362d56
 userModel.addMovie = addMovie;
 userModel.deleteMovie = deleteMovie;
 
@@ -59,7 +63,10 @@ function deleteWebsite(userId, websiteId) {
         })
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fffe1a1786d4bc4733a9a8596b8a41c290362d56
 function findCriticByUsername(criticUsername) {
     console.log(criticUsername);
     return userModel.findOne({username: criticUsername});
@@ -72,7 +79,7 @@ function addMovie(userId, imdbId) {
 
             var index = -1;
             index = user.favorites.indexOf(imdbId);
-            if(index == -1) {
+            if (index == -1) {
                 user.favorites.push(imdbId);
                 return user.save();
             }
@@ -88,4 +95,8 @@ function deleteMovie(userId, imdbId) {
             user.favorites.splice(index, 1);
             return user.save();
         })
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fffe1a1786d4bc4733a9a8596b8a41c290362d56
