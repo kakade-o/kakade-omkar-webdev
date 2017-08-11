@@ -10,6 +10,7 @@ userModel.deleteUser = deleteUser;
 userModel.addWebsite = addWebsite;
 userModel.deleteWebsite = deleteWebsite;
 userModel.findUserByUsername = findUserByUsername;
+userModel.findCriticByUsername = findCriticByUsername;
 
 module.exports = userModel;
 
@@ -54,4 +55,10 @@ function deleteWebsite(userId, websiteId) {
             user.websites.splice(index, 1);
             return user.save();
         })
+}
+
+function findCriticByUsername(criticUsername) {
+    console.log(criticUsername);
+    return userModel.findOne({username: criticUsername});
+
 }

@@ -21,6 +21,20 @@
             })
 
 
+            // Critic Search
+            .when("/user/:userId/criticSearch", {
+                templateUrl: "views/criticSearch/templates/criticSearch.view.client.html",
+                controller: "criticSearchController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/criticSearch/details/:reviewerId", {
+                templateUrl: "views/criticSearch/templates/criticDetails.view.client.html",
+                controller: "criticDetailsController",
+                controllerAs: "model"
+            })
+
+
             // User
             .when("/login", {
                 templateUrl: "views/user/templates/login.view.client.html",
