@@ -4,9 +4,11 @@
         .module("omdbApp")
         .controller("userSearchController", userSearchController);
 
-    function userSearchController($location, movieService) {
+    function userSearchController($location, movieService, $routeParams) {
 
         var model = this;
+
+        model.userId = $routeParams.userId;
 
         model.searchMovieByTitle = searchMovieByTitle;
 
