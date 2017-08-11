@@ -3,13 +3,14 @@
         .module("omdbApp")
         .controller("userDetailsController", userDetailsController);
 
-    function userDetailsController(movieService, $routeParams, userService) {
+    function userDetailsController($location, movieService, $routeParams, userService) {
        var model = this;
 
         model.userId = $routeParams.userId;
         model.imdbId = $routeParams.imdbId;
 
         model.makeFavorite = makeFavorite;
+        model.toProfile = toProfile;
 
         function init() {
             movieService
@@ -29,6 +30,18 @@
                 .makeFavorite(model.userId, model.imdbId);
         }
 
+        function toProfile() {
+            userService
+                .findUserById(model.userId)
+                .then(function (user) {
+                    if(user.isCritic == true) {
+                        $location.url('/criticProfile/' + user._id);
+                    }
+                    else {
+                        $location.url('/profile/' + user._id);
+                    }
+                })
+        }
 
     }
 
