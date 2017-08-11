@@ -31,7 +31,7 @@ function findReviewByreviewname(reviewname) {
 
 function findReviewsForUser(userId) {
     return reviewModel
-        .find({_reviewId: userId})
+        .find({_reviewerId: userId})
         .populate('_reviewId', 'username')
         .exec();
 }

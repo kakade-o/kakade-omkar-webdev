@@ -3,7 +3,7 @@ var reviewSchema = mongoose.Schema({
     reviewname: {type: String, require: true},
     reviewtext: String,
     rating: Number,
-    _reviewerId: {type: mongoose.Schema.ObjectId, ref: "ProjectUserModel"},
+    _reviewerId: {type: mongoose.Schema.Types.ObjectId, ref: "ProjectUserModel"},
     // websites: [{type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel"}],
     dateCreated: {type: Date, default: Date.now}
 }, {collection: "review"});

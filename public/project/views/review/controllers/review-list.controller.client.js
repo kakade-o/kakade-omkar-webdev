@@ -11,6 +11,7 @@
         model.reviewId = $routeParams.reviewId;
 
         function init() {
+            console.log("inside controller");
             reviewService
                 .findReviewByUserId(model.userId)
                 .then(function (reviews) {
