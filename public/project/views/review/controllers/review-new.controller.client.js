@@ -8,14 +8,14 @@
         var model = this;
 
         model.userId = $routeParams.userId;
-        model.websiteId = $routeParams.websiteId;
+        // model.websiteId = $routeParams.websiteId;
         model.reviewId = $routeParams.reviewId;
 
         model.newReview = newReview;
 
         function init() {
             reviewService
-                .findReviewByUserId(model.websiteId)
+                .findReviewByUserId(model.userId)
                 .then(function (reviews) {
                     model.reviews = reviews;
                 });
@@ -25,9 +25,9 @@
 
         function newReview(review) {
             reviewService
-                .createReview(model.websiteId, review)
+                .createReview(model.reviewId, review)
                 .then(function () {
-                    $location.url("/user/"+model.userId+"/"+model.websiteId+"/review");
+                    $location.url("/user/"+model.userId+"/review");
                 })
         }
 

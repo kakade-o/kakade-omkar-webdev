@@ -16,7 +16,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-text pull-left">
-                    <a href="#!/user/{{model.userId}}/{{model.websiteId}}/review">
+                    <a href="#!/user/{{model.userId}}/{{model.reviewId}}/review">
                         <span class = "glyphicon glyphicon-chevron-left white_color"></span>
                     </a>
                 </div>
@@ -37,55 +37,32 @@
         </div>
     </nav>
 
-        <div class = "container-fluid">
-            <div row>
-                <div class="visible-lg col-xs-3 ok-split-view-left">
+<form>
+    <div class="form-group">
+        Rating
+        <br/>
+        <select class="dropdown_width" ng-model="model.review.rating">
+            <option value="1">1:Garbage</option>
+            <option value="2">2:Poor</option>
+            <option value="3">3:Average</option>
+            <option value="4">4:Good</option>
+            <option value="5">5:Excellent</option>
+        </select>
+        <!--<input-->
+        <!--type="text"-->
+        <!--ng-model="widget.widgetType"-->
+        <!--class="form-control"-->
+        <!--placeholder="Name" value="HEADING"/>-->
+    </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item active">
-                            Name
-                        </li>
+    <div ng-model="model.widget.text"
+         text-angular
+         ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+    </div>
 
-                        <li ng-repeat="review in model.reviews" class="list-group-item">
-                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/widget" >
-                                {{review.name}}
-                            </a>
-
-                            <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/edit">
-                                <span class="pull-right glyphicon glyphicon-cog"></span>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">
-                                Name
-                            </label>
-                            <input id="name"
-                                   type="text"
-                                   ng-model="new_review.name"
-                                   class="form-control"
-                                   placeholder="Name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="title">
-                                Title
-                            </label>
-                            <input id="title"
-                                   type="text"
-                                   ng-model="new_review.description"
-                                   class="form-control"
-                                   placeholder="Review Title"/>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
+</form>
 
     <!-- Footer -->
     <nav class="navbar navbar-default navbar-fixed-bottom">

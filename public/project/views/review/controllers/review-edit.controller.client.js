@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module("WebAppMaker")
+        .module("omdbApp")
         .controller("reviewEditController", reviewEditController);
 
     function reviewEditController($location, $routeParams, reviewService) {

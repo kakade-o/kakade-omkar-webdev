@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="navbar-text pull-right">
-                    <a href="#!/user/{{model.userId}}/{{model.websiteId}}/review/new">
+                    <a href="#!/user/{{model.userId}}/review/new">
                         <span class="glyphicon glyphicon-plus white_color"></span>
                     </a>
                 </div>
@@ -54,8 +54,7 @@
             </li>
 
             <li ng-repeat="review in model.reviews" class="list-group-item">
-                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/widget" >
-                    {{review.name}}
+                <a href="#!/user/{{model.userId}}/{{review._id}}">
                 </a>
 
                 <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{review._id}}/edit">
