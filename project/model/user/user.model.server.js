@@ -10,12 +10,9 @@ userModel.deleteUser = deleteUser;
 userModel.addWebsite = addWebsite;
 userModel.deleteWebsite = deleteWebsite;
 userModel.findUserByUsername = findUserByUsername;
-<<<<<<< HEAD
 userModel.findCriticByUsername = findCriticByUsername;
-=======
 userModel.addMovie = addMovie;
 userModel.deleteMovie = deleteMovie;
->>>>>>> e6826990f059c6ea8ab793c72233ce17e521869c
 
 module.exports = userModel;
 
@@ -62,12 +59,12 @@ function deleteWebsite(userId, websiteId) {
         })
 }
 
-<<<<<<< HEAD
+
 function findCriticByUsername(criticUsername) {
     console.log(criticUsername);
     return userModel.findOne({username: criticUsername});
+}
 
-=======
 function addMovie(userId, imdbId) {
     return userModel
         .findUserById(userId)
@@ -91,5 +88,4 @@ function deleteMovie(userId, imdbId) {
             user.favorites.splice(index, 1);
             return user.save();
         })
->>>>>>> e6826990f059c6ea8ab793c72233ce17e521869c
 }
