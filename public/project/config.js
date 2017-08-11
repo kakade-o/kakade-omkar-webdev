@@ -47,6 +47,11 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/search", {
+                templateUrl: "views/search/templates/search_movie.view.client.html",
+                controller: "userSearchController",
+                controllerAs: "model"
+            })
 
 
             //Review
