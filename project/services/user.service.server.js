@@ -85,10 +85,8 @@ module.exports = function (app) {
     function findUserByCredentials(req, res) {
         var username = req.query['username'];
         var password = req.query['password'];
-        //console.log([username, password]);
 
         if(username && password) {
-
             userModel
                 .findUserByCredentials(username, password)
                 .then(function (user) {
@@ -111,14 +109,19 @@ module.exports = function (app) {
             return;
 
         } else if(username) {
-            for(u in users) {
-                if(users[u].username === username) {
-                    //return users[u];
-                    res.send(users[u]);
-                    return;
-                }
-            }
-            res.send("0");
+
+            // for(u in users) {
+            //     if(users[u].username === username) {
+            //         //return users[u];
+            //         res.send(users[u]);
+            //         return;
+            //     }
+            // }
+
+            userModel.findUserByUsername(username)
+                .then(function (user) {
+                    res.json(user);
+                });
         }
 
     }

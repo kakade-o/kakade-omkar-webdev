@@ -23,7 +23,7 @@
 
             function login(found) {
                 if(found !== null) {
-                    $location.url('/profile');
+                    $location.url('/profile/' + found._id);
                 } else {
                     model.errorMessage = "Username '" + username + "' not found. Please try again.";
                 }

@@ -50,16 +50,18 @@
                 userService.findUserByUsername(user.username)
                     .then(function (response) {
                         var _user = response.data;
-                        if(_user ==="0") {
-                            return userService.registerUser(user)
+                        console.log(response.data);
+                        if(!_user) {
+                            return userService
+                                .registerUser(user)
+                                .then(function (response) {
+                                _user = response.data;
+                                $location.url("/profile/" + _user._id);
+                            });
 
                         } else {
                             model.error = "User already exists";
                         }
-                    })
-                    .then(function (response) {
-                        _user = response.data;
-                        $location.url("/profile/" + _user._id);
                     });
             }
 
