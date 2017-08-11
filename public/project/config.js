@@ -53,6 +53,12 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/details/:imdbId", {
+                templateUrl: "views/search/templates/details_movie.view.client.html",
+                controller: "userDetailsController",
+                controllerAs: "model"
+            })
+
 
             //Review
             .when("/user/:userId/review", {

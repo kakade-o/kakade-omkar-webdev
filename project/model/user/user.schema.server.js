@@ -7,7 +7,7 @@ var userSchema = mongoose.Schema({
     dob: Date,
     isAdmin: Boolean,
     isCritic: Boolean,
-    // websites: [{type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel"}],
+    //websites: [{type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel"}],
     dateCreated: {type: Date, default: Date.now}
 }, {collection: "user"});
 
