@@ -25,7 +25,20 @@
         // }
 
         function renderUser(user) {
+            // console.log(user.following);
             model.user = user;
+            model.critics = [];
+
+            for (var u in model.user.following) {
+            userService
+                .findUserById(model.user.following[u])
+                .then(function (user) {
+                    model.critics.push(user)
+                })
+
+            }
+
+            console.log(model.user.following);
         }
 
         // function init() {

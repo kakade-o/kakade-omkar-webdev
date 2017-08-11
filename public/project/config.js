@@ -57,6 +57,8 @@
             .when("/user/:userId/following", {
                 templateUrl: "views/user/templates/following.view.client.html",
                 controller: "followingController",
+                controllerAs: "model"
+
             })
 
             .when("/user/:userId/favorites", {

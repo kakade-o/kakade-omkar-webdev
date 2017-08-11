@@ -47,10 +47,11 @@
         <li class="list-group-item active">
             Name
         </li>
-        <li ng-repeat="critic in model.user.following" class="list-group-item">
-            <a href="#!/user/{{model.userId}}/{{review._id}}">
-                {{model.user.following}}
-                <!--{{critic.username}}-->
+        <li ng-repeat="critic in model.critics" class="list-group-item">
+            <a>
+                    <!--href="#!/user/{{model.userId}}/{{review._id}}">-->
+                <!--{{model.user.following}}-->
+                {{critic.username}}
             </a>
 
             <a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">
@@ -58,3 +59,22 @@
             </a>
         </li>
     </ul>
+
+
+
+    <!--<table class="table">-->
+        <!--{{model.user.following}}-->
+        <!--<tr ng-repeat="critic in model.user.following" class="list-group-item">-->
+            <!--<td>-->
+
+                    <!--{{critic}}-->
+
+
+
+                <!--<a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">-->
+                    <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
+                <!--</a>-->
+            <!--</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+</div>
