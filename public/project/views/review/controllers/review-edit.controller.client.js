@@ -38,11 +38,11 @@
             model.updated = "Updated!";
         }
 
-        function removeReview(id) {
+        function removeReview(userId, reviewId) {
             reviewService
-                .deleteReview(id)
+                .deleteReview(userId, reviewId)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.reviewId + "/review");
+                    $location.url("/user/" + model.userId + "/review");
                 });
         }
 
