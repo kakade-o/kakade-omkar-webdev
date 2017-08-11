@@ -31,12 +31,13 @@ function findReviewByreviewname(reviewname) {
 
 function findReviewsForUser(userId) {
     return reviewModel
-        .find({_reviewId: userId})
+        .find({_reviewerId: userId})
         .populate('_reviewId', 'username')
         .exec();
 }
 
 function deleteReview(reviewId) {
+    console.log(reviewId);
     return reviewModel.remove({_id: reviewId});
 }
 

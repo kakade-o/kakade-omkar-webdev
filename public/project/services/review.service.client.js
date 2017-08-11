@@ -21,9 +21,9 @@
 
 
         // Deletes an existing review
-        function deleteReview(reviewId) {
+        function deleteReview(userId, reviewId) {
 
-            var url = "/api/project/review/" + reviewId;
+            var url = "/api/project/user/" + userId +"/review/" + reviewId;
             return $http.delete(url);
 
             // for(var p in reviews) {
@@ -48,9 +48,9 @@
         }
 
         // Finds a review requested by user by Id
-        function findReviewById(reviewId) {
+        function findReviewById(userId, reviewId) {
 
-            var url = "/api/project/review/" + reviewId;
+            var url = "/api/project/user/"+ userId + "/review/" + reviewId;
             return $http.get(url);
 
             // for(var p in reviews) {

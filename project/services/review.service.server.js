@@ -2,10 +2,10 @@ module.exports = function (app) {
 
     var reviewModel = require("../model/review/review.model.server");
 
-    app.get   ("/api/project/user/:userId/review", findReviewsForUser);
-    app.get   ("/api/project/user/:userId/review/:reviewId", findReviewById);
-    app.post  ("/api/project/user/:userId/review", createReview);
-    app.put   ("/api/project/review/:reviewId", updateReview);
+    app.get("/api/project/user/:userId/review", findReviewsForUser);
+    app.get("/api/project/user/:userId/review/:reviewId", findReviewById);
+    app.post("/api/project/user/:userId/review", createReview);
+    app.put("/api/project/review/:reviewId", updateReview);
     app.delete("/api/project/user/:userId/review/:reviewId", deleteReview);
 
 
@@ -42,7 +42,7 @@ module.exports = function (app) {
         var reviewId = req.params.reviewId;
         var userId = req.params.userId;
         reviewModel
-            .deleteReview(userId, reviewId)
+            .deleteReview(reviewId)
             .then(function (status) {
                 res.json(status);
             });
@@ -94,7 +94,7 @@ module.exports = function (app) {
     }
 
     function findReviewsForUser(req, res) {
-
+        console.log("in server");
         var userId = req.params.userId;
 
         reviewModel

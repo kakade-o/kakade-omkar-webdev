@@ -8,7 +8,7 @@
         var model = this;
 
         model.userId = $routeParams.userId;
-        model.websiteId = $routeParams.websiteId;
+        // model.websiteId = $routeParams.websiteId;
         model.reviewId = $routeParams.reviewId;
 
         model.updateReview = updateReview;
@@ -22,7 +22,7 @@
                 });
 
             reviewService
-                .findReviewById(model.reviewId)
+                .findReviewById(model.userId, model.reviewId)
                 .then(function (response) {
                     model.review = response.data;
                 })
@@ -33,15 +33,16 @@
             reviewService
                 .updateReview(review._id, review)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/review");
+                    $location.url("/user/" + model.userId + "/review");
                 });
+            model.updated = "Updated!";
         }
 
-        function removeReview(id) {
+        function removeReview(userId, reviewId) {
             reviewService
-                .deleteReview(id)
+                .deleteReview(userId, reviewId)
                 .then(function () {
-                    $location.url("/user/" + model.userId + "/" + model.websiteId + "/review");
+                    $location.url("/user/" + model.userId + "/review");
                 });
         }
 
