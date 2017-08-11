@@ -20,7 +20,8 @@
             "registerUser": registerUser,
             "findUserByUsername": findUserByUsername,
             "deleteUser": deleteUser,
-            "makeFavorite": makeFavorite
+            "makeFavorite": makeFavorite,
+            "followCritic": followCritic
         };
 
         return api;
@@ -120,6 +121,16 @@
 
         function makeFavorite(userId, imdbId) {
             var url = "/api/project/user/" + userId + "/imdb/" + imdbId;
+
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
+
+        }
+
+        function followCritic(userId, criticId) {
+            var url = "/api/project/user/" + userId + "/criticSearch/" + criticId;
 
             return $http.get(url)
                 .then(function (response) {

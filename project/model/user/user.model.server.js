@@ -13,6 +13,7 @@ userModel.findUserByUsername = findUserByUsername;
 userModel.findCriticByUsername = findCriticByUsername;
 userModel.addMovie = addMovie;
 userModel.deleteMovie = deleteMovie;
+userModel.addCritic = addCritic;
 
 module.exports = userModel;
 
@@ -86,6 +87,37 @@ function deleteMovie(userId, imdbId) {
         .then(function (user) {
             var index = user.favorites.indexOf(imdbId);
             user.favorites.splice(index, 1);
+            return user.save();
+        });
+}
+
+
+
+//Critic Functions
+
+function addCritic(userId, criticId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+
+            var index = -1;
+            index = user.following.indexOf(criticId);
+            if (index == -1) {
+                user.following.push(criticId);
+                return user.save();
+            }
+            return user;
+        })
+}
+
+
+
+function deleteMovie(userId, criticId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            var index = user.following.indexOf(criticId);
+            user.following.splice(index, 1);
             return user.save();
         });
 }

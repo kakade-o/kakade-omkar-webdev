@@ -8,6 +8,7 @@ module.exports = function (app) {
     app.put   ("/api/project/user/:userId", updateUser);
     app.get   ("/api/project/user/:userId/imdb/:imdbId", addMovie);
     app.delete("/api/project/user/:userId", deleteUser);
+    app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -48,6 +49,18 @@ module.exports = function (app) {
             })
 
     }
+
+    function followCritic(req, res) {
+        var userId = req.params.userId;
+        var criticId = req.params.criticId;
+        userModel
+            .addCritic(userId, criticId)
+            .then(function (status) {
+                res.json(status);
+            })
+
+    }
+
 
     function registerUser(req, res) {
         var user = req.body;

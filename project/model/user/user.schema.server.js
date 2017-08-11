@@ -9,6 +9,7 @@ var userSchema = mongoose.Schema({
     isCritic: Boolean,
     //websites: [{type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel"}],
     favorites: [{type: String}],
+    following: [{type: mongoose.Schema.Types.ObjectId, ref: "ProjectUserModel"}],
     dateCreated: {type: Date, default: Date.now}
 }, {collection: "user"});
 

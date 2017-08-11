@@ -28,8 +28,12 @@
 <table class="table">
     <tr>
         <td>
-            <a href="#!/details/{{movie.imdbID}}">
+            <a
+               ng-click="model.addCritic(model.critics._id)"
+               class = "btn btn-success">
+                Critic:
                 {{model.critics.username}}
+
             </a>
         </td>
     </tr>
