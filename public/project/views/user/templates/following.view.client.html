@@ -1,0 +1,60 @@
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+
+    <!--<div class="navbar-text pull-right">-->
+        <!--<a class="btn btn-danger btn-block"-->
+           <!--href="#!/">Logout</a>-->
+    <!--</div>-->
+
+    <!--<div class="navbar-header">-->
+        <!--<a class="navbar-brand">-->
+            <!--<span class="white_color x-large_font_size">Critic Search</span>-->
+        <!--</a>-->
+    <!--</div>-->
+
+<!--</nav>-->
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="blog-masthead">
+        <div class="container-fluid">
+
+            <div class="navbar-text pull-left">
+                <a href="#!/profile/{{model.user._id}}/">
+                    <span class = "glyphicon glyphicon-chevron-left white_color"></span>
+                </a>
+            </div>
+
+            <div class="navbar-text pull-right">
+                <a href="#!/user/{{model.userId}}/review/new">
+                    <span class="glyphicon glyphicon-plus white_color"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <span class="white_color x-large_font_size">Followed Critics</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+
+    <ul class="list-group">
+        <li class="list-group-item active">
+            Name
+        </li>
+        <li ng-repeat="critic in model.user.following" class="list-group-item">
+            <a href="#!/user/{{model.userId}}/{{review._id}}">
+                {{model.user.following}}
+                <!--{{critic.username}}-->
+            </a>
+
+            <a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">
+                <span class="pull-right glyphicon glyphicon-cog"></span>
+            </a>
+        </li>
+    </ul>
