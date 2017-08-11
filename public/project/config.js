@@ -39,6 +39,12 @@
                 controllerAs: "model"
             })
 
+            .when("/criticProfile/:userId", {
+                templateUrl: "views/user/templates/criticProfile.view.client.html",
+                controller: "criticProfileController",
+                controllerAs: "model"
+            })
+
     }
     
 })();
