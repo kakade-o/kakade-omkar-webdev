@@ -6,6 +6,7 @@ module.exports = function (app) {
     app.get   ('/api/project/user', findUserByCredentials);
     app.post  ('/api/project/profile', registerUser);
     app.put   ("/api/project/user/:userId", updateUser);
+    app.get   ("/api/project/user/:userId/imdb/:imdbId", addMovie);
     app.delete("/api/project/user/:userId", deleteUser);
 
     var users = [
@@ -35,6 +36,17 @@ module.exports = function (app) {
         //     }
         // }
         // return res.sendStatus(404);
+    }
+
+    function addMovie(req, res) {
+        var userId = req.params.userId;
+        var imdbId = req.params.imdbId;
+        userModel
+            .addMovie(userId, imdbId)
+            .then(function (status) {
+                res.json(status);
+            })
+
     }
 
     function registerUser(req, res) {

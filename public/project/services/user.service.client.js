@@ -19,7 +19,8 @@
             "findUserById": findUserById,
             "registerUser": registerUser,
             "findUserByUsername": findUserByUsername,
-            "deleteUser": deleteUser
+            "deleteUser": deleteUser,
+            "makeFavorite": makeFavorite
         };
 
         return api;
@@ -116,6 +117,17 @@
             // return null;
 
         }
+
+        function makeFavorite(userId, imdbId) {
+            var url = "/api/project/user/" + userId + "/imdb/" + imdbId;
+
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
+
+        }
+
         
     }
     
