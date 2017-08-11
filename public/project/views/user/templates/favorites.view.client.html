@@ -5,6 +5,12 @@
            href="#!/">Logout</a>
     </div>
 
+    <div class="navbar-text pull-left">
+        <a href="#!/profile/{{model.userId}}">
+            <span class = "glyphicon glyphicon-chevron-left "></span>
+        </a>
+    </div>
+
     <div class="navbar-header">
         <a class="navbar-brand">
             <span class="white_color x-large_font_size">Critic Search</span>
@@ -12,3 +18,19 @@
     </div>
 
 </nav>
+
+<h2>Favorites</h2>
+
+<table class="table">
+    <tr ng-repeat="movie in model.movieArray">
+        <td>
+                {{movie.Title}}
+        </td>
+        <td>
+            <img ng-src="{{movie.Poster}}"/>
+        </td>
+        <td>
+            {{movie.Plot}}
+        </td>
+    </tr>
+</table>

@@ -53,6 +53,12 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/favorites", {
+                templateUrl: "views/user/templates/favorites.view.client.html",
+                controller: "favoritesController",
+                controllerAs: "model"
+            })
+
 
             //Critic User
             .when("/criticProfile/:userId", {
