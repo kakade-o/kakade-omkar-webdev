@@ -21,7 +21,9 @@
         }
 
         function renderCritics(critics) {
+            console.log("inside renderCritics");
             model.critics = critics;
+            console.log(critics);
         }
     }
 

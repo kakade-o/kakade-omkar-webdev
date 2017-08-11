@@ -15,7 +15,8 @@
             return $http.get(url)
                 .then(function (response) {
                     if (response.data.isCritic === true) {
-                        return response.data;
+                        var critics = response.data
+                        return critics;
                     }
                     else {
                         return (err);
