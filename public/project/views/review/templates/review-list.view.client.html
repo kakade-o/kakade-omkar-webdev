@@ -55,6 +55,7 @@
 
             <li ng-repeat="review in model.reviews" class="list-group-item">
                 <a href="#!/user/{{model.userId}}/{{review._id}}">
+                    {{review.reviewname}}
                 </a>
 
                 <a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">
@@ -62,6 +63,9 @@
                 </a>
             </li>
         </ul>
+
+
+
 
         <!--<ul class="nav nav-pills nav-stacked">-->
             <!--<li role="presentation">-->
