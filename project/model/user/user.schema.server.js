@@ -8,6 +8,7 @@ var userSchema = mongoose.Schema({
     isAdmin: Boolean,
     isCritic: Boolean,
     //websites: [{type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel"}],
+    favorites: [{type: String}],
     dateCreated: {type: Date, default: Date.now}
 }, {collection: "user"});
 

@@ -3,11 +3,13 @@
         .module("omdbApp")
         .controller("userDetailsController", userDetailsController);
 
-    function userDetailsController(movieService, $routeParams) {
+    function userDetailsController(movieService, $routeParams, userService) {
        var model = this;
 
         model.userId = $routeParams.userId;
         model.imdbId = $routeParams.imdbId;
+
+        model.makeFavorite = makeFavorite;
 
         function init() {
             movieService
@@ -20,6 +22,11 @@
             model.movie = movie;
             console.log(model.movie);
 
+        }
+
+        function makeFavorite() {
+            userService
+                .makeFavorite(model.userId, model.imdbId);
         }
 
 

@@ -10,6 +10,8 @@ userModel.deleteUser = deleteUser;
 userModel.addWebsite = addWebsite;
 userModel.deleteWebsite = deleteWebsite;
 userModel.findUserByUsername = findUserByUsername;
+userModel.addMovie = addMovie;
+userModel.deleteMovie = deleteMovie;
 
 module.exports = userModel;
 
@@ -52,6 +54,31 @@ function deleteWebsite(userId, websiteId) {
         .then(function (user) {
             var index = user.websites.indexOf(websiteId);
             user.websites.splice(index, 1);
+            return user.save();
+        })
+}
+
+function addMovie(userId, imdbId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+
+            var index = -1;
+            index = user.favorites.indexOf(imdbId);
+            if(index == -1) {
+                user.favorites.push(imdbId);
+                return user.save();
+            }
+            return user;
+        })
+}
+
+function deleteMovie(userId, imdbId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            var index = user.favorites.indexOf(imdbId);
+            user.favorites.splice(index, 1);
             return user.save();
         })
 }
