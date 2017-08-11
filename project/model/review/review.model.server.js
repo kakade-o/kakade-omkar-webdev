@@ -5,7 +5,7 @@ var reviewModel = mongoose.model("ProjectReviewModel", reviewSchema);
 reviewModel.createReview = createReview;
 reviewModel.findReviewById = findReviewById;
 reviewModel.updateReview = updateReview;
-reviewModel.findReviewByCredentials = findReviewByCredentials;
+reviewModel.findReviewsForUser = findReviewsForUser;
 reviewModel.deleteReview = deleteReview;
 // reviewModel.addWebsite = addWebsite;
 // reviewModel.deleteWebsite = deleteWebsite;
@@ -29,8 +29,11 @@ function findReviewByreviewname(reviewname) {
     return reviewModel.findOne({reviewname: reviewname});
 }
 
-function findReviewByCredentials(reviewname, password) {
-    return reviewModel.findOne({reviewname: reviewname, password: password});
+function findReviewsForUser(userId) {
+    return reviewModel
+        .find({_user: userId})
+        .populate('_user', 'username')
+        .exec();
 }
 
 function deleteReview(reviewId) {

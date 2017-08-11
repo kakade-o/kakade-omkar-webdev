@@ -25,7 +25,7 @@
 
         function newReview(review) {
             reviewService
-                .createReview(model.reviewId, review)
+                .createReview(model.userId, review)
                 .then(function () {
                     $location.url("/user/"+model.userId+"/review");
                 })

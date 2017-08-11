@@ -12,7 +12,7 @@
 
         function init() {
             reviewService
-                .findReviewByreviewId(model.reviewId)
+                .findReviewByUserId(model.userId)
                 .then(function (reviews) {
                     model.reviews = reviews;
                 });

@@ -58,13 +58,13 @@
 
             .when("/user/:userId/review/new", {
                 templateUrl: "views/review/templates/review-new.view.client.html",
-                controller: "reviewListController",
+                controller: "reviewNewController",
                 controllerAs: "model"
             })
 
             .when("/user/:userId/review/:reviewId/edit", {
                 templateUrl: "views/review/templates/review-edit.view.client.html",
-                controller: "reviewListController",
+                controller: "reviewEditController",
                 controllerAs: "model"
             })
 

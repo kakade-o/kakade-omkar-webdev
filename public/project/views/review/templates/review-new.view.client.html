@@ -16,13 +16,13 @@
             <div class="container-fluid">
 
                 <div class="navbar-text pull-left">
-                    <a href="#!/user/{{model.userId}}/{{model.reviewId}}/review">
+                    <a href="#!/user/{{model.userId}}/review">
                         <span class = "glyphicon glyphicon-chevron-left white_color"></span>
                     </a>
                 </div>
 
                 <div class="navbar-text pull-right">
-                    <a ng-click="model.newReview(new_review)" role="button">
+                    <a ng-click="model.newReview(model.review)" role="button">
                         <span class="glyphicon glyphicon-ok white_color"></span>
                     </a>
                 </div>
@@ -36,6 +36,32 @@
             </div>
         </div>
     </nav>
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
+
+    <form>
+        <label for="Name">
+            Name
+        </label>
+        <input id="Name"
+               ng-model="model.review.name"
+               type="text"
+               class="form-control"
+               placeholder="Name">
+        <br/>
+        <label for="Description">
+            Description
+        </label>
+        <textarea class="form-control"
+                  ng-model="model.review.description"
+                  id="Description"
+                  rows="5"
+                  placeholder="Description"></textarea>
+
+    </form>
+
+</div>
 
 <form>
     <div class="form-group">
