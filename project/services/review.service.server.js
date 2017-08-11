@@ -94,7 +94,6 @@ module.exports = function (app) {
     }
 
     function findReviewsForUser(req, res) {
-        console.log("in server");
         var userId = req.params.userId;
 
         reviewModel

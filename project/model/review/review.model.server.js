@@ -37,7 +37,7 @@ function findReviewsForUser(userId) {
 }
 
 function deleteReview(reviewId) {
-    console.log(reviewId);
+
     return reviewModel.remove({_id: reviewId});
 }
 

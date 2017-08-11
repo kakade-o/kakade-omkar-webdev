@@ -62,7 +62,7 @@ function deleteWebsite(userId, websiteId) {
 
 
 function findCriticByUsername(criticUsername) {
-    console.log(criticUsername);
+
     return userModel.findOne({username: criticUsername});
 }
 

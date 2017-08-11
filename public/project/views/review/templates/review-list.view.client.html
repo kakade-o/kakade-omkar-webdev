@@ -137,19 +137,15 @@
     </div>
 
 
-    <!-- Footer -->
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="blog-masthead">
-            <div class="container-fluid">
-                <div class="navbar-text pull-right"
-                >
-                    <a href="#!/profile/{{model.userId}}">
-                        <span class="glyphicon glyphicon-user white_color"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+
+    <div class="navbar-text pull-right">
+        <a ng-click="model.toProfile()">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+
+</nav>
 
     <!--</body>-->
 <!--</html>-->
