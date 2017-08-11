@@ -1,0 +1,51 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar-text pull-right">
+        <a class="btn btn-danger btn-block"
+           href="#!/">Logout</a>
+    </div>
+
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <span class="white_color x-large_font_size">Search Movies</span>
+        </a>
+    </div>
+
+</nav>
+
+<h2>Search by Movie Title</h2>
+<input placeholder="titanic"
+       ng-model="movieTitle"
+       id="searchByTitleFld"
+       class="form-control">
+<br/>
+<button id="searchByTitleBtn"
+        ng-click="model.searchMovieByTitle(movieTitle)"
+        class="btn btn-block btn-primary">
+    Search
+</button>
+
+<table class="table">
+    <tr ng-repeat="movie in model.movies.Search">
+        <td>
+            <a href="#!/user/{{model.userId}}/details/{{movie.imdbID}}">
+                {{movie.Title}}
+            </a>
+        </td>
+        <td>
+            <img ng-src="{{movie.Poster}}"/>
+        </td>
+    </tr>
+</table>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+
+            <div class="navbar-text pull-right">
+                <a ng-click="model.toProfile()">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+
+</nav>

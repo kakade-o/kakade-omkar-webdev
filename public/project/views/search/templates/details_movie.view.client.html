@@ -1,0 +1,99 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar-text pull-left">
+        <a href="#!/user/{{model.userId}}/search">
+            <span class = "glyphicon glyphicon-chevron-left "></span>
+        </a>
+    </div>
+
+    <div class="navbar-text pull-right">
+        <a class="btn btn-danger btn-block"
+           href="#!/">Logout</a>
+    </div>
+
+    <div class="navbar-text pull-right">
+        <a class="btn btn-warning btn-block" ng-click="model.makeFavorite()">
+            Like
+        </a>
+    </div>
+
+
+
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <span class="white_color x-large_font_size">Movie Details</span>
+        </a>
+    </div>
+
+</nav>
+
+<div class="ok-padding-top">
+    <h1>{{model.movie.Title}}</h1>
+    <br/>
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-3">
+        <img src="{{model.movie.Poster}}">
+    </div>
+
+    <div class="col-md-5">
+        {{model.movie.Plot}}
+    </div>
+
+    <div class="col-md-4">
+        <table class="table table-bordered">
+
+            <tr>
+                <td><b>Director</b></td>
+                <td>{{model.movie.Director}}</td>
+            </tr>
+            <tr>
+                <td> <b>Year</b></td>
+                <td>{{model.movie.Year}}</td>
+            </tr>
+            <tr>
+                <td><b>Rated</b></td>
+                <td>{{model.movie.Rated}}</td>
+            </tr>
+            <tr>
+                <td><b>Released</b></td>
+                <td>{{model.movie.Released}}</td>
+            </tr>
+            <tr>
+                <td><b>Genre</b></td>
+                <td>{{model.movie.Genre}}</td>
+            </tr>
+            <tr>
+                <td><b>Runtime</b></td>
+                <td>{{model.movie.Runtime}}</td>
+            </tr>
+            <tr>
+                <td><b>Country</b></td>
+                <td>{{model.movie.Country}}</td>
+            </tr>
+            <tr>
+                <td><b>IMDb Rating</b></td>
+                <td>{{model.movie.imdbRating}}</td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+
+    <div class="navbar-text pull-right">
+        <a ng-click="model.toProfile()">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+
+</nav>
+
+
+

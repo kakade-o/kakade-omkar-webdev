@@ -1,0 +1,46 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar-text pull-right">
+        <a class="btn btn-danger btn-block"
+           href="#!/">Logout</a>
+    </div>
+
+    <div class="navbar-text pull-left">
+        <a href="#!/profile/{{model.userId}}">
+            <span class = "glyphicon glyphicon-chevron-left "></span>
+        </a>
+    </div>
+
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <span class="white_color x-large_font_size">Critic Search</span>
+        </a>
+    </div>
+
+</nav>
+
+<h2>Search For Critic By Username</h2>
+<input placeholder="titanic"
+       ng-model="model.criticUsername"
+       id="searchByTitleFld"
+       class="form-control">
+<br/>
+<button id="searchByTitleBtn"
+        ng-click="model.searchCriticByUsername(model.criticUsername)"
+        class="btn btn-block btn-primary">
+    Search
+</button>
+
+<table class="table">
+    <tr>
+        <td>
+            <a
+               ng-click="model.addCritic(model.critics._id)"
+               class = "btn btn-success">
+                Critic:
+                {{model.critics.username}}
+
+            </a>
+        </td>
+    </tr>
+</table>
