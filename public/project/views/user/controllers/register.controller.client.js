@@ -50,13 +50,16 @@
                 userService.findUserByUsername(user.username)
                     .then(function (response) {
                         var _user = response.data;
-                        console.log(response.data);
                         if(!_user) {
                             return userService
                                 .registerUser(user)
                                 .then(function (response) {
                                 _user = response.data;
-                                $location.url("/profile/" + _user._id);
+                                if(user.isCritic ==  true) {
+                                    $location.url("/criticProfile/" + _user._id);
+                                } else {
+                                    $location.url("/profile/" + _user._id);
+                                }
                             });
 
                         } else {
