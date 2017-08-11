@@ -81,7 +81,6 @@
 
         // Creates a new review
         function createReview(userId, review) {
-
             var url = '/api/project/user/' + userId + '/review';
             return $http.post(url, review);
 

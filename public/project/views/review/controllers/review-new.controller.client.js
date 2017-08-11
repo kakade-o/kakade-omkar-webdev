@@ -24,6 +24,7 @@
 
 
         function newReview(review) {
+            console.log("inside controller");
             reviewService
                 .createReview(model.userId, review)
                 .then(function () {

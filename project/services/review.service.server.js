@@ -9,22 +9,24 @@ module.exports = function (app) {
     app.delete("/api/project/user/:userId/review/:reviewId", deleteReview);
 
 
-    var reviews = [
-        { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
-        { "_id": "234", "name": "Tweeter",     "developerId": "456", "description": "Lorem" },
-        { "_id": "456", "name": "Gizmodo",     "developerId": "456", "description": "Lorem" },
-        { "_id": "890", "name": "Go",          "developerId": "123", "description": "Lorem" },
-        { "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
-        { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
-        { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
-    ];
+    // var reviews = [
+    //     { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
+    //     { "_id": "234", "name": "Tweeter",     "developerId": "456", "description": "Lorem" },
+    //     { "_id": "456", "name": "Gizmodo",     "developerId": "456", "description": "Lorem" },
+    //     { "_id": "890", "name": "Go",          "developerId": "123", "description": "Lorem" },
+    //     { "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
+    //     { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
+    //     { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
+    // ];
 
     function createReview(req, res) {
         var review = req.body;
         var userId = req.params.userId;
 
+        review._reviewerId = userId;
+
         reviewModel
-            .createReview(userId ,review)
+            .createReview(review)
             .then(function (review) {
                 res.json(review);
             });
