@@ -7,32 +7,6 @@
 
         var model = this;
 
-        // model.registerUser = function registerUser(user) {
-        //
-        //     userService
-        //         .findUserByUsername(user.username)
-        //         .then(register, handleError);
-        //
-        //     function handleError(error) {
-        //         model.error = "User already exists. Please use another username.";
-        //     }
-        //
-        //     function register(new_user) {
-        //         if(!new_user) {
-        //              if(new_user.password !== new_user.password2) {
-        //                  model.error = "Passwords must match!";
-        //              } else {
-        //                  var user = userService.registerUser(user);
-        //                  $location.url("/profile/" + new_user._id)
-        //              }
-        //
-        //          } else {
-        //              model.error = "User already exists";
-        //          }
-        //     }
-        //
-        // }
-
         model.registerUser = registerUser;
 
         function init() {
@@ -65,24 +39,6 @@
             }
 
             }
-
-        // function registerUser(user) {
-        //     var promise =
-        //
-        //      var _user = userService.findUserByUsername(user.username);
-        //      if(!_user) {
-        //          if(user.password !== user.password2) {
-        //              model.error = "Passwords must match!";
-        //          } else {
-        //              var user = userService.registerUser(user);
-        //              $location.url("/profile/" + user._id)
-        //          }
-        //
-        //      } else {
-        //          model.error = "User already exists";
-        //      }
-        //
-        // }
 
     }
 

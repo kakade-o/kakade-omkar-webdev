@@ -27,14 +27,6 @@ module.exports = function (app) {
                 res.sendStatus(404).send(err);
             });
 
-        // for(var u in users) {
-        //     if(users[u]._id === userId) {
-        //         users[u] = user;
-        //         res.send(user);
-        //         return;
-        //     }
-        // }
-        // return res.sendStatus(404);
     }
 
     function registerUser(req, res) {
@@ -44,9 +36,7 @@ module.exports = function (app) {
             .then(function (user) {
                 res.json(user);
             })
-        // user._id = (new Date()).getTime() + "";
-        // users.push(user);
-        // res.send(user);
+
     }
 
     function deleteUser(req, res) {
@@ -58,12 +48,6 @@ module.exports = function (app) {
                 res.sendStatus(200);
             })
 
-        // for (var u in users) {
-        //     if(users[u]._id === userId) {
-        //         users.splice(u, 1);
-        //         res.sendStatus(200);
-        //     }
-        // }
     }
 
     function findUserById(req, res) {
@@ -74,12 +58,7 @@ module.exports = function (app) {
             .then(function (user) {
                 res.json(user);
             })
-        
-        // var user = users.find(function (user) {
-        //    return user._id === userId;
-        // });
-        //
-        // res.send(user);
+
     }
 
     function findUserByCredentials(req, res) {
@@ -99,15 +78,6 @@ module.exports = function (app) {
                     return;
                 });
 
-            // for(var u in users) {
-            //     var user = users[u];
-            //     if(user.username === username &&
-            //         user.password === password) {
-            //         res.json(user);
-            //         return;
-            //     }
-            // }
-            // res.sendStatus(404);
             return;
 
         } else if(username) {
@@ -117,14 +87,6 @@ module.exports = function (app) {
                     res.json(user);
                 })
 
-            // for(u in users) {
-            //     if(users[u].username === username) {
-            //         //return users[u];
-            //         res.send(users[u]);
-            //         return;
-            //     }
-            // }
-            // res.send("0");
         }
 
     }

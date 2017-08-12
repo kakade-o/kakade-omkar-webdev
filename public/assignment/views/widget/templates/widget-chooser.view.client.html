@@ -1,64 +1,51 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-    <!--<head>-->
-        <!--<meta charset="UTF-8">-->
-        <!--<title>Widget Chooser</title>-->
-        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
-        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
-    <!--</head>-->
-    <!--<body>-->
-        <!-- Header -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="blog-masthead">
-                <div class="container-fluid">
 
-                    <div class="navbar-text pull-left">
-                        <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
-                            <span class = "glyphicon glyphicon-chevron-left white_color"></span>
-                        </a>
-                    </div>
+<!-- Header -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="blog-masthead">
+        <div class="container-fluid">
 
-                    <div class="navbar-header">
-                        <a class="navbar-brand">
-                            <span class="white_color x-large_font_size">Choose Widget</span>
-                        </a>
-                    </div>
-
-                </div>
+            <div class="navbar-text pull-left">
+                <a href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
+                    <span class = "glyphicon glyphicon-chevron-left white_color"></span>
+                </a>
             </div>
-        </nav>
 
-        <div class="container">
-            <ul class="nav nav-sidebar">
-                <li><a href="" ng-click="model.createWidget('HEADING')">
-                    Heading</a></li>
-                <li><a href="" ng-click="model.createWidget('IMAGE')">
-                    Image</a></li>
-                <li><a href="" ng-click="model.createWidget('YOUTUBE')">
-                    YouTube</a></li>
-                <li><a href="" ng-click="model.createWidget('HTML')">
-                    HTML</a> </li>
-                <li><a href="" ng-click="model.createWidget('TEXT')">
-                    Text</a> </li>
-            </ul>
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <span class="white_color x-large_font_size">Choose Widget</span>
+                </a>
+            </div>
+
         </div>
+    </div>
+</nav>
 
-        <!-- Footer -->
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="blog-masthead">
-                <div class="container-fluid">
-                    <div class="navbar-text pull-right"
-                    >
-                        <a href="#!/profile/{{model.userId}}">
-                            <span class="glyphicon glyphicon-user white_color"></span>
-                        </a>
-                    </div>
-                </div>
+<div class="container">
+    <ul class="nav nav-sidebar">
+        <li><a href="" ng-click="model.createWidget('HEADING')">
+            Heading</a></li>
+        <li><a href="" ng-click="model.createWidget('IMAGE')">
+            Image</a></li>
+        <li><a href="" ng-click="model.createWidget('YOUTUBE')">
+            YouTube</a></li>
+        <li><a href="" ng-click="model.createWidget('HTML')">
+            HTML</a> </li>
+        <li><a href="" ng-click="model.createWidget('TEXT')">
+            Text</a> </li>
+    </ul>
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="blog-masthead">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right"
+            >
+                <a href="#!/profile/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user white_color"></span>
+                </a>
             </div>
-        </nav>
+        </div>
+    </div>
+</nav>
 
-    <!--</body>-->
-<!--</html>-->

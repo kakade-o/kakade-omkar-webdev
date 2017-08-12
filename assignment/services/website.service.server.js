@@ -29,11 +29,6 @@ module.exports = function (app) {
                 res.json(website);
             });
 
-        // website.developerId = userId;
-        // website._id = (new Date()).getTime() + "";
-        //
-        // websites.push(website);
-        // res.json(website);
     }
 
     function deleteWebsite(req, res) {
@@ -45,12 +40,6 @@ module.exports = function (app) {
                res.json(status);
             });
 
-        // for(var w in websites) {
-        //     if(websites[w]._id === websiteId) {
-        //         websites.splice(w, 1);
-        //         res.sendStatus(200);
-        //     }
-        // }
 
     }
 
@@ -64,14 +53,6 @@ module.exports = function (app) {
                 res.json(website);
             })
 
-        // for(var w in websites) {
-        //     if(websites[w]._id === req.params.websiteId) {
-        //         websites[w] = website;
-        //         res.send(website);
-        //     }
-        // }
-        // res.sendStatus(404);
-
     }
 
     function findWebsiteById(req, res) {
@@ -82,13 +63,6 @@ module.exports = function (app) {
                 res.json(website);
             })
 
-
-        // for(var w in websites) {
-        //     if(websites[w]._id === req.params.websiteId) {
-        //         res.json(websites[w]);
-        //     }
-        // }
-        // res.sendStatus(404);
     }
 
     function findWebsitesForUser(req, res) {
@@ -100,15 +74,6 @@ module.exports = function (app) {
             .then(function (websites) {
                 res.json(websites);
             });
-
-        // var sites = [];
-        //
-        // for(var w in websites) {
-        //     if(websites[w].developerId === userId) {
-        //         sites.push(websites[w]);
-        //     }
-        // }
-        // res.json(sites);
 
     }
 

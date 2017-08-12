@@ -7,11 +7,6 @@
 
     function pageService($http) {
 
-        // var pages = [
-        //     { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
-        //     { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
-        //     { "_id": "543", "name": "Post 3", "websiteId": "456", "description": "Lorem" }
-        // ];
         
         this.findPageByWebsiteId = findPageByWebsiteId;
         this.createPage = createPage;
@@ -30,11 +25,6 @@
                     return response.data;
                 });
 
-            // for(var p in pages) {
-            //     if(pages[p]._id === id) {
-            //         pages.splice(p, 1);
-            //     }
-            // }
         }
 
         // Updates details of an an existing page
@@ -44,11 +34,6 @@
 
             return $http.put(url, page);
 
-            // for(var p in pages) {
-            //     if(pages[p]._id === id) {
-            //         pages[p] = page;
-            //     }
-            // }
         }
 
         // Finds a page requested by user by Id
@@ -57,11 +42,7 @@
             var url = "/api/page/" + pageId;
             return $http.get(url);
 
-            // for(var p in pages) {
-            //     if(pages[p]._id === pageId) {
-            //         return pages[p];
-            //     }
-            // }
+
         }
 
         // Finds the list of pages in a website of a user
@@ -71,15 +52,6 @@
                 .then(function (response) {
                     return response.data;
                 });
-
-            // var page = [];
-            //
-            // for(var p in pages) {
-            //     if(pages[p].websiteId === siteId) {
-            //         page.push(pages[p]);
-            //     }
-            // }
-            // return page;
 
         }
 
@@ -93,9 +65,6 @@
                     return response.data;
                 });
 
-            // page.websiteId = websiteId;
-            // page._id = (new Date()).getTime() + "";
-            // pages.push(page);
         }
 
 

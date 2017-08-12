@@ -29,11 +29,6 @@
             var url = "/api/user/" + userId;
             return $http.delete(url);
 
-            // for (var u in users) {
-            //     if(users[u]._id === userId) {
-            //         users.splice(u, 1);
-            //     }
-            // }
         }
 
         // updates the info of an existing user
@@ -43,13 +38,6 @@
 
             return $http.put(url, user);
 
-            // for(var u in users) {
-            //     if(users[u]._id === userId) {
-            //         users[u] = user;
-            //         return;
-            //     }
-            // }
-            // return null;
         }
 
         // Finds user by username only
@@ -58,12 +46,7 @@
             var url = "/api/user?username=" + username;
             return $http.get(url);
 
-            // for(u in users) {
-            //     if(users[u].username === username) {
-            //         return users[u];
-            //     }
-            // }
-            // return null;
+
         }
 
         // Registers a new user
@@ -73,9 +56,6 @@
 
             return $http.post(url, user);
 
-            // user._id = (new Date()).getTime() + "";
-            // users.push(user);
-            // return user;
         }
 
         // Finds user by username and password
@@ -88,15 +68,6 @@
                     return response.data;
                 })
 
-            // for (var u in users) {
-            //     var _user = users[u];
-            //     if(_user.username === username && _user.password === password) {
-            //         return _user;
-            //     }
-            //
-            // }
-            // return null;
-
         }
 
         // Finds the user by ID
@@ -107,13 +78,6 @@
                 .then(function (response) {
                     return response.data;
                 })
-
-            // for(u in users) {
-            //     if(users[u]._id === userId) {
-            //         return users[u];
-            //     }
-            // }
-            // return null;
 
         }
         

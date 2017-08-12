@@ -25,11 +25,6 @@ module.exports = function (app) {
                 res.json(page);
             });
 
-        // page.websiteId = websiteId;
-        // page._id = (new Date()).getTime() + "";
-        //
-        // pages.push(page);
-        // res.json(page);
     }
 
     function deletePage(req, res) {
@@ -42,12 +37,6 @@ module.exports = function (app) {
                 res.json(status);
             });
 
-        // for(var p in pages) {
-        //     if(pages[p]._id === pageId) {
-        //         pages.splice(p, 1);
-        //         res.sendStatus(200);
-        //     }
-        // }
     }
 
     function updatePage(req, res) {
@@ -61,13 +50,6 @@ module.exports = function (app) {
                 res.json(page);
             });
 
-        // for(var p in pages) {
-        //     if(pages[p]._id === req.params.pageId) {
-        //         pages[p] = page;
-        //         res.send(page);
-        //     }
-        // }
-        // res.sendStatus(404);
 
     }
 
@@ -81,12 +63,6 @@ module.exports = function (app) {
                 res.json(page);
             })
 
-        // for(var p in pages) {
-        //     if(pages[p]._id === req.params.pageId) {
-        //         res.json(pages[p]);
-        //     }
-        // }
-        // res.sendStatus(404);
     }
 
 
@@ -99,14 +75,6 @@ module.exports = function (app) {
                 res.json(pages);
             })
 
-        // var page = [];
-        //
-        // for(var p in pages) {
-        //     if(pages[p].websiteId === websiteId) {
-        //         page.push(pages[p]);
-        //     }
-        // }
-        // res.json(page);
     }
 
 };

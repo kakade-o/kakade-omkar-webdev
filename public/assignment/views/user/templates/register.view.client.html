@@ -1,42 +1,30 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>Title</title>-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
-          <!--rel="stylesheet"/>-->
-    <!--<link href="../../css/style.css" rel="stylesheet"/>-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
-<!--</head>-->
-<!--<body>-->
-    <div class="container">
 
-        <div ng-show="model.error" class="alert alert-danger">
-            {{model.error}}
-        </div>
+<div class="container">
 
-        <h1>Register</h1>
-
-        <input type="text"
-               class="form-control"
-               ng-model="user.username"
-               placeholder="username"/>
-
-        <input type="password"
-               ng-model="user.password"
-               class="form-control"
-               placeholder="password"/>
-
-        <input type="password"
-               ng-model="user.password2"
-               class="form-control"
-               placeholder="verify password"/>
-
-        <a class="btn btn-primary btn-block"
-           ng-click="model.registerUser(user)">Register</a>
-
-        <a class="btn btn-danger  btn-block"
-           href="#!/login">Cancel</a>
+    <div ng-show="model.error" class="alert alert-danger">
+        {{model.error}}
     </div>
-<!--</body>-->
-<!--</html>-->
+
+    <h1>Register</h1>
+
+    <input type="text"
+           class="form-control"
+           ng-model="user.username"
+           placeholder="username"/>
+
+    <input type="password"
+           ng-model="user.password"
+           class="form-control"
+           placeholder="password"/>
+
+    <input type="password"
+           ng-model="user.password2"
+           class="form-control"
+           placeholder="verify password"/>
+
+    <a class="btn btn-primary btn-block"
+       ng-click="model.registerUser(user)">Register</a>
+
+    <a class="btn btn-danger  btn-block"
+       href="#!/login">Cancel</a>
+</div>
