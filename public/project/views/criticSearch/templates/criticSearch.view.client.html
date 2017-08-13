@@ -6,10 +6,10 @@
     </div>
 
     <div class="navbar-text pull-left">
-        <a href="#!/profile/{{model.userId}}">
-            <span class = "glyphicon glyphicon-chevron-left "></span>
-        </a>
-    </div>
+    <a href="#!/user/{{model.userId}}/following">
+        <span class = "glyphicon glyphicon-chevron-left "></span>
+    </a>
+</div>
 
     <div class="navbar-header">
         <a class="navbar-brand">
@@ -34,13 +34,18 @@
 <table class="table">
     <tr>
         <td>
-            <a
+            Follow Critic:
+            <a ng-show="model.critics.username"
                ng-click="model.addCritic(model.critics._id)"
                class = "btn btn-success">
-                Critic:
+
                 {{model.critics.username}}
 
             </a>
         </td>
     </tr>
 </table>
+
+<div ng-show="model.errorMessage" class="alert alert-danger">
+    {{model.errorMessage}}
+</div>

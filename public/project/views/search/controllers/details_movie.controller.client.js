@@ -11,6 +11,7 @@
 
         model.makeFavorite = makeFavorite;
         model.toProfile = toProfile;
+        model.createComment = createComment;
 
         function init() {
             movieService
@@ -28,6 +29,11 @@
         function makeFavorite() {
             userService
                 .makeFavorite(model.userId, model.imdbId);
+        }
+
+        function createComment() {
+            userService
+                .createComment(model.userId, model.imdbId);
         }
 
         function toProfile() {

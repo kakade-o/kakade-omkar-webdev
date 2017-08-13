@@ -7,9 +7,9 @@ var userSchema = mongoose.Schema({
     dob: Date,
     isAdmin: Boolean,
     isCritic: Boolean,
-    //websites: [{type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel"}],
     favorites: [{type: String}],
     following: [{type: mongoose.Schema.Types.ObjectId, ref: "ProjectUserModel"}],
+    comments: [{type: mongoose.Schema.Types.ObjectId, ref: "CommentModel"}],
     dateCreated: {type: Date, default: Date.now}
 }, {collection: "user"});
 

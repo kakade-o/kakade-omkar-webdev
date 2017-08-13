@@ -9,6 +9,7 @@ module.exports = function (app) {
     app.get   ("/api/project/user/:userId/imdb/:imdbId", addMovie);
     app.delete("/api/project/user/:userId", deleteUser);
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
+    //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -60,6 +61,24 @@ module.exports = function (app) {
             })
 
     }
+
+    // function createComment(req, res) {
+    //     var userId = req.params.userId;
+    //     var imdbId = req.params.imdbId;
+    //
+    //     userModel
+    //         .findUserById(userId)
+    //         .then(function (user) {
+    //             var temp = 0;
+    //             for(var c in user.comments) {
+    //                 if(user.comments[c].movieId == imdbId) {
+    //                     temp = 1;
+    //
+    //                 }
+    //             }
+    //             res.send(temp);
+    //         })
+    // }
 
 
     function registerUser(req, res) {

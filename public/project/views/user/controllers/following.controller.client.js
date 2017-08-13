@@ -12,7 +12,7 @@
 
         model.updateUser = updateUser;
         model.unregister = unregister;
-
+        model.toProfile = toProfile;
 
         userService
             .findUserById(userId)
@@ -37,8 +37,6 @@
                 })
 
             }
-
-            console.log(model.user.following);
         }
 
         // function init() {
@@ -62,6 +60,19 @@
                 .deleteUser(user._id)
                 .then(function () {
                     $location.url('/login');
+                })
+        }
+
+        function toProfile() {
+            userService
+                .findUserById(userId)
+                .then(function (user) {
+                    if(user.isCritic == true) {
+                        $location.url('/criticProfile/' + user._id);
+                    }
+                    else {
+                        $location.url('/profile/' + user._id);
+                    }
                 })
         }
 

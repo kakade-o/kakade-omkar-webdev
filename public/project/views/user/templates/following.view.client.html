@@ -19,13 +19,13 @@
         <div class="container-fluid">
 
             <div class="navbar-text pull-left">
-                <a href="#!/profile/{{model.user._id}}/">
-                    <span class = "glyphicon glyphicon-chevron-left white_color"></span>
+                <a ng-click="model.toProfile()">
+                    <span class = "glyphicon glyphicon-chevron-left "></span>
                 </a>
             </div>
 
             <div class="navbar-text pull-right">
-                <a href="#!/user/{{model.userId}}/review/new">
+                <a href="#!/user/{{model.user._id}}/criticSearch">
                     <span class="glyphicon glyphicon-plus white_color"></span>
                 </a>
             </div>
@@ -61,20 +61,4 @@
     </ul>
 
 
-
-    <!--<table class="table">-->
-        <!--{{model.user.following}}-->
-        <!--<tr ng-repeat="critic in model.user.following" class="list-group-item">-->
-            <!--<td>-->
-
-                    <!--{{critic}}-->
-
-
-
-                <!--<a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">-->
-                    <!--<span class="pull-right glyphicon glyphicon-cog"></span>-->
-                <!--</a>-->
-            <!--</td>-->
-        <!--</tr>-->
-    <!--</table>-->
 </div>

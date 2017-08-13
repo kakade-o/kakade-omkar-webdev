@@ -19,12 +19,12 @@ function createWidget(pageId, widget) {
         .create(widget)
         .then(function (createdWidget) {
             return pageModel
-                .addWidget(pageId, createdWidget._id).then(() => createdWidget);
+                .addWidget(pageId, createdWidget._id);
         }).catch(console.log);
 }
 
 function findWidgetsByPageId(pageId) {
-    return pageModel.findPageById(pageId).then(page => Promise.all(page.widgets.map(findWidgetById)));
+    return pageModel.findPageById(pageId);
 }
 
 function findWidgetById(id) {
