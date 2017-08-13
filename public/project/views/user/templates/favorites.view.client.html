@@ -32,5 +32,8 @@
         <td>
             {{movie.Plot}}
         </td>
+        <td>
+            <a class="glyphicon glyphicon-remove" ng-click="model.deleteMovie(movie.imdbID)"></a>
+        </td>
     </tr>
 </table>

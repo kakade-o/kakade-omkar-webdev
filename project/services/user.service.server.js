@@ -9,6 +9,7 @@ module.exports = function (app) {
     app.get   ("/api/project/user/:userId/imdb/:imdbId", addMovie);
     app.delete("/api/project/user/:userId", deleteUser);
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
+    app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
@@ -47,6 +48,17 @@ module.exports = function (app) {
             .addMovie(userId, imdbId)
             .then(function (status) {
                 res.json(status);
+            })
+
+    }
+
+    function deleteMovie(req, res) {
+        var userId = req.params.userId;
+        var imdbId = req.params.imdbId;
+        userModel
+            .deleteMovie(userId, imdbId)
+            .then(function (status) {
+                res.sendStatus(200);
             })
 
     }

@@ -112,12 +112,12 @@ function addCritic(userId, criticId) {
 
 
 
-function deleteMovie(userId, criticId) {
+function deleteMovie(userId, movieId) {
     return userModel
         .findUserById(userId)
         .then(function (user) {
-            var index = user.following.indexOf(criticId);
-            user.following.splice(index, 1);
+            var index = user.favorites.indexOf(movieId);
+            user.favorites.splice(index, 1);
             return user.save();
         });
 }

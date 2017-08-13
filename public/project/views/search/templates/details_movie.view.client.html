@@ -28,6 +28,11 @@
 </nav>
 
 <div class="ok-padding-top">
+
+    <div ng-show="model.liked" class="alert alert-success ok-fade">
+        {{model.liked}}
+    </div>
+
     <h1>{{model.movie.Title}}</h1>
     <br/>
 </div>

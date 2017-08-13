@@ -28,7 +28,11 @@
 
         function makeFavorite() {
             userService
-                .makeFavorite(model.userId, model.imdbId);
+                .makeFavorite(model.userId, model.imdbId)
+                .then(function () {
+                    model.liked = "Added to Favorites!";
+                })
+
         }
 
         function createComment() {

@@ -22,6 +22,7 @@
             "deleteUser": deleteUser,
             "makeFavorite": makeFavorite,
             "followCritic": followCritic,
+            "deleteMovie": deleteMovie
             //"createComment": createComment
         };
 
@@ -138,6 +139,11 @@
                     return response.data;
                 });
 
+        }
+
+        function deleteMovie(userId, imdbId) {
+            var url = "/api/project/user/" + userId + "/imdb/" + imdbId;
+            return $http.delete(url);
         }
 
         // function createComment(userId, movieId) {
