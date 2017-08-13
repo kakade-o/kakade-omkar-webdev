@@ -31,7 +31,9 @@
                     } else {
                         criticService
                             .searchCriticByUsername(criticUsername)
-                            .then(renderCritics);
+                            .then(renderCritics, function (err) {
+                                model.errorMessage = "Critic does not exist";
+                            });
                     }
                 });
         }
