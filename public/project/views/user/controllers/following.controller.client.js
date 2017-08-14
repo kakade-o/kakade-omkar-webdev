@@ -9,6 +9,7 @@
         var model = this;
 
         var userId = $routeParams.userId;
+        model.userId = $routeParams.userId;
 
         model.updateUser = updateUser;
         model.unregister = unregister;
