@@ -1,15 +1,16 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 
-    <div class="navbar-text pull-right">
+    <div class="navbar-text pull-left">
+        <a href="#!/user/{{model.userId}}/following">
+            <span class = "glyphicon glyphicon-chevron-left "></span>
+        </a>
+    </div>
+
+    <div class="navbar-form pull-right">
         <a class="btn btn-danger btn-block"
            href="#!/">Logout</a>
     </div>
 
-    <div class="navbar-text pull-left">
-    <a href="#!/user/{{model.userId}}/following">
-        <span class = "glyphicon glyphicon-chevron-left "></span>
-    </a>
-</div>
 
     <div class="navbar-header">
         <a class="navbar-brand">
@@ -20,7 +21,7 @@
 </nav>
 
 <h2>Search For Critic By Username</h2>
-<input placeholder="titanic"
+<input placeholder="bob"
        ng-model="model.criticUsername"
        id="searchByTitleFld"
        class="form-control">
@@ -45,6 +46,20 @@
         </td>
     </tr>
 </table>
+
+<div>
+    <ul class="list-group">
+        <li class="list-group-item active">
+           Critic List
+        </li>
+        <li class="list-group-item" ng-repeat="critics in model.allCritics">
+            {{critics.username}}
+        </li>
+
+    </ul>
+</div>
+
+
 
 <div ng-show="model.errorMessage" class="alert alert-danger">
     {{model.errorMessage}}

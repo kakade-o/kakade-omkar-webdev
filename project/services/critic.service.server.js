@@ -3,6 +3,7 @@ module.exports = function (app) {
     var userModel = require("../model/user/user.model.server");
 
     app.get   ('/api/project/criticSearch/:criticUsername', findCriticByUsername);
+    app.get   ('/api/project/critics', findAllCritics);
     // app.get   ('/api/project/user', findUserByCredentials);
     // app.post  ('/api/project/profile', registerUser);
     // app.put   ("/api/project/user/:userId", updateUser);
@@ -35,12 +36,16 @@ module.exports = function (app) {
     }
 
 
+    function findAllCritics(req, res) {
+
+        userModel
+            .findAllCritics()
+            .then(function (users) {
+                res.json(users);
+            })
 
 
-
-
-
-
+    }
 
 
 

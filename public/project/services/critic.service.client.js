@@ -8,6 +8,7 @@
     function criticService($http) {
 
         this.searchCriticByUsername = searchCriticByUsername;
+        this.findAllCritics = findAllCritics;
         // this.searchCriticByReviewerId = searchCriticByReviewerId;
 
         function searchCriticByUsername(criticUsername) {
@@ -15,12 +16,20 @@
             return $http.get(url)
                 .then(function (response) {
                     if (response.data.isCritic === true) {
-                        var critics = response.data
+                        var critics = response.data;
                         return critics;
                     }
                     else {
                         return (err);
                     }
+                })
+        }
+
+        function findAllCritics() {
+            var url = "/api/project/critics";
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
                 })
         }
 

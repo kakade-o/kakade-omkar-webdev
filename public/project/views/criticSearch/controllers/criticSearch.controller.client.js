@@ -15,7 +15,11 @@
         model.toProfile = toProfile;
 
         function init() {
-
+            criticService
+                .findAllCritics()
+                .then(function (critics) {
+                    model.allCritics = critics;
+                })
         }
         init();
 

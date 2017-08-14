@@ -14,6 +14,7 @@ userModel.findCriticByUsername = findCriticByUsername;
 userModel.addMovie = addMovie;
 userModel.deleteMovie = deleteMovie;
 userModel.addCritic = addCritic;
+userModel.findAllCritics = findAllCritics;
 
 module.exports = userModel;
 
@@ -91,6 +92,10 @@ function deleteMovie(userId, imdbId) {
         });
 }
 
+function findAllCritics() {
+    return userModel
+        .find({isCritic: true});
+}
 
 
 //Critic Functions
@@ -109,7 +114,6 @@ function addCritic(userId, criticId) {
             return user;
         })
 }
-
 
 
 function deleteMovie(userId, movieId) {

@@ -74,6 +74,7 @@ module.exports = function (app) {
 
     }
 
+
     // function createComment(req, res) {
     //     var userId = req.params.userId;
     //     var imdbId = req.params.imdbId;
