@@ -4,7 +4,7 @@
         .controller("criticProfileController", criticProfileController);
 
 
-    function criticProfileController($location, $routeParams, userService) {
+    function criticProfileController($location, $routeParams, userService, $timeout) {
 
         var model = this;
 
@@ -35,7 +35,9 @@
 
         function updateUser(user) {
             userService.updateUser(user._id, user);
-            model.updated = "Updated!";
+            model.updated = "Profile Updated!";
+            model.hasAlert = true;
+            $timeout(function() {model.hasAlert = false}, 3000);
         }
 
         function unregister(user) {

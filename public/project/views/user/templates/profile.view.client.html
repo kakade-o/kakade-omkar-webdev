@@ -1,6 +1,6 @@
  <div >
     <!-- Header -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="blog-masthead">
             <div class="container-fluid">
 
@@ -77,8 +77,8 @@
 
             <br/>
             <br/>
-            <div ng-show="model.updated" class="alert alert-success ok-fade">
-                Profile Updated!
+            <div ng-show="model.hasAlert" class="alert alert-success ok-fade">
+                {{model.updated}}
             </div>
 
         </div>
