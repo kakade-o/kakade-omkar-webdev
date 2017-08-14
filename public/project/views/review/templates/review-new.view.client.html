@@ -1,41 +1,28 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-    <!--<head>-->
-        <!--<meta charset="UTF-8">-->
-        <!--<title>New review</title>-->
-        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
-        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <!--</head>-->
-    <!--<body>-->
-    <!-- Header -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="blog-masthead">
-            <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="blog-masthead">
+        <div class="container-fluid">
 
-                <div class="navbar-text pull-left">
-                    <a href="#!/user/{{model.userId}}/review">
-                        <span class = "glyphicon glyphicon-chevron-left white_color"></span>
-                    </a>
-                </div>
-
-                <div class="navbar-text pull-right">
-                    <a ng-click="model.newReview(model.review)" role="button">
-                        <span class="glyphicon glyphicon-ok white_color"></span>
-                    </a>
-                </div>
-
-                <div class="navbar-header">
-                    <a class="navbar-brand">
-                        <span class="white_color x-large_font_size">New Review</span>
-                    </a>
-                </div>
-
+            <div class="navbar-text pull-left">
+                <a href="#!/user/{{model.userId}}/review">
+                    <span class="glyphicon glyphicon-chevron-left white_color"></span>
+                </a>
             </div>
+
+            <div class="navbar-text pull-right">
+                <a ng-click="model.newReview(model.review)" role="button">
+                    <span class="glyphicon glyphicon-ok white_color"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <span class="white_color x-large_font_size">New Review</span>
+                </a>
+            </div>
+
         </div>
-    </nav>
+    </div>
+</nav>
 
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
@@ -58,51 +45,31 @@
                   id="Description"
                   rows="5"
                   placeholder="Description"></textarea>
-
-    </form>
-
-</div>
-
-<form>
-    <div class="form-group">
-        Rating
         <br/>
-        <select class="dropdown_width" ng-model="model.review.rating">
+        <label for="Rating">
+            Rating
+        </label>
+        <select id="Rating" class="dropdown_width" ng-model="model.review.rating">
             <option value="1">1:Garbage</option>
             <option value="2">2:Poor</option>
             <option value="3">3:Average</option>
             <option value="4">4:Good</option>
             <option value="5">5:Excellent</option>
         </select>
-        <!--<input-->
-        <!--type="text"-->
-        <!--ng-model="widget.widgetType"-->
-        <!--class="form-control"-->
-        <!--placeholder="Name" value="HEADING"/>-->
-    </div>
 
-    <!--<div ng-model="model.widget.text"-->
-         <!--text-angular-->
-         <!--ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],-->
-        <!--['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],-->
-        <!--['indent','outdent'],['html']]">-->
-    <!--</div>-->
+    </form>
 
-</form>
+</div>
 
-    <!-- Footer -->
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="blog-masthead">
-            <div class="container-fluid">
-                <div class="navbar-text pull-right"
-                >
-                    <a href="#!/profile/{{model.userId}}">
-                        <span class="glyphicon glyphicon-user white_color"></span>
-                    </a>
-                </div>
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="blog-masthead">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a href="#!/profile/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user white_color"></span>
+                </a>
             </div>
         </div>
-    </nav>
-
-    <!--</body>-->
-<!--</html>-->
+    </div>
+</nav>

@@ -24,3 +24,16 @@ body {
 .starWarsBackground {
     background-image: url("http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2015/10/star-wars-force-awakens-official-poster.jpg");
 }
+
+.ok-fade {
+    transition: all linear 450ms;
+    opacity: 1;
+}
+
+.ok-fade.ng-hide {
+    opacity: 0;
+}
+
+.white_color {
+    color: white;
+}

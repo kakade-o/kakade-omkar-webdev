@@ -7,7 +7,7 @@
         .module("omdbApp")
         .controller("loginController", loginController);
 
-    function loginController($location, userService) {
+    function loginController($location, userService, $timeout) {
 
         var model = this;
 
@@ -19,6 +19,8 @@
             
             function handleError(error) {
                 model.errorMessage = "Username '" + username + "' not found. Please try again.";
+                model.hasAlert = true;
+                $timeout(function() {model.hasAlert = false}, 3000);
             }
 
             function login(found) {
@@ -30,7 +32,7 @@
                         $location.url('/profile/' + found._id);
                     }
                 } else {
-                    model.errorMessage = "Username '" + username + "' not found. Please try again.";
+                    handleError(null);
                 }
             }
 
