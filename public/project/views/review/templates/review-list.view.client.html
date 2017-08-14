@@ -1,143 +1,139 @@
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
-    <!--<head>-->
-        <!--<meta charset="UTF-8">-->
-        <!--<title>review-List</title>-->
-        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
-        <!--<link href="../../css/style.css" rel="stylesheet"/>-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <!--</head>-->
-    <!--<body>-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>review-List</title>-->
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+<!--rel="stylesheet"/>-->
+<!--<link href="../../css/bootstrap.css" rel="stylesheet"/>-->
+<!--<link href="../../css/style.css" rel="stylesheet"/>-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
+<!--<body>-->
 
-    <!-- Header -->
-
+<!-- Header -->
 
 
 <!--***************NEED TO REFACTOR HREFS******************-->
 
 
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="blog-masthead">
-            <div class="container-fluid">
-
-                <div class="navbar-text pull-left">
-                    <a href="#!/criticProfile/{{model.userId}}/">
-                        <span class = "glyphicon glyphicon-chevron-left white_color"></span>
-                    </a>
-                </div>
-
-                <div class="navbar-text pull-right">
-                    <a href="#!/user/{{model.userId}}/review/new">
-                        <span class="glyphicon glyphicon-plus white_color"></span>
-                    </a>
-                </div>
-
-                <div class="navbar-header">
-                    <a class="navbar-brand">
-                        <span class="white_color x-large_font_size">Reviews</span>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
 
     <div class="container-fluid">
 
-        <ul class="list-group">
-            <li class="list-group-item active">
-                Name
-            </li>
+        <div class="navbar-text pull-left">
+            <a href="#!/criticProfile/{{model.userId}}/">
+                <span class="glyphicon glyphicon-chevron-left white_color"></span>
+            </a>
+        </div>
 
-            <li ng-repeat="review in model.reviews" class="list-group-item">
-                <a href="#!/user/{{model.userId}}/{{review._id}}">
-                    {{review.reviewname}}
-                </a>
+        <div class="navbar-text pull-right">
+            <a href="#!/user/{{model.userId}}/review/new">
+                <span class="glyphicon glyphicon-plus white_color"></span>
+            </a>
+        </div>
 
-                <a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">
-                    <span class="pull-right glyphicon glyphicon-cog"></span>
-                </a>
-            </li>
-        </ul>
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="white_color x-large_font_size">Reviews</span>
+            </a>
+        </div>
 
-
-
-
-        <!--<ul class="nav nav-pills nav-stacked">-->
-            <!--<li role="presentation">-->
-
-                <!--<div class="text-left">-->
-                    <!--<a href="../widget/widget-list.view.client.html">Blog Post-->
-                    <!--</a>-->
-
-                    <!--<div class="pull-right">-->
-                        <!--<a hrreviewreview-edit.view.client.html">-->
-                                <!--<span class="glyphicon glyphicon-cog">-->
-                                <!--</span>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash;-->
-                    <!--<a hrwebsite-edit.view.client.htmlhtml">-->
-                        <!--<span class="glyphicon glyphicon-cog pull-right">-->
-                        <!--</span>-->
-                    <!--</a>-->
-                    <!--&ndash;&gt;-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--&nbsp;-->
-            <!--<li role="presentation">-->
-
-                <!--<div class="text-left">-->
-                    <!--<a href="../widget/widget-list.view.client.html">Blogs-->
-                    <!--</a>-->
-                    <!--<a hrreviewreview-edit.view.client.html">-->
-                            <!--<span class="glyphicon glyphicon-cog pull-right">-->
-                            <!--</span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--&nbsp;-->
-            <!--<li role="presentation">-->
-
-                <!--<div class="text-left">-->
-                    <!--<a href="../widget/widget-list.view.client.html">Home-->
-                    <!--</a>-->
-                    <!--<a hrreviewreview-edit.view.client.html">-->
-                        <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--&nbsp;-->
-            <!--<li role="presentation">-->
-
-                <!--<div class="text-left">-->
-                    <!--<a href="../widget/widget-list.view.client.html">About-->
-                    <!--</a>-->
-                    <!--<a hrreviewreview-edit.view.client.html">-->
-                        <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<br/>-->
-            <!--<li role="presentation">-->
-
-                <!--<div class="text-left">-->
-                    <!--<a href="../widget/widget-list.view.client.html">Contact Us</a>-->
-                    <!--<a hrreviewreview-edit.view.client.html">-->
-                        <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</li>-->
-
-        <!--</ul>-->
     </div>
 
+</nav>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
+
+<div class="container-fluid">
+
+    <ul class="list-group">
+        <li class="list-group-item active">
+            Name
+        </li>
+
+        <li ng-repeat="review in model.reviews" class="list-group-item">
+            <a href="#!/user/{{model.userId}}/{{review._id}}">
+                {{review.reviewname}}
+            </a>
+
+            <a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">
+                <span class="pull-right glyphicon glyphicon-cog"></span>
+            </a>
+        </li>
+    </ul>
+
+
+    <!--<ul class="nav nav-pills nav-stacked">-->
+    <!--<li role="presentation">-->
+
+    <!--<div class="text-left">-->
+    <!--<a href="../widget/widget-list.view.client.html">Blog Post-->
+    <!--</a>-->
+
+    <!--<div class="pull-right">-->
+    <!--<a hrreviewreview-edit.view.client.html">-->
+    <!--<span class="glyphicon glyphicon-cog">-->
+    <!--</span>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;-->
+    <!--<a hrwebsite-edit.view.client.htmlhtml">-->
+    <!--<span class="glyphicon glyphicon-cog pull-right">-->
+    <!--</span>-->
+    <!--</a>-->
+    <!--&ndash;&gt;-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--&nbsp;-->
+    <!--<li role="presentation">-->
+
+    <!--<div class="text-left">-->
+    <!--<a href="../widget/widget-list.view.client.html">Blogs-->
+    <!--</a>-->
+    <!--<a hrreviewreview-edit.view.client.html">-->
+    <!--<span class="glyphicon glyphicon-cog pull-right">-->
+    <!--</span>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--&nbsp;-->
+    <!--<li role="presentation">-->
+
+    <!--<div class="text-left">-->
+    <!--<a href="../widget/widget-list.view.client.html">Home-->
+    <!--</a>-->
+    <!--<a hrreviewreview-edit.view.client.html">-->
+    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--&nbsp;-->
+    <!--<li role="presentation">-->
+
+    <!--<div class="text-left">-->
+    <!--<a href="../widget/widget-list.view.client.html">About-->
+    <!--</a>-->
+    <!--<a hrreviewreview-edit.view.client.html">-->
+    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--<br/>-->
+    <!--<li role="presentation">-->
+
+    <!--<div class="text-left">-->
+    <!--<a href="../widget/widget-list.view.client.html">Contact Us</a>-->
+    <!--<a hrreviewreview-edit.view.client.html">-->
+    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</li>-->
+
+    <!--</ul>-->
+</div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom container-fluid">
 
     <div class="navbar-text pull-right">
         <a ng-click="model.toProfile()">
@@ -147,5 +143,5 @@
 
 </nav>
 
-    <!--</body>-->
+<!--</body>-->
 <!--</html>-->

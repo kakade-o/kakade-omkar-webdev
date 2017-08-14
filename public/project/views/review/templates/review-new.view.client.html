@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="blog-masthead">
         <div class="container-fluid">
 
@@ -62,14 +62,12 @@
 </div>
 
 <!-- Footer -->
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="blog-masthead">
-        <div class="container-fluid">
-            <div class="navbar-text pull-right">
-                <a href="#!/profile/{{model.userId}}">
-                    <span class="glyphicon glyphicon-user white_color"></span>
-                </a>
-            </div>
-        </div>
+<nav class="navbar navbar-inverse navbar-fixed-bottom container-fluid">
+
+    <div class="navbar-text pull-right">
+        <a ng-click="model.toProfile()">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
     </div>
+
 </nav>

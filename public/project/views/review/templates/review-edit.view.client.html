@@ -1,154 +1,144 @@
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
-    <!--<head>-->
-        <!--<meta charset="UTF-8">-->
-        <!--<title>review Edit</title>-->
-        <!--<link href="../../css/bootstrap.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<link href="../../css/style.css"-->
-              <!--rel="stylesheet"/>-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <!--</head>-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>review Edit</title>-->
+<!--<link href="../../css/bootstrap.css"-->
+<!--rel="stylesheet"/>-->
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+<!--rel="stylesheet"/>-->
+<!--<link href="../../css/style.css"-->
+<!--rel="stylesheet"/>-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
 
-    <!--<body>-->
-    <!-- Header -->
-
-
-
-
+<!--<body>-->
+<!-- Header -->
 
 
 <!--***************NEED TO REFACTOR HREFS******************-->
 
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="blog-masthead">
+        <div class="container-fluid">
 
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="blog-masthead">
-            <div class="container-fluid">
-
-                <div class="navbar-text pull-left">
-                    <a href="#!/user/{{model.userId}}/review/">
-                        <span class = "glyphicon glyphicon-chevron-left white_color"></span>
-                    </a>
-                </div>
-
-                <div class="navbar-text pull-right">
-                    <a  ng-click="model.updateReview(model.review)" role="button">
-                        <span class="glyphicon glyphicon-ok white_color"></span>
-                    </a>
-                </div>
-
-                <div class="navbar-header">
-                    <a class="navbar-brand">
-                        <span class="white_color x-large_font_size">Edit Review</span>
-                    </a>
-                </div>
-
+            <div class="navbar-text pull-left">
+                <a href="#!/user/{{model.userId}}/review/">
+                    <span class="glyphicon glyphicon-chevron-left white_color"></span>
+                </a>
             </div>
+
+            <div class="navbar-text pull-right">
+                <a ng-click="model.updateReview(model.review)" role="button">
+                    <span class="glyphicon glyphicon-ok white_color"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <span class="white_color x-large_font_size">Edit Review</span>
+                </a>
+            </div>
+
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class = "container-fluid">
-        <div row>
+<div class="container-fluid">
+    <div row>
 
-            <div class="visible-lg col-xs-3 ok-split-view-left">
+        <div class="visible-lg col-xs-3 ok-split-view-left">
 
-                <ul class="list-group">
-                    <li class="list-group-item active">
-                        Name
-                    </li>
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    Name
+                </li>
 
-                    <li ng-repeat="review in model.reviews" class="list-group-item">
-                        <a href="#!/user/{{model.userId}}/{{review._id}}">
-                        </a>
+                <li ng-repeat="review in model.reviews" class="list-group-item">
+                    <a href="#!/user/{{model.userId}}/{{review._id}}">
+                    </a>
 
-                        <a href="#!/user/{{model.userId}}/{{review._id}}/edit">
-                            <span class="pull-right glyphicon glyphicon-cog"></span>
-                        </a>
-                    </li>
-                </ul>
+                    <a href="#!/user/{{model.userId}}/{{review._id}}/edit">
+                        <span class="pull-right glyphicon glyphicon-cog"></span>
+                    </a>
+                </li>
+            </ul>
 
-            </div>
+        </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
-                <form>
-                    <form>
-                        <label for="Name">
-                            Name
-                        </label>
-                        <input id="Name"
-                               ng-model="model.review.reviewname"
-                               type="text"
-                               class="form-control"
-                               placeholder="Name" value={{model.review.reviewname}}>
-                        <br/>
-                        <label for="Description">
-                            Description
-                        </label>
-                        <textarea class="form-control"
-                                  ng-model="model.review.reviewtext"
-                                  id="Description"
-                                  rows="5"
-                                  placeholder="Description"></textarea>
-
-                    </form>
-
-            </div>
-
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 ok-split-view-right">
             <form>
-                <div class="form-group">
-                    Rating
+                <form>
+                    <label for="Name">
+                        Name
+                    </label>
+                    <input id="Name"
+                           ng-model="model.review.reviewname"
+                           type="text"
+                           class="form-control"
+                           placeholder="Name" value={{model.review.reviewname}}>
                     <br/>
-                    <select class="dropdown_width" ng-model="model.review.rating">
-                        <option value="1">1:Garbage</option>
-                        <option value="2">2:Poor</option>
-                        <option value="3">3:Average</option>
-                        <option value="4">4:Good</option>
-                        <option value="5">5:Excellent</option>
-                    </select>
-                    <!--<input-->
-                    <!--type="text"-->
-                    <!--ng-model="widget.widgetType"-->
-                    <!--class="form-control"-->
-                    <!--placeholder="Name" value="HEADING"/>-->
-                </div>
+                    <label for="Description">
+                        Description
+                    </label>
+                    <textarea class="form-control"
+                              ng-model="model.review.reviewtext"
+                              id="Description"
+                              rows="5"
+                              placeholder="Description"></textarea>
 
-                <!--<div ng-model="model.widget.text"-->
-                <!--text-angular-->
-                <!--ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],-->
-                <!--['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],-->
-                <!--['indent','outdent'],['html']]">-->
-                <!--</div>-->
-
-            </form>
-
-                    <div class="form-group">
-                        <a ng-click="model.removeReview(model.userId, model.reviewId)" role="button"
-                           class="btn btn-danger btn-block">Delete
-                        </a>
-                    </div>
                 </form>
-            </div>
-        </div>
 
+                <form>
+                    <div class="form-group">
+                        Rating
+                        <br/>
+                        <select class="dropdown_width" ng-model="model.review.rating">
+                            <option value="1">1:Garbage</option>
+                            <option value="2">2:Poor</option>
+                            <option value="3">3:Average</option>
+                            <option value="4">4:Good</option>
+                            <option value="5">5:Excellent</option>
+                        </select>
+                        <!--<input-->
+                        <!--type="text"-->
+                        <!--ng-model="widget.widgetType"-->
+                        <!--class="form-control"-->
+                        <!--placeholder="Name" value="HEADING"/>-->
+                    </div>
+
+                    <!--<div ng-model="model.widget.text"-->
+                    <!--text-angular-->
+                    <!--ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],-->
+                    <!--['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],-->
+                    <!--['indent','outdent'],['html']]">-->
+                    <!--</div>-->
+
+                </form>
+
+                <div class="form-group">
+                    <a ng-click="model.removeReview(model.userId, model.reviewId)" role="button"
+                       class="btn btn-danger btn-block">Delete
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 
+</div>
 
-    <!-- Footer -->
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="blog-masthead">
-            <div class="container-fluid">
-                <div class="navbar-text pull-right">
-                    <a href="#!/profile/{{model.userId}}">
-                        <span class="glyphicon glyphicon-user white_color"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!--</body>-->
+<!-- Footer -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom container-fluid">
+
+    <div class="navbar-text pull-right">
+        <a ng-click="model.toProfile()">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+
+</nav>
+
+<!--</body>-->
 <!--</html>-->

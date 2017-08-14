@@ -3,7 +3,7 @@
         .module("omdbApp")
         .controller("reviewEditController", reviewEditController);
 
-    function reviewEditController($location, $routeParams, reviewService) {
+    function reviewEditController($location, $routeParams, reviewService, userService) {
 
         var model = this;
 
@@ -13,6 +13,7 @@
 
         model.updateReview = updateReview;
         model.removeReview = removeReview;
+        model.toProfile = toProfile;
 
         function init() {
             reviewService
@@ -44,6 +45,19 @@
                 .then(function () {
                     $location.url("/user/" + model.userId + "/review");
                 });
+        }
+
+        function toProfile() {
+            userService
+                .findUserById(model.userId)
+                .then(function (user) {
+                    if(user.isCritic == true) {
+                        $location.url('/criticProfile/' + user._id);
+                    }
+                    else {
+                        $location.url('/profile/' + user._id);
+                    }
+                })
         }
 
 
