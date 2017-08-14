@@ -40,11 +40,20 @@
         <label for="Description">
             Description
         </label>
-        <textarea class="form-control"
-                  ng-model="model.review.reviewtext"
-                  id="Description"
-                  rows="5"
-                  placeholder="Description"></textarea>
+        <!--<textarea class="form-control"-->
+                  <!--ng-model="model.review.reviewtext"-->
+                  <!--id="Description"-->
+                  <!--rows="5"-->
+                  <!--placeholder="Description"></textarea>-->
+
+        <div ng-model="model.review.reviewtext"
+             text-angular
+             id="Description"
+             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+        </div>
+
         <br/>
         <label for="Rating">
             Rating
