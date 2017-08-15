@@ -37,3 +37,7 @@ body {
 .white_color {
     color: white;
 }
+
+.navbar-btn {
+    margin-right: 5px;
+}

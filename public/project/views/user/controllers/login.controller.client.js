@@ -25,7 +25,10 @@
 
             function login(found) {
                 if(found !== null) {
-                    if(found.isCritic === true) {
+                    if(found.isAdmin === true) {
+                        $location.url('/adminList/' + found._id);
+                    }
+                    else if(found.isCritic === true) {
                         $location.url('/criticProfile/' + found._id);
                     }
                     else {

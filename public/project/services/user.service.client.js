@@ -16,6 +16,7 @@
         var api = {
             "updateUser": updateUser,
             "findUserByCredentials": findUserByCredentials,
+            "findAllUsers": findAllUsers,
             "findUserById": findUserById,
             "registerUser": registerUser,
             "findUserByUsername": findUserByUsername,
@@ -63,6 +64,11 @@
             var url = "/api/project/user?username=" + username;
             return $http.get(url);
 
+        }
+
+        function findAllUsers() {
+            var url = "/api/project/allUsers";
+            return $http.get(url);
         }
 
         // Registers a new user
