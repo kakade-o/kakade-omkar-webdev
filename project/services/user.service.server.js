@@ -10,6 +10,7 @@ module.exports = function (app) {
     app.delete("/api/project/user/:userId", deleteUser);
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
+    app.post  ('/api/project/user', findUser);
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
@@ -138,6 +139,64 @@ module.exports = function (app) {
         //
         // res.send(user);
     }
+
+//Passport Implementation
+
+    function findUser(req, res) {
+        var body = req.body;
+        var username = body.username;
+        var password = body.password;
+
+        if(username && password) {
+            userModel
+                .findUserByCredentials(username, password)
+                .then(function (user) {
+                    res.json(user);
+                    return;
+                }, function (err) {
+                    res.sendStatus(404).send(err);
+                    return;
+                });
+
+            // for(var u in users) {
+            //     var user = users[u];
+            //     if(user.username === username &&
+            //         user.password === password) {
+            //         res.json(user);
+            //         return;
+            //     }
+            // }
+            // res.sendStatus(404);
+            return;
+
+        } else if(username) {
+
+            // for(u in users) {
+            //     if(users[u].username === username) {
+            //         //return users[u];
+            //         res.send(users[u]);
+            //         return;
+            //     }
+            // }
+
+            userModel.findUserByUsername(username)
+                .then(function (user) {
+                    res.json(user);
+                });
+        }
+
+    }
+
+
+
+
+
+
+
+
+//OLD IMPLEMENTATION
+
+
 
     function findUserByCredentials(req, res) {
         var username = req.query['username'];

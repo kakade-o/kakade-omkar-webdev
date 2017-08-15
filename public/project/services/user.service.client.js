@@ -22,7 +22,8 @@
             "deleteUser": deleteUser,
             "makeFavorite": makeFavorite,
             "followCritic": followCritic,
-            "deleteMovie": deleteMovie
+            "deleteMovie": deleteMovie,
+            "login": login
             //"createComment": createComment
         };
 
@@ -73,6 +74,23 @@
 
 
         }
+
+
+        //PASSPORT IMPLEMENTATION
+        // Finds user by username and password
+        function login(username, password) {
+            var url = "/api/project/user";
+
+            return $http.post(url, {username: username, password: password})
+                .then(function (response) {
+                    return response.data;
+                })
+
+
+        }
+
+
+
 
         // Finds the user by ID
         function findUserById(userId) {
