@@ -11,6 +11,7 @@ module.exports = function (app) {
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
     app.post  ('/api/project/user', findUser);
+    app.get   ("/api/project/allUsers", findAllUsers);
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
@@ -73,6 +74,14 @@ module.exports = function (app) {
                 res.json(status);
             })
 
+    }
+
+    function findAllUsers(req, res) {
+        userModel
+            .findAllUsers()
+            .then(function (users) {
+                res.json(users);
+            })
     }
 
 

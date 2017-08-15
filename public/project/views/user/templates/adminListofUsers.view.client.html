@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar-form pull-right">
+        <a class="btn btn-danger btn-block"
+           href="#!/">Logout</a>
+    </div>
+
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <span class="white_color x-large_font_size">Administrator</span>
+        </a>
+    </div>
+
+</nav>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            Users
+
+            <a href="#!/adminList/{{model.adminId}}/newUser">
+                <span class="glyphicon glyphicon-plus white_color pull-right"></span>
+            </a>
+        </li>
+
+        <li ng-repeat="user in model.users" class="list-group-item">
+            <!--<a href="#!/user/{{model.userId}}/{{review._id}}">-->
+            {{user.username}}
+            <!--</a>-->
+
+            <a href="#!/adminList/{{model.adminId}}/user/{{user._id}}/edit">
+                <span class="pull-right glyphicon glyphicon-cog"></span>
+            </a>
+        </li>
+    </ul>
+</div>

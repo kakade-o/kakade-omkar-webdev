@@ -15,8 +15,13 @@ userModel.addMovie = addMovie;
 userModel.deleteMovie = deleteMovie;
 userModel.addCritic = addCritic;
 userModel.findAllCritics = findAllCritics;
+userModel.findAllUsers = findAllUsers;
 
 module.exports = userModel;
+
+function findAllUsers() {
+    return userModel.find();
+}
 
 function createUser(user) {
     return userModel.create(user);
@@ -82,15 +87,6 @@ function addMovie(userId, imdbId) {
         })
 }
 
-function deleteMovie(userId, imdbId) {
-    return userModel
-        .findUserById(userId)
-        .then(function (user) {
-            var index = user.favorites.indexOf(imdbId);
-            user.favorites.splice(index, 1);
-            return user.save();
-        });
-}
 
 function findAllCritics() {
     return userModel

@@ -42,7 +42,24 @@
                 controllerAs: "model"
             })
 
+            // Admin
+            .when("/adminList/:adminId", {
+                templateUrl: "views/user/templates/adminListOfUsers.view.client.html",
+                controller: "adminController",
+                controllerAs: "model"
+            })
 
+            .when("/adminList/:adminId/newUser", {
+                templateUrl: "views/user/templates/adminCreateNewUser.view.client.html",
+                controller: "adminController",
+                controllerAs: "model"
+            })
+
+            .when("/adminList/:adminId/user/:userId/edit", {
+                templateUrl: "views/user/templates/adminEditUser.view.client.html",
+                controller: "adminController",
+                controllerAs: "model"
+            })
 
             // User
             .when("/login", {

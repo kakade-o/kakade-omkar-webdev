@@ -1,0 +1,86 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar-form pull-right">
+        <a class="btn btn-danger btn-block"
+           href="#!/">Logout</a>
+    </div>
+
+    <div class="navbar-text pull-left">
+        <a href="#!/adminList/{{model.adminId}}">
+            <span class="glyphicon glyphicon-chevron-left white_color"></span>
+        </a>
+    </div>
+
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <span class="white_color x-large_font_size">Create New User</span>
+        </a>
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text"
+                   ng-model="model.user.username"
+                   class="form-control"
+                   id="username"
+                   placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text"
+                   ng-model="model.user.firstName"
+                   class="form-control"
+                   id="first-name"
+                   placeholder="Alice">
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text"
+                   ng-model="model.user.lastName"
+                   class="form-control"
+                   id="last-name"
+                   placeholder="Wonderland">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   ng-model="model.user.password"
+                   class="form-control"
+                   placeholder="password"/>
+        </div>
+
+        <div class="form-group">
+            <label> Critic:
+                <input type="checkbox"
+                       ng-model="model.user.isCritic">
+            </label>
+        </div>
+    </form>
+
+    <div>
+        <a class="btn btn-success btn-block"
+           ng-click="model.updateUser(model.user)">Update User</a>
+
+        <a class="btn btn-danger btn-block"
+           ng-click="model.removeUser(model.user)">Delete User</a>
+    </div>
+    <br/>
+    <div>
+        <div ng-show="model.hasAlert" class="alert alert-danger ok-fade">
+            {{model.error}}
+        </div>
+    </div>
+    <div>
+        <div ng-show="model.updatedAlert" class="alert alert-success ok-fade">
+            {{model.updated}}
+        </div>
+    </div>
+
+</div>
