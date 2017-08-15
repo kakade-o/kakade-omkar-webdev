@@ -28,11 +28,20 @@
                 controllerAs: "model"
             })
 
-            .when("/user/:userId/criticSearch/details/:reviewerId", {
-                templateUrl: "views/criticSearch/templates/criticDetails.view.client.html",
-                controller: "criticDetailsController",
+            //Review List and Details for User
+
+            .when("/user/:userId/criticReviewList/:reviewerId", {
+                templateUrl: "views/criticReviewList/templates/reviewList.view.client.html",
+                controller: "reviewListController",
                 controllerAs: "model"
             })
+
+            .when("/user/:userId/criticReviewList/:reviewerId/details/:reviewId", {
+                templateUrl: "views/criticReviewList/templates/reviewDetails.view.client.html",
+                controller: "reviewListController",
+                controllerAs: "model"
+            })
+
 
 
             // User
