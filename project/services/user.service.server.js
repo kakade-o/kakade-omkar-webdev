@@ -1,6 +1,14 @@
 module.exports = function (app) {
 
+    //Passport
+    var passport      = require('passport');
+    var LocalStrategy = require('passport-local').Strategy;
+    passport.use(new LocalStrategy(localStrategy));
+    passport.serializeUser(serializeUser);
+    passport.deserializeUser(deserializeUser);
+
     var userModel = require("../model/user/user.model.server");
+
 
     app.get   ('/api/project/user/:userId', findUserById);
     app.get   ('/api/project/user', findUserByCredentials);
@@ -10,7 +18,7 @@ module.exports = function (app) {
     app.delete("/api/project/user/:userId", deleteUser);
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
-    app.post  ('/api/project/user', findUser);
+    app.post  ("/api/project/user", passport.authenticate('local'), login);
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
@@ -19,6 +27,76 @@ module.exports = function (app) {
         {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
     ];
+
+
+    //Local Strategy Function for Passport
+
+    function localStrategy(username, password, done) {
+        userModel
+            .findUserByCredentials(username, password)
+            .then(
+                function(user) {
+                    if (!user) { return done(null, false); }
+                    return done(null, user);
+                },
+                function(err) {
+                    if (err) { return done(err); }
+                }
+            );
+    }
+
+
+
+    //Passport Implementation
+
+    function login(req, res) {
+        var user = req.user;
+        res.json(user);
+
+
+        // var body = req.body;
+        // var username = body.username;
+        // var password = body.password;
+        //
+        // if(username && password) {
+        //     userModel
+        //         .findUserByCredentials(username, password)
+        //         .then(function (user) {
+        //             res.json(user);
+        //             return;
+        //         }, function (err) {
+        //             res.sendStatus(404).send(err);
+        //             return;
+        //         });
+        //
+        //     // for(var u in users) {
+        //     //     var user = users[u];
+        //     //     if(user.username === username &&
+        //     //         user.password === password) {
+        //     //         res.json(user);
+        //     //         return;
+        //     //     }
+        //     // }
+        //     // res.sendStatus(404);
+        //     return;
+        //
+        // } else if(username) {
+        //
+        //     // for(u in users) {
+        //     //     if(users[u].username === username) {
+        //     //         //return users[u];
+        //     //         res.send(users[u]);
+        //     //         return;
+        //     //     }
+        //     // }
+        //
+        //     userModel.findUserByUsername(username)
+        //         .then(function (user) {
+        //             res.json(user);
+        //         });
+        // }
+
+    }
 
     function updateUser(req, res) {
         var userId = req.params.userId;
@@ -140,56 +218,6 @@ module.exports = function (app) {
         // res.send(user);
     }
 
-//Passport Implementation
-
-    function findUser(req, res) {
-        var body = req.body;
-        var username = body.username;
-        var password = body.password;
-
-        if(username && password) {
-            userModel
-                .findUserByCredentials(username, password)
-                .then(function (user) {
-                    res.json(user);
-                    return;
-                }, function (err) {
-                    res.sendStatus(404).send(err);
-                    return;
-                });
-
-            // for(var u in users) {
-            //     var user = users[u];
-            //     if(user.username === username &&
-            //         user.password === password) {
-            //         res.json(user);
-            //         return;
-            //     }
-            // }
-            // res.sendStatus(404);
-            return;
-
-        } else if(username) {
-
-            // for(u in users) {
-            //     if(users[u].username === username) {
-            //         //return users[u];
-            //         res.send(users[u]);
-            //         return;
-            //     }
-            // }
-
-            userModel.findUserByUsername(username)
-                .then(function (user) {
-                    res.json(user);
-                });
-        }
-
-    }
-
-
-
-
 
 
 
@@ -240,6 +268,26 @@ module.exports = function (app) {
                 });
         }
 
+    }
+
+
+//Passport Serializing functions
+
+    function serializeUser(user, done) {
+        done(null, user);
+    }
+
+    function deserializeUser(user, done) {
+        userModel
+            .findUserById(user._id)
+            .then(
+                function(user){
+                    done(null, user);
+                },
+                function(err){
+                    done(err, null);
+                }
+            );
     }
 
 };
