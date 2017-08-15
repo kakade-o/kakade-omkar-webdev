@@ -46,7 +46,10 @@
             .when("/adminList/:adminId", {
                 templateUrl: "views/user/templates/adminListOfUsers.view.client.html",
                 controller: "adminController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    abc: checkLogin
+                }
             })
 
             .when("/adminList/:adminId/newUser", {
