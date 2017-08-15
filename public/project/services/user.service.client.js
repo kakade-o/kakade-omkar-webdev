@@ -23,11 +23,22 @@
             "makeFavorite": makeFavorite,
             "followCritic": followCritic,
             "deleteMovie": deleteMovie,
-            "login": login
+            "login": login,
+            "checkLogin": checkLogin
             //"createComment": createComment
         };
 
         return api;
+
+        function checkLogin() {
+            console.log("in checkLogin");
+            return $http.get("/api/project/checkLogin")
+                .then(function (response) {
+                    console.log(response);
+                    return response.data;
+                })
+
+        }
 
         // Deletes an existing user
         function deleteUser(userId) {

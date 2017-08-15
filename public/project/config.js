@@ -54,7 +54,10 @@
             .when("/profile/:userId", {
                 templateUrl: "views/user/templates/profile.view.client.html",
                 controller: "profileController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    abc: checkLogin
+                }
             })
             .when("/register", {
                 templateUrl: "views/user/templates/register.view.client.html",
@@ -117,6 +120,22 @@
             })
 
 
+    }
+
+    function checkLogin(userService, $q, $location) {
+        var deferred = $q.defer();
+        userService
+            .checkLogin()
+            .then(function (user) {
+                if (user === '0') {
+                    deferred.reject();
+                    $location.url("/login")
+
+                } else {
+                    deferred.resolve(user);
+                }
+            });
+        return deferred.promise;
     }
 
 })();

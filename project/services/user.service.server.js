@@ -19,6 +19,7 @@ module.exports = function (app) {
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
     app.post  ("/api/project/user", passport.authenticate('local'), login);
+    app.get   ("/api/project/checkLogin", checkLogin);
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
@@ -28,6 +29,12 @@ module.exports = function (app) {
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
     ];
 
+
+    //Check Login for Passport
+
+    function checkLogin(req, res) {
+        res.send(req.isAuthenticated() ? req.user : '0');
+    }
 
     //Local Strategy Function for Passport
 
