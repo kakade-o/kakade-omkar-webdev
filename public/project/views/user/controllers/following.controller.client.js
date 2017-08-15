@@ -4,12 +4,12 @@
         .controller("followingController", followingController);
 
 
-    function followingController($location, $routeParams, userService) {
+    function followingController($location, $routeParams, userService, resolveUser) {
 
         var model = this;
 
-        var userId = $routeParams.userId;
-        model.userId = $routeParams.userId;
+        var userId =  resolveUser._id; //$routeParams.userId;
+        model.userId = resolveUser._id;  //$routeParams.userId;
 
         model.updateUser = updateUser;
         model.unregister = unregister;
@@ -69,10 +69,10 @@
                 .findUserById(userId)
                 .then(function (user) {
                     if(user.isCritic == true) {
-                        $location.url('/criticProfile/' + user._id);
+                        $location.url('/criticProfile');
                     }
                     else {
-                        $location.url('/profile/' + user._id);
+                        $location.url('/profile');
                     }
                 })
         }

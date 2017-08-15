@@ -22,46 +22,61 @@
 
 
             // Critic Search
-            .when("/user/:userId/criticSearch", {
+            .when("/user/criticSearch", {
                 templateUrl: "views/criticSearch/templates/criticSearch.view.client.html",
                 controller: "criticSearchController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
             //Review List and Details for User
 
-            .when("/user/:userId/criticReviewList/:reviewerId", {
+            .when("/user/criticReviewList/:reviewerId", {
                 templateUrl: "views/criticReviewList/templates/reviewList.view.client.html",
                 controller: "reviewListController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
-            .when("/user/:userId/criticReviewList/:reviewerId/details/:reviewId", {
+            .when("/user/criticReviewList/:reviewerId/details/:reviewId", {
                 templateUrl: "views/criticReviewList/templates/reviewDetails.view.client.html",
                 controller: "reviewListController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
             // Admin
-            .when("/adminList/:adminId", {
+            .when("/adminList", {
                 templateUrl: "views/user/templates/adminListOfUsers.view.client.html",
                 controller: "adminController",
                 controllerAs: "model",
                 resolve: {
-                    abc: checkLogin
+                    resolveUser: checkLogin
                 }
             })
 
-            .when("/adminList/:adminId/newUser", {
+            .when("/adminList/newUser", {
                 templateUrl: "views/user/templates/adminCreateNewUser.view.client.html",
                 controller: "adminController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
-            .when("/adminList/:adminId/user/:userId/edit", {
+            .when("/adminList/user/edit", {
                 templateUrl: "views/user/templates/adminEditUser.view.client.html",
                 controller: "adminController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
             // User
@@ -70,13 +85,14 @@
                 controller: "loginController",
                 controllerAs: "model"
 
+
             })
-            .when("/profile/:userId", {
+            .when("/profile/", {
                 templateUrl: "views/user/templates/profile.view.client.html",
                 controller: "profileController",
                 controllerAs: "model",
                 resolve: {
-                    abc: checkLogin
+                    resolveUser: checkLogin
                 }
             })
             .when("/register", {
@@ -86,57 +102,81 @@
             })
 
 
-            .when("/user/:userId/following", {
+            .when("/user/following", {
                 templateUrl: "views/user/templates/following.view.client.html",
                 controller: "followingController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
 
             })
 
-            .when("/user/:userId/favorites", {
+            .when("/user/favorites", {
                 templateUrl: "views/user/templates/favorites.view.client.html",
                 controller: "favoritesController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
 
             //Critic User
-            .when("/criticProfile/:userId", {
+            .when("/criticProfile", {
                 templateUrl: "views/user/templates/criticProfile.view.client.html",
                 controller: "criticProfileController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
-            .when("/user/:userId/search", {
+            .when("/user/search", {
                 templateUrl: "views/search/templates/search_movie.view.client.html",
                 controller: "userSearchController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
-            .when("/user/:userId/details/:imdbId", {
+            .when("/user/details/:imdbId", {
                 templateUrl: "views/search/templates/details_movie.view.client.html",
                 controller: "userDetailsController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
 
             //Review
-            .when("/user/:userId/review", {
+            .when("/user/review", {
                 templateUrl: "views/review/templates/review-list.view.client.html",
                 controller: "reviewListController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
-            .when("/user/:userId/review/new", {
+            .when("/user/review/new", {
                 templateUrl: "views/review/templates/review-new.view.client.html",
                 controller: "reviewNewController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
-            .when("/user/:userId/review/:reviewId/edit", {
+            .when("/user/review/:reviewId/edit", {
                 templateUrl: "views/review/templates/review-edit.view.client.html",
                 controller: "reviewEditController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
             })
 
 

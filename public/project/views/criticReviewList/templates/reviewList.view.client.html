@@ -22,7 +22,7 @@
     <div class="container-fluid">
 
         <div class="navbar-text pull-left">
-            <a href="#!/profile/{{model.userId}}/">
+            <a href="#!/profile">
                 <span class="glyphicon glyphicon-chevron-left white_color"></span>
             </a>
         </div>
@@ -52,7 +52,7 @@
         </li>
 
         <li ng-repeat="review in model.reviews" class="list-group-item">
-            <a ng-click="" href="#!/user/{{model.userId}}/criticReviewList/{{review._reviewerId}}/details/{{review._id}}">
+            <a ng-click="" href="#!/user/criticReviewList/{{review._reviewerId}}/details/{{review._id}}">
             {{review.reviewname}}
             </a>
 

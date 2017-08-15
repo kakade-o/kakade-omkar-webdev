@@ -4,10 +4,10 @@
         .module("omdbApp")
         .controller("favoritesController", favoritesController);
 
-    function favoritesController($routeParams, $location, movieService, userService) {
+    function favoritesController($routeParams, $location, movieService, userService, resolveUser) {
         var model = this;
 
-        model.userId = $routeParams.userId;
+        model.userId = resolveUser._id; // $routeParams.userId;
 
         model.movieArray = [];
 

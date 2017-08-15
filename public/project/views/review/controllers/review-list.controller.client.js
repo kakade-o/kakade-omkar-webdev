@@ -3,11 +3,11 @@
         .module("omdbApp")
         .controller("reviewListController", reviewListController);
 
-    function reviewListController($location, $routeParams, reviewService, userService, $sce) {
+    function reviewListController($location, $routeParams, reviewService, userService, $sce, resolveUser) {
 
         var model = this;
 
-        model.userId = $routeParams.userId;
+        model.userId = resolveUser._id;//$routeParams.userId;
         model.reviewId = $routeParams.reviewId;
         model.reviewerId = $routeParams.reviewerId;
         model.toProfile = toProfile;
@@ -46,10 +46,10 @@
                 .findUserById(model.userId)
                 .then(function (user) {
                     if (user.isCritic == true) {
-                        $location.url('/criticProfile/' + user._id);
+                        $location.url('/criticProfile');
                     }
                     else {
-                        $location.url('/profile/' + user._id);
+                        $location.url('/profile');
                     }
                 })
         }

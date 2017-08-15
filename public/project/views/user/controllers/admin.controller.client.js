@@ -4,12 +4,12 @@
         .module("omdbApp")
         .controller("adminController", adminController);
     
-    function adminController($routeParams, userService, $location, $timeout) {
+    function adminController($routeParams, userService, $location, $timeout, resolveUser) {
 
         var model = this;
 
-        model.adminId = $routeParams.adminId;
-        model.userId = $routeParams.userId;
+        model.adminId = resolveUser.adminId; //$routeParams.adminId;
+        model.userId = resolveUser._id; //$routeParams.userId;
         model.updateUser = updateUser;
         model.removeUser = removeUser;
 
@@ -77,7 +77,7 @@
                 userService
                     .deleteUser(model.userId)
                     .then(function () {
-                        $location.url("/adminList/" + model.adminId);
+                        $location.url("/adminList");
                     })
             }
         }

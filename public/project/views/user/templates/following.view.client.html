@@ -25,7 +25,7 @@
             </div>
 
             <div class="navbar-text pull-right">
-                <a href="#!/user/{{model.user._id}}/criticSearch">
+                <a href="#!/user/criticSearch">
                     <span class="glyphicon glyphicon-plus white_color"></span>
                 </a>
             </div>
@@ -48,14 +48,14 @@
             Name
         </li>
         <li ng-repeat="critic in model.critics" class="list-group-item">
-            <a href="#!/user/{{model.userId}}/criticReviewList/{{critic._id}}">
+            <a href="#!/user/criticReviewList/{{critic._id}}">
                     <!--href="#!/user/{{model.userId}}/{{review._id}}">-->
                 <!--{{model.user.following}}-->
 
                 {{critic.username}}
             </a>
 
-            <a href="#!/user/{{model.userId}}/review/{{review._id}}/edit">
+            <a href="#!/user/review/{{review._id}}/edit">
                 <span class="pull-right glyphicon glyphicon-cog"></span>
             </a>
         </li>

@@ -26,13 +26,13 @@
             function login(found) {
                 if(found !== null) {
                     if(found.isAdmin === true) {
-                        $location.url('/adminList/' + found._id);
+                        $location.url('/adminList');
                     }
                     else if(found.isCritic === true) {
-                        $location.url('/criticProfile/' + found._id);
+                        $location.url('/criticProfile');
                     }
                     else {
-                        $location.url('/profile/' + found._id);
+                        $location.url('/profile');
                     }
                 } else {
                     handleError(null);

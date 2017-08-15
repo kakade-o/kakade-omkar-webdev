@@ -8,11 +8,11 @@
         .controller("profileController", profileController);
 
 
-    function profileController($location, $routeParams, userService, $timeout) {
-
+    function profileController($location, $routeParams, userService, $timeout, resolveUser) {
+        console.log(resolveUser);
         var model = this;
 
-        var userId = $routeParams["userId"];
+        var userId = resolveUser._id; //$routeParams.userId;
 
         model.updateUser = updateUser;
         model.unregister = unregister;
@@ -21,11 +21,11 @@
         userService
             .findUserById(userId)
             .then(renderUser);
-        
+
         function renderUser(user) {
             model.user = user;
         }
-        
+
         // function init() {
         //     //model.user = userService.findUserById(userId);
         //     var promise = userService.findUserById(userId);
@@ -41,7 +41,9 @@
             userService.updateUser(user._id, user);
             model.updated = "Profile Updated!";
             model.hasAlert = true;
-            $timeout(function() {model.hasAlert = false}, 3000);
+            $timeout(function () {
+                model.hasAlert = false
+            }, 3000);
         }
 
         function unregister(user) {

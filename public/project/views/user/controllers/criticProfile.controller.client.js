@@ -4,11 +4,11 @@
         .controller("criticProfileController", criticProfileController);
 
 
-    function criticProfileController($location, $routeParams, userService, $timeout) {
+    function criticProfileController($location, $routeParams, userService, $timeout, resolveUser) {
 
         var model = this;
 
-        var userId = $routeParams["userId"];
+        var userId = resolveUser._id; //$routeParams["userId"];
 
         model.updateUser = updateUser;
         model.unregister = unregister;

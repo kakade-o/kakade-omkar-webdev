@@ -4,11 +4,11 @@
         .module("omdbApp")
         .controller("userSearchController", userSearchController);
 
-    function userSearchController($location, movieService, $routeParams, userService) {
+    function userSearchController($location, movieService, $routeParams, userService, resolveUser) {
 
         var model = this;
 
-        model.userId = $routeParams.userId;
+        model.userId = resolveUser._id;//$routeParams.userId;
 
         model.searchMovieByTitle = searchMovieByTitle;
         model.toProfile = toProfile;
@@ -28,10 +28,10 @@
                 .findUserById(model.userId)
                 .then(function (user) {
                     if(user.isCritic == true) {
-                        $location.url('/criticProfile/' + user._id);
+                        $location.url('/criticProfile');
                     }
                     else {
-                        $location.url('/profile/' + user._id);
+                        $location.url('/profile');
                     }
                 })
         }

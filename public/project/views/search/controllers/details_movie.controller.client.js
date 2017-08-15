@@ -3,10 +3,10 @@
         .module("omdbApp")
         .controller("userDetailsController", userDetailsController);
 
-    function userDetailsController($location, movieService, $routeParams, userService, $timeout) {
+    function userDetailsController($location, movieService, $routeParams, userService, $timeout, resolveUser) {
        var model = this;
 
-        model.userId = $routeParams.userId;
+        model.userId = resolveUser._id;//$routeParams.userId;
         model.imdbId = $routeParams.imdbId;
 
         model.makeFavorite = makeFavorite;
