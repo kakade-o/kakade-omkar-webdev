@@ -1,6 +1,6 @@
 (function () {
 
     angular
-        .module("omdbApp", ["ngRoute", "ngAnimate"]);
+        .module("omdbApp", ["ngRoute", "ngAnimate", "textAngular"]);
 
 })();

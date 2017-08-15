@@ -3,7 +3,7 @@
         .module("omdbApp")
         .controller("userDetailsController", userDetailsController);
 
-    function userDetailsController($location, movieService, $routeParams, userService) {
+    function userDetailsController($location, movieService, $routeParams, userService, $timeout) {
        var model = this;
 
         model.userId = $routeParams.userId;
@@ -31,6 +31,8 @@
                 .makeFavorite(model.userId, model.imdbId)
                 .then(function () {
                     model.liked = "Added to Favorites!";
+                    model.hasAlert = true;
+                    $timeout(function() {model.hasAlert = false}, 3000);
                 })
 
         }

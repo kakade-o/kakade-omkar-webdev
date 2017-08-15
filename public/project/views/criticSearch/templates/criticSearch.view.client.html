@@ -20,6 +20,10 @@
 
 </nav>
 
+<div ng-show="model.newFollow" class="alert alert-success">
+    {{model.liked}}
+</div>
+
 <h2>Search For Critic By Username</h2>
 <input placeholder="bob"
        ng-model="model.criticUsername"
@@ -47,10 +51,17 @@
     </tr>
 </table>
 
+<div ng-show="model.followAlert" class="alert alert-danger">
+    {{model.errorMessage}}
+</div>
+<div ng-show="model.hasAlert" class="alert alert-danger">
+    {{model.errorMessage}}
+</div>
+
 <div>
     <ul class="list-group">
         <li class="list-group-item active">
-           Critic List
+           List of all Critics
         </li>
         <li class="list-group-item" ng-repeat="critics in model.allCritics">
             {{critics.username}}
@@ -59,8 +70,3 @@
     </ul>
 </div>
 
-
-
-<div ng-show="model.errorMessage" class="alert alert-danger">
-    {{model.errorMessage}}
-</div>
