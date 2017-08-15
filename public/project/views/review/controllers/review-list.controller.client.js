@@ -11,6 +11,8 @@
         model.reviewId = $routeParams.reviewId;
         model.reviewerId = $routeParams.reviewerId;
         model.toProfile = toProfile;
+        model.showDetails = showDetails;
+
 
         function init() {
             console.log("inside controller");
@@ -20,6 +22,11 @@
                     .findReviewByUserId(model.reviewerId)
                     .then(function (reviews) {
                         model.reviews = reviews;
+                        if(model.reviewId != null) {
+                            var i = showDetails(model.reviews);
+                            model.reviewDescription = i;
+                            console.log(model.reviewDescription);
+                        }
                     });
             }
             else {
@@ -46,6 +53,17 @@
                     }
                 })
         }
+
+        function showDetails(reviews) {
+            for (var u in model.reviews) {
+                if (reviews[u]._id === model.reviewId) {
+                    return model.reviewDetails = reviews[u];
+
+                }
+            }
+
+        }
+
 
     }
 
