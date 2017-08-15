@@ -18,13 +18,11 @@ module.exports = function (app) {
     app.delete("/api/project/user/:userId", deleteUser);
     app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
-<<<<<<< HEAD
+
     app.post  ("/api/project/user", passport.authenticate('local'), login);
     app.get   ("/api/project/checkLogin", checkLogin);
-=======
-    app.post  ('/api/project/user', findUser);
+
     app.get   ("/api/project/allUsers", findAllUsers);
->>>>>>> 1bf8a18860934488cb3d439e0e78fce430c62d7b
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [

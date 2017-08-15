@@ -41,3 +41,7 @@ body {
 .navbar-btn {
     margin-right: 5px;
 }
+
+.navbar-text {
+    margin-left: 10px;
+}
