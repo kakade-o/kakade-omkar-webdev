@@ -3,7 +3,7 @@
         .module("omdbApp")
         .controller("reviewListController", reviewListController);
 
-    function reviewListController($location, $routeParams, reviewService, userService) {
+    function reviewListController($location, $routeParams, reviewService, userService, $sce) {
 
         var model = this;
 
@@ -12,7 +12,7 @@
         model.reviewerId = $routeParams.reviewerId;
         model.toProfile = toProfile;
         model.showDetails = showDetails;
-
+        model.trustThisContent = trustThisContent;
 
         function init() {
             console.log("inside controller");
@@ -61,6 +61,11 @@
 
                 }
             }
+
+        }
+
+        function trustThisContent(html) {
+            return $sce.trustAsHtml(html);
 
         }
 

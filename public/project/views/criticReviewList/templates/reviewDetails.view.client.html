@@ -22,7 +22,7 @@
     <div class="container-fluid">
 
         <div class="navbar-text pull-left">
-            <a href="#!/criticProfile/{{model.userId}}/">
+            <a href="#!/user/{{model.userId}}/criticReviewList/{{model.reviewerId}}/">
                 <span class="glyphicon glyphicon-chevron-left white_color"></span>
             </a>
         </div>
@@ -44,12 +44,10 @@
 </nav>
 
 <div class="container-fluid">
-
-    {{model.reviewDescription.reviewtext}}
+    <div ng-bind-html="model.trustThisContent(model.reviewDescription.reviewtext)">
+    </div>
 
     <!--<br/>-->
-    <br/>
-    <br/>
     <br/>
     <div>
         <h5>Rating: {{model.reviewDescription.rating}}</h5>
