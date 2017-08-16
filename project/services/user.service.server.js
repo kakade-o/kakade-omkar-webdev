@@ -20,8 +20,14 @@ module.exports = function (app) {
     app.delete("/api/project/user/:userId", deleteUser);
     app.get("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
+
+
+    app.post  ("/api/project/user", passport.authenticate('local'), login);
+    app.get   ("/api/project/checkLogin", checkLogin);
+
     app.post("/api/project/user", passport.authenticate('local'), login);
     app.get("/api/project/checkLogin", checkLogin);
+
 
     // app.post  ('/api/project/user', findUser);
     // app.get   ("/api/project/allUsers", findAllUsers);
@@ -29,9 +35,13 @@ module.exports = function (app) {
     app.post("/api/project/user", passport.authenticate('local'), login);
     app.get("/api/project/checkLogin", checkLogin);
 
+
+    app.get   ("/api/project/allUsers", findAllUsers);
+
     app.get("/api/project/allUsers", findAllUsers);
     app.post("/api/project/logout", logout);
     app.post("/api/project/register", register);
+<<<<<<< HEAD
     app.get("/auth/google", passport.authenticate('google', { scope : ['profile', 'email'] }));
     app.get('https://kakade-omkar-webdev.herokuapp.com/auth/google/callback',
         passport.authenticate('google', {
@@ -44,6 +54,11 @@ module.exports = function (app) {
             successRedirect: '/#!/profile',
             failureRedirect: '/#!/login'
         }));
+=======
+    app.get("/auth/google", function (req, res) {
+        console.log("logging in with Google");
+    });
+>>>>>>> 955dbae9fe5fcbedae6cdebccecb94826a288d57
 
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 

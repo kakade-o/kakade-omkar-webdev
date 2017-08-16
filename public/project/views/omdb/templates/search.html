@@ -1,11 +1,11 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 
-    <div class="navbar-form pull-right">
+    <div class="navbar-btn pull-right">
         <a class="btn btn-success btn-block"
            href="#!/login">Login</a>
     </div>
 
-    <div class="navbar-form pull-right">
+    <div class="navbar-btn pull-right">
         <a class="btn btn-warning btn-block"
            href="#!/register">Register</a>
     </div>
@@ -19,6 +19,7 @@
 </nav>
 
 <h2>Search by Movie Title</h2>
+
 <input placeholder="titanic"
        ng-model="movieTitle"
        id="searchByTitleFld"
@@ -29,6 +30,43 @@
         class="btn btn-block btn-primary">
     Search
 </button>
+<br/>
+<div class="slideshow-container" ng-hide="model.movies">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <img src="/images/iron-man.jpg" style="width:100%"/>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="/images/300.jpg" style="width:100%"/>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="/images/strange.jpg" style="width:100%"/>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="/images/transformers.jpg" style="width:100%"/>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="/images/wonder-woman.jpg" style="width:100%"/>
+    </div>
+
+</div>
+<br>
+<div style="text-align:center" ng-hide="model.movies">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+
 
 <table class="table">
     <tr ng-repeat="movie in model.movies.Search">
