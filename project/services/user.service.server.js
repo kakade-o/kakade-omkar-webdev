@@ -19,14 +19,14 @@ module.exports = function (app) {
     app.delete("/api/project/user/:userId", deleteUser);
     app.get("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
-<<<<<<< HEAD
+
 
     app.post  ("/api/project/user", passport.authenticate('local'), login);
     app.get   ("/api/project/checkLogin", checkLogin);
-=======
+
     app.post("/api/project/user", passport.authenticate('local'), login);
     app.get("/api/project/checkLogin", checkLogin);
->>>>>>> 00c2eaa90a139f23156cc5da27702dd16d117481
+
 
     // app.post  ('/api/project/user', findUser);
     // app.get   ("/api/project/allUsers", findAllUsers);
@@ -34,16 +34,16 @@ module.exports = function (app) {
     app.post("/api/project/user", passport.authenticate('local'), login);
     app.get("/api/project/checkLogin", checkLogin);
 
-<<<<<<< HEAD
+
     app.get   ("/api/project/allUsers", findAllUsers);
-=======
+
     app.get("/api/project/allUsers", findAllUsers);
     app.post("/api/project/logout", logout);
     app.post("/api/project/register", register);
     app.get("/auth/google", function (req, res) {
         console.log("logging in with Google");
     });
->>>>>>> 00c2eaa90a139f23156cc5da27702dd16d117481
+
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [

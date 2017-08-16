@@ -9,6 +9,7 @@
         var model = this;
 
         model.imdbId = $routeParams.imdbId;
+        model.goBack = goBack;
 
         function init() {
             movieService
@@ -21,6 +22,10 @@
 
             model.movie = movie;
             
+        }
+        
+        function goBack() {
+            window.history.back();
         }
     }
 
