@@ -1,8 +1,9 @@
 module.exports = function (app) {
 
     //Passport
-    var passport      = require('passport');
+    var passport = require('passport');
     var LocalStrategy = require('passport-local').Strategy;
+    var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
     passport.use(new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
@@ -10,37 +11,75 @@ module.exports = function (app) {
     var userModel = require("../model/user/user.model.server");
 
 
-    app.get   ('/api/project/user/:userId', findUserById);
-    app.get   ('/api/project/user', findUserByCredentials);
-    app.post  ('/api/project/profile', registerUser);
-    app.put   ("/api/project/user/:userId", updateUser);
-    app.get   ("/api/project/user/:userId/imdb/:imdbId", addMovie);
+    app.get('/api/project/user/:userId', findUserById);
+    app.get('/api/project/user', findUserByCredentials);
+    app.post('/api/project/profile', registerUser);
+    app.put("/api/project/user/:userId", updateUser);
+    app.get("/api/project/user/:userId/imdb/:imdbId", addMovie);
     app.delete("/api/project/user/:userId", deleteUser);
-    app.get   ("/api/project/user/:userId/criticSearch/:criticId", followCritic);
+    app.get("/api/project/user/:userId/criticSearch/:criticId", followCritic);
     app.delete("/api/project/user/:userId/imdb/:imdbId", deleteMovie);
+<<<<<<< HEAD
 
     app.post  ("/api/project/user", passport.authenticate('local'), login);
     app.get   ("/api/project/checkLogin", checkLogin);
+=======
+    app.post("/api/project/user", passport.authenticate('local'), login);
+    app.get("/api/project/checkLogin", checkLogin);
+>>>>>>> 00c2eaa90a139f23156cc5da27702dd16d117481
 
     // app.post  ('/api/project/user', findUser);
     // app.get   ("/api/project/allUsers", findAllUsers);
 
-    app.post  ("/api/project/user", passport.authenticate('local'), login);
-    app.get   ("/api/project/checkLogin", checkLogin);
+    app.post("/api/project/user", passport.authenticate('local'), login);
+    app.get("/api/project/checkLogin", checkLogin);
 
+<<<<<<< HEAD
     app.get   ("/api/project/allUsers", findAllUsers);
+=======
+    app.get("/api/project/allUsers", findAllUsers);
+    app.post("/api/project/logout", logout);
+    app.post("/api/project/register", register);
+    app.get("/auth/google", function (req, res) {
+        console.log("logging in with Google");
+    });
+>>>>>>> 00c2eaa90a139f23156cc5da27702dd16d117481
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
-        {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-        {_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
-        {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
-        {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
+        {_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder"},
+        {_id: "234", username: "bob", password: "bob", firstName: "Bob", lastName: "Marley"},
+        {_id: "345", username: "charly", password: "charly", firstName: "Charly", lastName: "Garcia"},
+        {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose", lastName: "Annunzi"}
     ];
 
 
-    //Check Login for Passport
+    function register(req, res) {
+        var user = req.body;
+        userModel
+            .createUser(user)
+            .then(
+                function (user) {
+                    if (user) {
+                        req.login(user, function (err) {
+                            if (err) {
+                                res.status(400).send(err);
+                            } else {
+                                res.json(user);
+                            }
+                        });
+                    }
+                }
+            );
+    }
 
+    //Logout for Passport
+    function logout(req, res) {
+        req.logOut();
+        res.send(200);
+    }
+
+    //Check Login for Passport
     function checkLogin(req, res) {
         res.send(req.isAuthenticated() ? req.user : '0');
     }
@@ -51,16 +90,19 @@ module.exports = function (app) {
         userModel
             .findUserByCredentials(username, password)
             .then(
-                function(user) {
-                    if (!user) { return done(null, false); }
+                function (user) {
+                    if (!user) {
+                        return done(null, false);
+                    }
                     return done(null, user);
                 },
-                function(err) {
-                    if (err) { return done(err); }
+                function (err) {
+                    if (err) {
+                        return done(err);
+                    }
                 }
             );
     }
-
 
 
     //Passport Implementation
@@ -243,18 +285,14 @@ module.exports = function (app) {
     }
 
 
-
-
-
 //OLD IMPLEMENTATION
-
 
 
     function findUserByCredentials(req, res) {
         var username = req.query['username'];
         var password = req.query['password'];
 
-        if(username && password) {
+        if (username && password) {
             userModel
                 .findUserByCredentials(username, password)
                 .then(function (user) {
@@ -276,7 +314,7 @@ module.exports = function (app) {
             // res.sendStatus(404);
             return;
 
-        } else if(username) {
+        } else if (username) {
 
             // for(u in users) {
             //     if(users[u].username === username) {
@@ -305,10 +343,10 @@ module.exports = function (app) {
         userModel
             .findUserById(user._id)
             .then(
-                function(user){
+                function (user) {
                     done(null, user);
                 },
-                function(err){
+                function (err) {
                     done(err, null);
                 }
             );

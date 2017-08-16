@@ -16,6 +16,7 @@
 
         model.updateUser = updateUser;
         model.unregister = unregister;
+        model.logout = logout;
 
 
         userService
@@ -52,6 +53,16 @@
                 .then(function () {
                     $location.url('/login');
                 })
+        }
+
+        function logout(user) {
+            userService
+                .logout(user)
+                .then(
+                    function (response) {
+                        console.log("in logout")
+                        $location.url("/login");
+                    });
         }
 
     }
