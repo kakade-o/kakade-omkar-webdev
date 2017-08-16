@@ -16,8 +16,13 @@ userModel.deleteMovie = deleteMovie;
 userModel.addCritic = addCritic;
 userModel.findAllCritics = findAllCritics;
 userModel.findAllUsers = findAllUsers;
+userModel.findUserByGoogleId = findUserByGoogleId;
 
 module.exports = userModel;
+
+function findUserByGoogleId(googleId) {
+    return userModel.findOne({'google.id': googleId})
+}
 
 function findAllUsers() {
     return userModel.find();

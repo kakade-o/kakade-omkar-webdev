@@ -2,6 +2,7 @@ module.exports = function (app) {
 
     //Passport
     var passport = require('passport');
+    var bcrypt = require("bcrypt-nodejs");
     var LocalStrategy = require('passport-local').Strategy;
     var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
     passport.use(new LocalStrategy(localStrategy));
@@ -31,9 +32,19 @@ module.exports = function (app) {
     app.get("/api/project/allUsers", findAllUsers);
     app.post("/api/project/logout", logout);
     app.post("/api/project/register", register);
-    app.get("/auth/google", function (req, res) {
-        console.log("logging in with Google");
-    });
+    app.get("/auth/google", passport.authenticate('google', { scope : ['profile', 'email'] }));
+    app.get('https://kakade-omkar-webdev.herokuapp.com/auth/google/callback',
+        passport.authenticate('google', {
+            successRedirect: '/#!/profile',
+            failureRedirect: '/#!/login'
+        }));
+
+    app.get('localhost:3000/127.0.0.1/auth/google/callback',
+        passport.authenticate('google', {
+            successRedirect: '/#!/profile',
+            failureRedirect: '/#!/login'
+        }));
+
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
     var users = [
@@ -42,6 +53,53 @@ module.exports = function (app) {
         {_id: "345", username: "charly", password: "charly", firstName: "Charly", lastName: "Garcia"},
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose", lastName: "Annunzi"}
     ];
+
+    //Google Config for Passport
+
+    var googleConfig = {
+        clientID     : process.env.GOOGLE_CLIENT_ID,
+        clientSecret : process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL  : process.env.GOOGLE_CALLBACK_URL
+    };
+
+    passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+
+    function googleStrategy(token, refreshToken, profile, done) {
+        userModel
+            .findUserByGoogleId(profile.id)
+            .then(
+                function(user) {
+                    if(user) {
+                        return done(null, user);
+                    } else {
+                        var email = profile.emails[0].value;
+                        var emailParts = email.split("@");
+                        var newGoogleUser = {
+                            username:  emailParts[0],
+                            firstName: profile.name.givenName,
+                            lastName:  profile.name.familyName,
+                            email:     email,
+                            google: {
+                                id:    profile.id,
+                                token: token
+                            }
+                        };
+                        return userModel.createUser(newGoogleUser);
+                    }
+                },
+                function(err) {
+                    if (err) { return done(err); }
+                }
+            )
+            .then(
+                function(user){
+                    return done(null, user);
+                },
+                function(err){
+                    if (err) { return done(err); }
+                }
+            );
+    }
 
 
     function register(req, res) {
