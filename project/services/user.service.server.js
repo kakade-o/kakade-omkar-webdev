@@ -41,7 +41,6 @@ module.exports = function (app) {
     app.get("/api/project/allUsers", findAllUsers);
     app.post("/api/project/logout", logout);
     app.post("/api/project/register", register);
-<<<<<<< HEAD
     app.get("/auth/google", passport.authenticate('google', { scope : ['profile', 'email'] }));
     app.get('https://kakade-omkar-webdev.herokuapp.com/auth/google/callback',
         passport.authenticate('google', {
@@ -54,11 +53,9 @@ module.exports = function (app) {
             successRedirect: '/#!/profile',
             failureRedirect: '/#!/login'
         }));
-=======
     app.get("/auth/google", function (req, res) {
         console.log("logging in with Google");
     });
->>>>>>> 955dbae9fe5fcbedae6cdebccecb94826a288d57
 
     //app.get   ("/api/project/user/:userId/imdb/:imdbId/comment", createComment);
 
