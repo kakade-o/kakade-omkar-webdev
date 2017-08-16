@@ -52,13 +52,14 @@
                         var _user = response.data;
                         if(!_user) {
                             return userService
-                                .registerUser(user)
+                                .register(user)
                                 .then(function (response) {
                                 _user = response.data;
+                                model.currentUser = _user;
                                 if(user.isCritic ==  true) {
-                                    $location.url("/criticProfile/" + _user._id);
+                                    $location.url("/criticProfile/");
                                 } else {
-                                    $location.url("/profile/" + _user._id);
+                                    $location.url("/profile/");
                                 }
                             });
 

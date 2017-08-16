@@ -99,6 +99,7 @@
                 templateUrl: "views/user/templates/register.view.client.html",
                 controller: "registerController",
                 controllerAs: "model"
+
             })
 
 

@@ -25,11 +25,22 @@
             "followCritic": followCritic,
             "deleteMovie": deleteMovie,
             "login": login,
-            "checkLogin": checkLogin
+            "checkLogin": checkLogin,
+            "logout": logout,
+            "register": register
             //"createComment": createComment
         };
 
         return api;
+
+        //Passport Register
+        function register(user) {
+            return $http.post("/api/project/register", user);
+        }
+
+        function logout(user) {
+            return $http.post("/api/project/logout");
+        }
 
         function checkLogin() {
             console.log("in checkLogin");

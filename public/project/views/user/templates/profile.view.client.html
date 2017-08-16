@@ -68,7 +68,9 @@
                href="#!/user/following">Followed Critics</a>
 
             <a class="btn btn-danger btn-block"
-               href="#!/login">Logout</a>
+               ng-click="model.logout(model.user)">
+               <!--href="#!/login">-->
+                Logout</a>
 
             <a class="btn btn-warning btn-block"
                ng-click="model.unregister(model.user)">
