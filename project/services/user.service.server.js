@@ -41,17 +41,17 @@ module.exports = function (app) {
     app.get("/api/project/allUsers", findAllUsers);
     app.post("/api/project/logout", logout);
     app.post("/api/project/register", register);
-    app.get("/auth/google", passport.authenticate('google', { scope : ['profile', 'email'] }));
+    app.get("/auth/google", passport.authenticate('google', { scope : ['profile'] }));
     app.get('https://kakade-omkar-webdev.herokuapp.com/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect: '/#!/profile',
-            failureRedirect: '/#!/login'
+            successRedirect: '/project/index.html#!/profile',
+            failureRedirect: '/project/index.html#!/login'
         }));
 
-    app.get('localhost:3000/127.0.0.1/auth/google/callback',
+    app.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect: '/#!/profile',
-            failureRedirect: '/#!/login'
+            successRedirect: '/project/index.html#!/profile',
+            failureRedirect: '/project/index.html#!/login'
         }));
     app.get("/auth/google", function (req, res) {
         console.log("logging in with Google");
@@ -74,6 +74,10 @@ module.exports = function (app) {
         callbackURL  : process.env.GOOGLE_CALLBACK_URL
     };
 
+<<<<<<< HEAD
+=======
+    console.log(googleConfig);
+>>>>>>> 40e42bbf4c5f6d6f7e3b2698f2f0a1a67cec58a4
 
     passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
@@ -85,13 +89,13 @@ module.exports = function (app) {
                     if(user) {
                         return done(null, user);
                     } else {
-                        var email = profile.emails[0].value;
-                        var emailParts = email.split("@");
+                        // var email = profile.emails[0].value;
+                        // var emailParts = email.split("@");
                         var newGoogleUser = {
-                            username:  emailParts[0],
+                            username:  profile.displayname,
                             firstName: profile.name.givenName,
                             lastName:  profile.name.familyName,
-                            email:     email,
+                            // email:     email,
                             google: {
                                 id:    profile.id,
                                 token: token
