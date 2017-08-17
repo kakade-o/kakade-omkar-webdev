@@ -31,18 +31,44 @@
     Search
 </button>
 
-<table class="table">
-    <tr ng-repeat="movie in model.movies.Search">
-        <td>
+<!--<table class="table">-->
+    <!--<tr ng-repeat="movie in model.movies.Search">-->
+        <!--<td>-->
+            <!--<a href="#!/user/details/{{movie.imdbID}}">-->
+                <!--{{movie.Title}}-->
+            <!--</a>-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--<img ng-src="{{movie.Poster}}"/>-->
+        <!--</td>-->
+    <!--</tr>-->
+<!--</table>-->
+
+<div class="hidden-xs">
+    <table class="table">
+        <tr ng-repeat="movie in model.movies.Search">
+            <td>
+                <a href="#!/user/details/{{movie.imdbID}}">
+                    {{movie.Title}}
+                </a>
+            </td>
+            <td>
+                <img ng-src="{{movie.Poster}}"/>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="visible-xs">
+    <ul class="list-group">
+        <li ng-repeat="movie in model.movies.Search" class="list-group-item">
             <a href="#!/user/details/{{movie.imdbID}}">
                 {{movie.Title}}
             </a>
-        </td>
-        <td>
             <img ng-src="{{movie.Poster}}"/>
-        </td>
-    </tr>
-</table>
+        </li>
+    </ul>
+</div>
 
 
 
