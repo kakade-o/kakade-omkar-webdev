@@ -23,6 +23,13 @@
 
         function renderMovies(movies, title) {
             model.movies = movies;
+
+            userService
+                .findUserById(model.userId)
+                .then(function (user) {
+                    console.log(user);
+                })
+
             //$location.url("/user/search/" + title +"/searchMovie");
         }
 

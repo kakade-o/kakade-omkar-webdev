@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var reviewSchema = require("./review.schema.server");
 var reviewModel = mongoose.model("ProjectReviewModel", reviewSchema);
+var userModel = require("../user/user.model.server");
 
 reviewModel.createReview = createReview;
 reviewModel.findReviewById = findReviewById;
@@ -13,8 +14,13 @@ reviewModel.findReviewByreviewname = findReviewByreviewname;
 
 module.exports = reviewModel;
 
-function createReview(review) {
-    return reviewModel.create(review);
+function createReview(userId, review) {
+    return reviewModel
+        .create(review)
+        .then(function (review) {
+            return userModel
+                .addReview(userId, review._id);
+        });
 }
 
 function findReviewById(id) {
@@ -36,9 +42,14 @@ function findReviewsForUser(userId) {
         .exec();
 }
 
-function deleteReview(reviewId) {
+function deleteReview(userId, reviewId) {
 
-    return reviewModel.remove({_id: reviewId});
+    return reviewModel
+        .remove({_id: reviewId})
+        .then(function (status) {
+            return userModel
+                .deleteReview(userId, reviewId);
+        });
 }
 
 
