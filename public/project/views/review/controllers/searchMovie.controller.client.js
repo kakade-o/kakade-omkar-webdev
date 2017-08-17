@@ -1,9 +1,9 @@
 (function () {
     angular
         .module("omdbApp")
-        .controller("criticSearchController", criticSearchController);
+        .controller("criticMovieSearchController", criticMovieSearchController);
 
-    function criticSearchController($location, movieService, reviewService, $routeParams, userService, resolveUser, $timeout) {
+    function criticMovieSearchController($location, movieService, reviewService, $routeParams, userService, resolveUser, $timeout) {
 
         var model = this;
 

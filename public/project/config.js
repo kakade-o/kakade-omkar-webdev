@@ -197,7 +197,7 @@
 
             .when("/user/review/new/search", {
                 templateUrl: "views/review/templates/searchMovie.view.client.html",
-                controller: "criticSearchController",
+                controller: "criticMovieSearchController",
                 controllerAs: "model",
                 resolve: {
                     resolveUser: checkLogin
