@@ -48,15 +48,15 @@ module.exports = function (app) {
     //         failureRedirect: '/project/index.html#!/login'
     //     }));
 
-    // app.get('/auth/google/callback',
-    //     passport.authenticate('google', {
-    //         successRedirect: '/project/index.html#!/profile',
-    //         failureRedirect: '/project/index.html#!/login'
-    //     }));
+    app.get('/auth/google/callback',
+        passport.authenticate('google', {
+            successRedirect: '/project/index.html#!/profile',
+            failureRedirect: '/project/index.html#!/login'
+        }));
 
-    app.get('/auth/google/callback', function (req, res) {
-        res.send("yay");
-    });
+    // app.get('/auth/google/callback', function (req, res) {
+    //     res.send("yay");
+    // });
 
     app.get("/auth/google", function (req, res) {
         console.log("logging in with Google");
