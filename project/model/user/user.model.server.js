@@ -18,6 +18,8 @@ userModel.addCritic = addCritic;
 userModel.findAllCritics = findAllCritics;
 userModel.findAllUsers = findAllUsers;
 userModel.findUserByGoogleId = findUserByGoogleId;
+userModel.addReview = addReview;
+userModel.deleteReview = deleteReview;
 
 module.exports = userModel;
 
@@ -84,6 +86,25 @@ function deleteWebsite(userId, websiteId) {
         .then(function (user) {
             var index = user.websites.indexOf(websiteId);
             user.websites.splice(index, 1);
+            return user.save();
+        })
+}
+
+function addReview(userId, reviewId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            user.reviews.push(reviewId);
+            return user.save();
+        })
+}
+
+function deleteReview(userId, reviewId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            var index = user.reviews.indexOf(reviewId);
+            user.reviews.splice(index, 1);
             return user.save();
         })
 }

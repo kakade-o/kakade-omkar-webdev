@@ -177,7 +177,7 @@
                 }
             })
 
-            .when("/user/review/new", {
+            .when("/user/review/new/search/:movieId", {
                 templateUrl: "views/review/templates/review-new.view.client.html",
                 controller: "reviewNewController",
                 controllerAs: "model",
@@ -189,6 +189,15 @@
             .when("/user/review/:reviewId/edit", {
                 templateUrl: "views/review/templates/review-edit.view.client.html",
                 controller: "reviewEditController",
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
+            })
+
+            .when("/user/review/new/search", {
+                templateUrl: "views/review/templates/searchMovie.view.client.html",
+                controller: "criticSearchController",
                 controllerAs: "model",
                 resolve: {
                     resolveUser: checkLogin

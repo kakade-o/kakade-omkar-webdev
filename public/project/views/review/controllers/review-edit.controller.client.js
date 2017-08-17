@@ -34,7 +34,8 @@
             reviewService
                 .updateReview(review._id, review)
                 .then(function () {
-                    $location.url("/user/" + "/review");
+                    console.log(review);
+                    $location.url("/user/" + "review");
                 });
             model.updated = "Updated!";
         }
@@ -43,7 +44,7 @@
             reviewService
                 .deleteReview(userId, reviewId)
                 .then(function () {
-                    $location.url("/user/" + "/review");
+                    $location.url("/user/" + "review");
                 });
         }
 

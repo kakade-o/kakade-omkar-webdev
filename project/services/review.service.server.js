@@ -26,7 +26,7 @@ module.exports = function (app) {
         review._reviewerId = userId;
 
         reviewModel
-            .createReview(review)
+            .createReview(userId, review)
             .then(function (review) {
                 res.json(review);
             });
@@ -42,7 +42,7 @@ module.exports = function (app) {
         var reviewId = req.params.reviewId;
         var userId = req.params.userId;
         reviewModel
-            .deleteReview(reviewId)
+            .deleteReview(userId, reviewId)
             .then(function (status) {
                 res.json(status);
             });
