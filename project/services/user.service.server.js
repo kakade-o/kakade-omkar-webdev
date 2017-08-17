@@ -74,10 +74,6 @@ module.exports = function (app) {
         callbackURL  : process.env.GOOGLE_CALLBACK_URL
     };
 
-<<<<<<< HEAD
-=======
-    console.log(googleConfig);
->>>>>>> 40e42bbf4c5f6d6f7e3b2698f2f0a1a67cec58a4
 
     passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
