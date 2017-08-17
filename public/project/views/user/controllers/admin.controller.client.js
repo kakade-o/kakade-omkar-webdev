@@ -48,7 +48,7 @@
                             return userService
                                 .registerUser(user)
                                 .then(function (response) {
-                                    $location.url("/adminList/" + model.adminId);
+                                    $location.url("/adminList");
                                 });
 
                         } else {
