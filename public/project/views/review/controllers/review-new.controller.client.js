@@ -11,6 +11,8 @@
         // model.websiteId = $routeParams.websiteId;
         model.reviewId = $routeParams.reviewId;
 
+        model.movieId = $routeParams.movieId;
+
         model.newReview = newReview;
         model.toProfile = toProfile;
 
@@ -26,10 +28,11 @@
 
         function newReview(review) {
             console.log("inside controller");
+            review.movieId = model.movieId;
             reviewService
                 .createReview(model.userId, review)
                 .then(function () {
-                    $location.url("/user/"+"/review");
+                    $location.url("/user"+"/review");
                 })
         }
 
