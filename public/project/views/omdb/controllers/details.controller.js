@@ -4,7 +4,7 @@
         .module("omdbApp")
         .controller("detailsController", detailsController);
 
-    function detailsController($routeParams, movieService) {
+    function detailsController($routeParams, movieService, $window) {
 
         var model = this;
 
@@ -25,7 +25,7 @@
         }
         
         function goBack() {
-            window.history.back();
+            $window.history.back();
         }
     }
 

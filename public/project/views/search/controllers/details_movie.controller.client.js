@@ -47,10 +47,10 @@
                 .findUserById(model.userId)
                 .then(function (user) {
                     if(user.isCritic == true) {
-                        $location.url('/criticProfile/' + user._id);
+                        $location.url('/criticProfile');
                     }
                     else {
-                        $location.url('/profile/' + user._id);
+                        $location.url('/profile');
                     }
                 })
         }

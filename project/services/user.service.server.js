@@ -74,6 +74,7 @@ module.exports = function (app) {
         callbackURL  : process.env.GOOGLE_CALLBACK_URL
     };
 
+
     passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
     function googleStrategy(token, refreshToken, profile, done) {

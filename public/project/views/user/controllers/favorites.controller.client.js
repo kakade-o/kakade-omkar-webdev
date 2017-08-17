@@ -4,7 +4,7 @@
         .module("omdbApp")
         .controller("favoritesController", favoritesController);
 
-    function favoritesController($routeParams, $location, movieService, userService, resolveUser) {
+    function favoritesController($routeParams, $location, movieService, userService, resolveUser, $window) {
         var model = this;
 
         model.userId = resolveUser._id; // $routeParams.userId;
@@ -44,16 +44,17 @@
         }
 
         function toProfile() {
-            userService
-                .findUserById(model.userId)
-                .then(function (user) {
-                    if(user.isCritic == true) {
-                        $location.url('/criticProfile/' + user._id);
-                    }
-                    else {
-                        $location.url('/profile/' + user._id);
-                    }
-                })
+            $window.history.back();
+            // userService
+            //     .findUserById(model.userId)
+            //     .then(function (user) {
+            //         if(user.isCritic == true) {
+            //             $location.url('/criticProfile/' + user._id);
+            //         }
+            //         else {
+            //             $location.url('/profile/' + user._id);
+            //         }
+            //     })
         }
 
     }

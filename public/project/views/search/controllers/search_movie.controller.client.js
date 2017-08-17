@@ -13,14 +13,30 @@
         model.searchMovieByTitle = searchMovieByTitle;
         model.toProfile = toProfile;
 
+        model.movieTitle = $routeParams.movieTitle;
+
+        function init() {
+
+            if (model.movieTitle == 'undefined') {
+                model.movieTitle = "";
+
+            } else {
+                searchMovieByTitle(model.movieTitle)
+            }
+
+        }
+
         function searchMovieByTitle(movieTitle) {
             movieService
                 .searchMovieByTitle(movieTitle)
-                .then(renderMovies);
+                .then(function (movies) {
+                    renderMovies(movies, movieTitle);
+                });
         }
 
-        function renderMovies(movies) {
+        function renderMovies(movies, title) {
             model.movies = movies;
+            //$location.url("/user/search/" + title +"/searchMovie");
         }
 
         function toProfile() {

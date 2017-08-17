@@ -4,14 +4,23 @@
         .module("omdbApp")
         .controller("searchController", searchController);
 
-    function searchController(movieService) {
+    function searchController($routeParams, movieService, $location) {
         var model = this;
 
         model.searchMovieByTitle = searchMovieByTitle;
         model.showSlides = showSlides;
 
+        model.movieTitle = $routeParams.movieTitle;
 
         function init() {
+
+            if (model.movieTitle == 'undefined') {
+                model.movieTitle = "";
+
+            } else {
+                searchMovieByTitle(model.movieTitle)
+            }
+
 
         }
         init();
@@ -19,11 +28,14 @@
         function searchMovieByTitle(movieTitle) {
             movieService
                 .searchMovieByTitle(movieTitle)
-                .then(renderMovies);
+                .then(function (movies) {
+                    renderMovies(movies, movieTitle);
+                });
         }
 
-        function renderMovies(movies) {
+        function renderMovies(movies, title) {
             model.movies = movies;
+            $location.url("/" + title +"/searchMovie");
         }
 
 
@@ -47,7 +59,7 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 1500); // Change image every 2 seconds
+            setTimeout(showSlides, 1700); // Change image every 2 seconds
         }
     }
 

@@ -20,6 +20,12 @@
                 controllerAs: "model"
             })
 
+            .when("/:movieTitle/searchMovie", {
+                templateUrl: "views/omdb/templates/search.html",
+                controller: "searchController",
+                controllerAs: "model"
+            })
+
 
             // Critic Search
             .when("/user/criticSearch", {
@@ -134,6 +140,15 @@
             })
 
             .when("/user/search", {
+                templateUrl: "views/search/templates/search_movie.view.client.html",
+                controller: "userSearchController",
+                controllerAs: "model",
+                resolve: {
+                    resolveUser: checkLogin
+                }
+            })
+
+            .when("/user/search/:movieTitle/searchMovie", {
                 templateUrl: "views/search/templates/search_movie.view.client.html",
                 controller: "userSearchController",
                 controllerAs: "model",
