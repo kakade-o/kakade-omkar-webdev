@@ -7,10 +7,10 @@ var userSchema = mongoose.Schema({
     dob: Date,
     isAdmin: Boolean,
     isCritic: Boolean,
-    email:     email,
+    // email: String,
     google: {
-        id:    profile.id,
-        token: token
+        id:    String,//profile.id,
+        token: String//token
     },
     favorites: [{type: String}],
     following: [{type: mongoose.Schema.Types.ObjectId, ref: "ProjectUserModel"}],
