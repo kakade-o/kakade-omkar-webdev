@@ -42,7 +42,7 @@ module.exports = function (app) {
     app.post("/api/project/logout", logout);
     app.post("/api/project/register", register);
     app.get("/auth/google", passport.authenticate('google', { scope : ['profile'] }));
-    app.get('https://kakade-omkar-webdev.herokuapp.com/auth/google/callback',
+    app.get('http://kakade-omkar-webdev.herokuapp.com/auth/google/callback',
         passport.authenticate('google', {
             successRedirect: '/project/index.html#!/profile',
             failureRedirect: '/project/index.html#!/login'
