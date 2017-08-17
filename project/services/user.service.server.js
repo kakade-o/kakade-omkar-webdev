@@ -93,7 +93,7 @@ module.exports = function (app) {
                         // var email = profile.emails[0].value;
                         // var emailParts = email.split("@");
                         var newGoogleUser = {
-                            username:  profile.displayname,
+                            username:  profile.name.givenName+profile.name.familyName,
                             firstName: profile.name.givenName,
                             lastName:  profile.name.familyName,
                             // email:     email,
@@ -122,6 +122,7 @@ module.exports = function (app) {
 
     function register(req, res) {
         var user = req.body;
+        user.password = bcrypt.hashSync(user.password);
         userModel
             .createUser(user)
             .then(
