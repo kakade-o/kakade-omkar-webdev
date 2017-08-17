@@ -3,7 +3,7 @@
         .module("omdbApp")
         .controller("criticSearchController", criticSearchController);
 
-    function criticSearchController($location, movieService, $routeParams, userService, resolveUser) {
+    function criticSearchController($location, movieService, reviewService, $routeParams, userService, resolveUser, $timeout) {
 
         var model = this;
 
@@ -35,15 +35,37 @@
 
         function checkForExistingReview(movieId) {
             //href="#!/user/review/new/search/{{movie.imdbID}}"
+            var temp;
+
             userService
                 .findUserById(model.userId)
                 .then(function (user) {
-
                     var allReviews = user.reviews;
+                    var found = false;
                     for(var r in allReviews) {
-                        console.log(allReviews[r]);
+                        reviewService
+                            .findReviewById(model.userId, allReviews[r])
+                            .then(function (response) {
+                                var review = response.data;
+
+                                if(review.movieId === movieId) {
+                                    ///user/review/{{review._id}}/edit
+                                    $location.url("/user/review/" + review._id + "/edit");
+                                }
+
+                            })
+                    }
+                    if(!found) {
+                        $location.url("/user/review/new/search/" + movieId);
                     }
                 })
+
+        }
+
+        function printError() {
+            model.errorMessage = "Review for this movie already exists!";
+            model.hasAlert = true;
+            $timeout(function() {model.hasAlert = false}, 3000);
         }
 
         function toProfile() {

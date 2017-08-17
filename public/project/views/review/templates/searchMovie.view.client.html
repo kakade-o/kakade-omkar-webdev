@@ -19,6 +19,10 @@
 
 </nav>
 
+<div ng-show="model.hasAlert" class="alert alert-danger ok-fade">
+    {{model.errorMessage}}
+</div>
+
 <h2>Search by Movie Title</h2>
 <input placeholder="titanic"
        ng-model="movieTitle"
@@ -34,7 +38,7 @@
 <table class="table">
     <tr ng-repeat="movie in model.movies.Search">
         <td>
-            <a href="#!/user/review/new/search/{{movie.imdbID}}">
+            <a ng-click="model.checkForExistingReview(movie.imdbID)">
                 {{movie.Title}}
             </a>
         </td>
