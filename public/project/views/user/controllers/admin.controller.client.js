@@ -9,7 +9,7 @@
         var model = this;
 
         model.adminId = resolveUser.adminId; //$routeParams.adminId;
-        model.userId = resolveUser._id; //$routeParams.userId;
+        model.userId = $routeParams.userId;
         model.updateUser = updateUser;
         model.removeUser = removeUser;
 

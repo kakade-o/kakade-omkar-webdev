@@ -76,7 +76,7 @@
                 }
             })
 
-            .when("/adminList/user/edit", {
+            .when("/adminList/user/:userId/edit", {
                 templateUrl: "views/user/templates/adminEditUser.view.client.html",
                 controller: "adminController",
                 controllerAs: "model",
