@@ -1,68 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Omkar Kakade's Web Dev Course Home Page</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-        <body background="images/background-image.jpg"></body>
-        <link href="css/style.css" rel="stylesheet"/>
-        <script src="vendor/angular.js"></script>
-        <script src="vendor/angular-route.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    </head>
-    <body>
+<head>
 
-        <!-- Header -->
-        <h1 class="indexheader">
-            Web Dev Course Home Page</h1>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- List of links -->
-        <ol class="jga-horizontal hidden-xs">
-            <li>
-                <a href="project/#!/"
-                   style="color: white">Project</a>
-            </li>
-            <li>
-                <a href="/assignment#!/login"
-                   style="color: white">Assignment</a>
-            </li>
-            <li>
-                <a href="test/index.html"
-                   style="color: white">Test MongoDB</a>
-            </li>
-            <li>
-                <a href="https://github.com/kakade-o/kakade-omkar-webdev"
-                   style="color: white">
-                    My GitHub.com</a>
-            </li>
-        </ol>
+    <title>Landing Page - Start Bootstrap Theme</title>
 
-        <!-- List of links -->
-        <ol class="jga-horizontal visible-xs" style="margin-left: 30px">
-            <li>
-                <a href="project/index.html"
-                   style="color: white">Project</a>
-            </li>
-            <li></li>
-            <li>
-                <a href="/assignment#!/login"
-                   style="color: white">Assignment</a>
-            </li>
-        </ol>
-        <ol class = "jga-horizontal visible-xs" style="margin-left: 20px">
-            <li>
-                <a href="test/index.html"
-                   style="color: white">Test MongoDB</a>
-            </li>
-            <li>
-                <a href="https://github.com/kakade-o/kakade-omkar-webdev"
-                   style="color: white">
-                    My GitHub.com</a>
-            </li>
-        </ol>
+    <!-- Bootstrap core CSS -->
+    <link href="indexVendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom fonts for this template -->
+    <link href="indexVendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.css" rel="stylesheet">
 
-    </body>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Omkar's Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="#contact">Contact</a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="intro-message">
+            <h1>Welcome!</h1>
+            <h3>To the website of Omkar Kakade</h3>
+            <hr class="intro-divider">
+            <ul class="list-inline intro-social-buttons">
+                <li class="list-inline-item">
+                    <a href="https://omkar-joe-project-webdev.herokuapp.com/project/index.html#!/" class="btn btn-secondary btn-lg">
+                        <i class="fa fa-ticket fa-fw"></i>
+                        <span class="network-name">Project</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="/assignment#!/login" class="btn btn-secondary btn-lg">
+                        <i class="fa fa-university fa-fw"></i>
+                        <span class="network-name">Assignment</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/kakade-o/kakade-omkar-webdev" class="btn btn-secondary btn-lg">
+                        <i class="fa fa-github fa-fw"></i>
+                        <span class="network-name">Github</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="test/index.html" class="btn btn-secondary btn-lg">
+                        <i class="fa fa-terminal fa-fw"></i>
+                        <span class="network-name">Test MongoDB</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<section class="content-section-a" id="about">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 ml-auto">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">About</h2>
+                <p class="lead"> BS in CS, Northeastern University.
+                    <!--<a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>-->
+                    <br>
+                    You can contact me via
+                    <a target="_blank" href="https://www.linkedin.com/in/omkar-kakade">LinkedIn</a>!
+                </p>
+            </div>
+            <div class="col-lg-5 mr-auto">
+                <img class="img-fluid" src="img/face-pic.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+</section>
+
+<!--<section class="content-section-b" id="contact">-->
+
+    <!--<div class="container">-->
+
+        <!--<div class="row">-->
+            <!--<div class="col-lg-5 mr-auto order-lg-2">-->
+                <!--<hr class="section-heading-spacer">-->
+                <!--<div class="clearfix"></div>-->
+                <!--<h2 class="section-heading">Contact</h2>-->
+                <!--<p class="lead">You can contact me via-->
+                    <!--<a target="_blank" href="https://www.linkedin.com/in/omkar-kakade">LinkedIn</a>!-->
+                    <!--<br class="justify-content-center"> or <br>-->
+                    <!--via email: kakade.o@husky.neu.edu-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-5 ml-auto order-lg-1">-->
+                <!--<img class="img-fluid" src="img/dog.png" alt="">-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--&lt;!&ndash; /.container &ndash;&gt;-->
+
+<!--</section>-->
+<!-- /.content-section-b -->
+
+<!--<section class="content-section-a">-->
+
+    <!--<div class="container">-->
+
+        <!--<div class="row">-->
+            <!--<div class="col-lg-5 ml-auto">-->
+                <!--<hr class="section-heading-spacer">-->
+                <!--<div class="clearfix"></div>-->
+                <!--<h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>-->
+                <!--<p class="lead">This template features the 'Lato' font, part of the-->
+                    <!--<a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as-->
+                    <!--<a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-5 mr-auto ">-->
+                <!--<img class="img-fluid" src="img/phones.png" alt="">-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--&lt;!&ndash; /.container &ndash;&gt;-->
+
+<!--</section>-->
+<!-- /.content-section-a -->
+
+<!--<aside class="banner">-->
+
+    <!--<div class="container">-->
+
+        <!--<div class="row">-->
+            <!--<div class="col-lg-6 my-auto">-->
+                <!--<h2>Connect to Start Bootstrap:</h2>-->
+            <!--</div>-->
+            <!--<div class="col-lg-6 my-auto">-->
+                <!--<ul class="list-inline banner-social-buttons">-->
+                    <!--<li class="list-inline-item">-->
+                        <!--<a href="#" class="btn btn-secondary btn-lg">-->
+                            <!--<i class="fa fa-twitter fa-fw"></i>-->
+                            <!--<span class="network-name">Twitter</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="list-inline-item">-->
+                        <!--<a href="#" class="btn btn-secondary btn-lg">-->
+                            <!--<i class="fa fa-github fa-fw"></i>-->
+                            <!--<span class="network-name">Github</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="list-inline-item">-->
+                        <!--<a href="#" class="btn btn-secondary btn-lg">-->
+                            <!--<i class="fa fa-linkedin fa-fw"></i>-->
+                            <!--<span class="network-name">Linkedin</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--&lt;!&ndash; /.container &ndash;&gt;-->
+
+<!--</aside>-->
+<!-- /.banner -->
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="#">Home</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+                <a href="#about">About</a>
+            </li>
+            <!--<li class="footer-menu-divider list-inline-item">&sdot;</li>-->
+            <!--<li class="list-inline-item">-->
+                <!--<a href="#contact">Contact</a>-->
+            <!--</li>-->
+        </ul>
+        <!--<p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>-->
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="indexVendor/jquery/jquery.min.js"></script>
+<script src="indexVendor/popper/popper.min.js"></script>
+<script src="indexVendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
+
+
+
+<!--***************************************-->
+<!--***************************************-->
+<!--***************************************-->
+<!--***************************************-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+    <!--<head>-->
+        <!--<meta charset="UTF-8">-->
+        <!--<title>Omkar Kakade's Web Dev Course Home Page</title>-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>-->
+        <!--<body background="images/background-image.jpg"></body>-->
+        <!--<link href="css/style.css" rel="stylesheet"/>-->
+        <!--<script src="vendor/angular.js"></script>-->
+        <!--<script src="vendor/angular-route.js"></script>-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+
+    <!--</head>-->
+    <!--<body>-->
+
+        <!--&lt;!&ndash; Header &ndash;&gt;-->
+        <!--<h1 class="indexheader">-->
+            <!--Web Dev Course Home Page</h1>-->
+
+        <!--&lt;!&ndash; List of links &ndash;&gt;-->
+        <!--<ol class="jga-horizontal hidden-xs">-->
+            <!--<li>-->
+                <!--<a href="project/#!/"-->
+                   <!--style="color: white">Project</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="/assignment#!/login"-->
+                   <!--style="color: white">Assignment</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="test/index.html"-->
+                   <!--style="color: white">Test MongoDB</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="https://github.com/kakade-o/kakade-omkar-webdev"-->
+                   <!--style="color: white">-->
+                    <!--My GitHub.com</a>-->
+            <!--</li>-->
+        <!--</ol>-->
+
+        <!--&lt;!&ndash; List of links &ndash;&gt;-->
+        <!--<ol class="jga-horizontal visible-xs" style="margin-left: 30px">-->
+            <!--<li>-->
+                <!--<a href="project/index.html"-->
+                   <!--style="color: white">Project</a>-->
+            <!--</li>-->
+            <!--<li></li>-->
+            <!--<li>-->
+                <!--<a href="/assignment#!/login"-->
+                   <!--style="color: white">Assignment</a>-->
+            <!--</li>-->
+        <!--</ol>-->
+        <!--<ol class = "jga-horizontal visible-xs" style="margin-left: 20px">-->
+            <!--<li>-->
+                <!--<a href="test/index.html"-->
+                   <!--style="color: white">Test MongoDB</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="https://github.com/kakade-o/kakade-omkar-webdev"-->
+                   <!--style="color: white">-->
+                    <!--My GitHub.com</a>-->
+            <!--</li>-->
+        <!--</ol>-->
+
+
+
+    <!--</body>-->
+<!--</html>-->
