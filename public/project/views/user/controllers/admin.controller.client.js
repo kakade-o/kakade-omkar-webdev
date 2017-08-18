@@ -46,7 +46,7 @@
                         var _user = response.data;
                         if(!_user) {
                             return userService
-                                .registerUser(user)
+                                .register(user)
                                 .then(function (response) {
                                     $location.url("/adminList");
                                 });
